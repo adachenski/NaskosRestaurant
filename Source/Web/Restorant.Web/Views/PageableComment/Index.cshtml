@@ -1,0 +1,55 @@
+﻿@model Restorant.Web.ViewModels.PageableComment.PageableCommentViewModel
+@{
+    ViewBag.Title = "People's Feedback";
+}
+
+<h2 style="background-color:pink;font-size:33px;font-family:'Comic Sans MS';text-align:center;padding-top:10px;padding-bottom:10px">@ViewBag.Title</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Author</th>
+        <th style="background-color:pink">Title</thstyle="background-color:pink">
+        <th>Content</th>
+        <th>Created On</th>
+    </tr>
+    @foreach (var comment in Model.AllComments)
+    {
+        <tr>
+            <th>@comment.Author</th>
+            <td style="background-color:pink; font-family:'Comic Sans MS';font-size:20px">@comment.Title</td>
+            <td>@comment.Description</td>
+            <td>@comment.CreatedOn</td>
+        </tr>
+    }
+</table>
+<nav>
+    <ul class="pagination">
+        @if (Model.CurrentPage > 1)
+        {
+            <li>
+                <a href="/CommentForm/Create/@Model.CurrentPage" aria-label="Previos">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        }
+        
+        @for (int i = 1; i <=Model.TotalPages; i++)
+        {
+            var className = string.Empty;
+            if (Model.CurrentPage==i)
+            {
+                className = "active";
+            }
+            <li class="@className" ><a href="/CommentForm/Create/@i">@i</a></li>
+        }
+
+        @if (Model.CurrentPage < Model.TotalPages+1)
+        {
+            <li>
+                <a href="/CommentForm/Create/@(Model.CurrentPage+1)" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>
