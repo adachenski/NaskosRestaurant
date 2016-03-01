@@ -31,6 +31,40 @@ namespace Restorant.Data.Migrations
                 }
                 context.SaveChanges();
             }
+            if (!context.Tables.Any())
+            {
+                for (int i = 1; i <= 10; i++)
+                {
+                    var currentTable = new Table
+                    {
+                        Id = i,
+                        NumberOfChairs = 2,
+                        IsTaken = false
+                    };
+                    context.Tables.Add(currentTable);
+                }
+                for (int i = 10; i <= 20; i++)
+                {
+                    var currentTable = new Table
+                    {
+                        Id = i,
+                        NumberOfChairs = 4,
+                        IsTaken = false
+                    };
+                    context.Tables.Add(currentTable);
+                }
+                for (int i = 20; i <= 30; i++)
+                {
+                    var currentTable = new Table
+                    {
+                        Id = i,
+                        NumberOfChairs = 6,
+                        IsTaken = false
+                    };
+                    context.Tables.Add(currentTable);
+                }
+                context.SaveChanges();
+            }
         }
     }
 }

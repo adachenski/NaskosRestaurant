@@ -1,0 +1,139 @@
+﻿@model Restorant.Data.Models.Reservation
+@{
+    ViewBag.Title = "Create Reservation";
+}
+
+
+<h2>@ViewBag.Title</h2>
+<link rel="stylesheet" type="text/css" href="~/Content/jquery.datepick.css">
+<link rel="stylesheet" type="text/css" href="~/Content/timepicki.css" />
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="~/Scripts/jquery.plugin.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.datepick.js"></script>
+    <script type="text/javascript" src="~/Scripts/timepicki.js"></script>
+
+    <script type="text/javascript">
+        $(function () { // will trigger when the document is ready
+            var now = new Date($.now());
+            $("#datepicker").datepick({
+                minDate: now,
+                maxDate: now + 7,
+                dateFormat: 'yyyy-mm-dd',
+                altField: '#isoDate', altFormat: 'yyyy-mm-dd'
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $('#timepicker').timepicki({
+            start_time: ["10", "00", "AM"],
+            step_size_minutes: 15,
+        });
+        function getTimepick() {
+
+            var datePick = $('#datepicker').datepick().val();
+            var timePick = $('#timepicker').timepicki().val();
+            var arr = timePick.split(/[ :]+/);
+            if (this.datepicker=="") {
+                
+            }
+            if (arr[2] == 'PM') {
+                var temp = parseInt(arr[0]);
+                temp += 12;
+                console.log(temp);
+                arr[0] = temp.toString();
+                timePick = arr[0] + ':' + arr[1];
+            }
+            else {
+                timePick = arr[0] + ':' + arr[1];
+            }
+   
+            $('.reserved').text(datePick);
+            $('.reservedTime').text(timePick);
+            $('.reserved').val(datePick + 'T' + timePick);
+        }
+
+    </script>
+}
+
+<div class="container">
+    <!-- Trigger the modal with a button -->
+        <h3>Pick up a Date</h3>
+        <input type="text" id="datepicker" required="required">
+        <br />
+        <br />
+        <h3>Pick up a Time</h3>
+        <input id="timepicker" type="text" name="timepicker" required="required" />
+        <br />
+        <br />
+
+        <button type="button" class="btn btn-info btn-lg" onclick="getTimepick()" data-toggle="modal" data-target="#myModal">Make a Reservation</button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 style="font-weight:900" class="modal-title">Compleate a registration form</h3>
+
+                </div>
+                <div class="modal-body">
+                    @using (Html.BeginForm("Create", "Reservation", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div style="font-size:18px" class="form-group">
+                            <div class="col-md-offset-4" style="font-weight:900">
+                                Your Reservation for :
+                                <span class="reserved"></span>
+                            </div>
+                            <div class="col-md-offset-4" style="font-weight:900">
+                                 Time :
+                                <span class="reservedTime"></span>
+                            </div>
+                            @Html.HiddenFor(m => m.ReservedFor, new { @class = "reserved", required = "required" })
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-4 col-md-4">
+                                @Html.LabelFor(m => m.Table) for
+
+                                @Html.DropDownListFor(m => m.Table.NumberOfChairs, new SelectList(new List<Object>{
+                                                    new { value = 2 , text = "2 People"  },
+                                                    new { value = 4 , text = "4 People" },
+                                                    new { value = 6 , text = "6 People"}
+                                                                                     },
+                                                                                   "value",
+                                                                                   "text",
+                                                                                    2))
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-4 col-md-4">
+
+                                @Html.LabelFor(m=> m.Table.IsTaken)
+                                @Html.CheckBoxFor(m => m.Table.IsTaken, new { required = "required" })
+                               <p style="color:red">@Html.ValidationMessageFor(model => model.Table.IsTaken)</p>                           
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-1 col-md-10">
+                                <input type="submit" class="btn btn-info" value="Send Reservation" />
+                            </div>
+                        </div>
+
+                    }
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

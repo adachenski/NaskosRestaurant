@@ -22,6 +22,10 @@
 
         public IDbSet<CommentForm> Comments { get; set; }
 
+        public IDbSet<Table> Tables { get; set; }
+
+        public IDbSet<Reservation> Reservations { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
