@@ -1,15 +1,12 @@
-﻿using AutoMapper.QueryableExtensions;
-using Restorant.Data.Common.Repository;
-using Restorant.Data.Models;
-using Restorant.Web.ViewModels.PageableComment;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace Restorant.Web.Controllers
+﻿namespace Restorant.Web.Controllers
 {
+    using AutoMapper.QueryableExtensions;
+    using Restorant.Data.Common.Repository;
+    using Restorant.Data.Models;
+    using Restorant.Web.ViewModels.PageableComment;
+    using System.Linq;
+    using System.Web.Mvc;
+
     public class PageableCommentController : Controller
     {
         const int itemPerPage = 4;
@@ -20,31 +17,20 @@ namespace Restorant.Web.Controllers
             this.feedbacks = feedBacks;
         }
         [HttpGet]
-        public ActionResult Index(int id =1)
+        public ActionResult Index(int page=1)
         {
-            PageableCommentViewModel pageableCommentViewModel;
-            if (this.HttpContext.Cache["Comment_page_id"+id]!=null)
-            {
-                pageableCommentViewModel = (PageableCommentViewModel)this.HttpContext.Cache["Comment_page_id" + id];
-            }
-            else
-            {
-                var page = id;
-                var allItemsCount = this.feedbacks.All().Count();
-                var totalPages =allItemsCount / itemPerPage;
-                var itemToSkip = (page - 1) * itemPerPage;
-                var pageableComments = this.feedbacks.All()
-                    .OrderBy(x => x.CreatedOn).ThenBy(x => x.Id)
-                    .Skip(itemToSkip).Take(itemPerPage).Project().To<PageableComment>().ToList();
+            var dummyItems = this.feedbacks.All()
+                    .OrderBy(x => x.CreatedOn).ThenBy(x => x.Id);
+                                
+            var pager = new Pager(dummyItems.Count(), page);
 
-                pageableCommentViewModel = new PageableCommentViewModel
-                {
-                    TotalPages = totalPages,
-                    CurrentPage = page,
-                    AllComments = pageableComments
-                };
-            }
-            return PartialView(pageableCommentViewModel);
+            var viewModel = new IndexPageViewModel
+            {
+                AllComments = dummyItems.Skip((pager.CurrentPage - 1) * pager.PageSize).Take(pager.PageSize).Project().To<PageableComment>().ToList(),
+                Pager = pager
+            };
+
+            return PartialView(viewModel);
         }
     }
 }

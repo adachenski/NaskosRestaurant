@@ -1,12 +1,9 @@
-﻿using Restorant.Web.Infrastructure.Mapping;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using AutoMapper;
-
-namespace Restorant.Web.ViewModels.PageableComment
+﻿namespace Restorant.Web.ViewModels.PageableComment
 {
+    using Restorant.Web.Infrastructure.Mapping;
+    using System;
+    using AutoMapper;
+
     public class PageableComment:IMapFrom<Restorant.Data.Models.CommentForm>,IHaveCustomMappings
     {
         public string Author { get; set; }
