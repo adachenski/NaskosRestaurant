@@ -10,7 +10,7 @@
         public string Email { get; set; }
 
         [Required]
-        [Display(Name = "Username")]
+        [Display(Name = "User Name")]
         public string Username { get; set; }
 
         [Required]

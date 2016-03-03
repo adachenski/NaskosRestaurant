@@ -479,6 +479,7 @@
     <Content Include="Views\CommentForm\Create.cshtml" />
     <Content Include="Views\PageableComment\Index.cshtml" />
     <Content Include="Views\Reservation\Create.cshtml" />
+    <Content Include="Views\Shared\_AffixHomePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

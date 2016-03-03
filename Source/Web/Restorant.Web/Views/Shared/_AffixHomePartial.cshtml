@@ -7,7 +7,14 @@
     @Styles.Render("~/Content/css")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid" style="background-color:ThreeDFace;color:#fff;height:200px;">
+        <h1>Bootstrap Affix Example</h1>
+        <h3>Fixed (sticky) navbar on scroll</h3>
+        <p>Scroll this page to see how the navbar behaves with data-spy="affix".</p>
+        <p>The navbar is attached to the top of the page after you have scrolled a specified amount of pixels.</p>
+    </div>
+
+    <div class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -21,13 +28,12 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Ask question", "Ask", "Questions")</li>
-                    <li>@Html.ActionLink("Feedbacks","Create","CommentForm")</li>
+                    <li>@Html.ActionLink("Feedbacks", "Create", "CommentForm")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div style="height:50px"></div>
     <div class="container body-content">
         <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
@@ -35,7 +41,7 @@
             <li class="active">Data</li>
         </ol>
 
-        @if (TempData["Notification"]!=null)
+        @if (TempData["Notification"] != null)
         {
             <div class="alert alert-info" role="alert">@this.TempData["Notification"]</div>
         }
