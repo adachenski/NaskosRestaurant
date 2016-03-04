@@ -3,60 +3,18 @@
     ViewBag.Title = "Create Reservation";
 }
 
-
 <h2>@ViewBag.Title</h2>
 <link rel="stylesheet" type="text/css" href="~/Content/jquery.datepick.css">
 <link rel="stylesheet" type="text/css" href="~/Content/timepicki.css" />
-@section Scripts{
-    @Scripts.Render("~/bundles/jqueryval")
-    <script type="text/javascript" src="~/Scripts/jquery.plugin.js"></script>
-    <script type="text/javascript" src="~/Scripts/jquery.datepick.js"></script>
-    <script type="text/javascript" src="~/Scripts/timepicki.js"></script>
 
-    <script type="text/javascript">
-        $(function () { // will trigger when the document is ready
-            var now = new Date($.now());
-            $("#datepicker").datepick({
-                minDate: now,
-                maxDate: now + 7,
-                dateFormat: 'yyyy-mm-dd',
-                altField: '#isoDate', altFormat: 'yyyy-mm-dd'
-            });
-        });
-    </script>
-    <script type="text/javascript">
-        $('#timepicker').timepicki({
-            start_time: ["10", "00", "AM"],
-            step_size_minutes: 15,
-        });
-        function getTimepick() {
-
-            var datePick = $('#datepicker').datepick().val();
-            var timePick = $('#timepicker').timepicki().val();
-            var arr = timePick.split(/[ :]+/);
-            if (this.datepicker=="") {
-                
-            }
-            if (arr[2] == 'PM') {
-                var temp = parseInt(arr[0]);
-                temp += 12;
-                console.log(temp);
-                arr[0] = temp.toString();
-                timePick = arr[0] + ':' + arr[1];
-            }
-            else {
-                timePick = arr[0] + ':' + arr[1];
-            }
-   
-            $('.reserved').text(datePick);
-            $('.reservedTime').text(timePick);
-            $('.reserved').val(datePick + 'T' + timePick);
-        }
-    </script>
-}
-
-<div class="container">
+<div  class="container">
     <!-- Trigger the modal with a button -->
+    <div style="font-size:22px" class="alert alert-warning alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Resevation Houers : </strong> Breakfast after 6 AM before 11 AM, Diner after 6 before 11 PM
+    </div>
         <h3>Pick up a Date</h3>
         <input type="text" id="datepicker" required="required">
         <br />
@@ -66,9 +24,9 @@
         <br />
         <br />
 
-        <button type="button" class="btn btn-info btn-lg" onclick="getTimepick()" data-toggle="modal" data-target="#myModal">Make a Reservation</button>
+        <button type="button" class="btn btn-info btn-lg no-modal" onclick="getTimepick()" data-toggle="modal" data-target="#myModal">Make a Reservation</button>
     <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
+    <div  class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
@@ -84,14 +42,15 @@
                         @Html.AntiForgeryToken()
                         <div style="font-size:18px" class="form-group">
                             <div class="col-md-offset-4" style="font-weight:900">
-                                Your Reservation for :
-                                <span class="reserved"></span>
+                                Reservation for :
+                                <span class="reserved" required = "required"></span>
                             </div>
+
                             <div class="col-md-offset-4" style="font-weight:900">
                                  Time :
                                 <span class="reservedTime"></span>
                             </div>
-                            @Html.HiddenFor(m => m.ReservedFor, new { @class = "reserved", required = "required" })
+                            @Html.TextBoxFor(m => m.ReservedFor, new { @class = "reserved", style = "visibility:hidden", required = "required" })
                         </div>
 
                         <div class="form-group">
@@ -136,3 +95,11 @@
 
     </div>
 </div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="~/Scripts/jquery.plugin.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.datepick.js"></script>
+    <script type="text/javascript" src="~/Scripts/timepicki.js"></script>
+    <script type="text/javascript" src="~/Scripts/reservation-form.validate.js"></script>
+}

@@ -229,6 +229,7 @@
     <Compile Include="ViewModels\PageableComment\IndexPageViewModel.cs" />
     <Compile Include="ViewModels\PageableComment\Pager.cs" />
     <Compile Include="ViewModels\PageableComment\PageableComment.cs" />
+    <Compile Include="ViewModels\PageableComment\SorthingValues.cs" />
     <Compile Include="ViewModels\Questions\QuestionDisplayViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -480,6 +481,7 @@
     <Content Include="Views\PageableComment\Index.cshtml" />
     <Content Include="Views\Reservation\Create.cshtml" />
     <Content Include="Views\Shared\_AffixHomePartial.cshtml" />
+    <Content Include="Scripts\reservation-form.validate.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

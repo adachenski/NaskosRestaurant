@@ -17,10 +17,15 @@
             this.feedbacks = feedBacks;
         }
         [HttpGet]
-        public ActionResult Index(int page=1)
+        public ActionResult Index( SorthingValues sorthValues , int page = 1 )
         {
             var dummyItems = this.feedbacks.All()
                     .OrderBy(x => x.CreatedOn).ThenBy(x => x.Id);
+            if (sorthValues.OrderByDate == "newest")
+            {
+                dummyItems = this.feedbacks.All()
+                    .OrderByDescending(x => x.CreatedOn).ThenBy(x => x.Id);
+            }
                                 
             var pager = new Pager(dummyItems.Count(), page);
 
