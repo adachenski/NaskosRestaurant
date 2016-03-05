@@ -21,7 +21,10 @@ $(function () { // will trigger when the document is ready
 
 function getTimepick() {
 
-	var datePick = $('#datepicker').datepick().val();
+    var datePick = $('#datepicker').datepick().val();
+    console.log(datePick);
+    var arrDate = datePick.split(/[ -]+/);
+    console.log(arrDate)
 	var timePick = $('#timepicker').timepicki().val();
 	var arr = timePick.split(/[ :]+/);
 
@@ -43,13 +46,25 @@ function getTimepick() {
 		$('.reserved').text("You must Enter Day").css("color", "red");
 	}
 	else {
-		$('.reserved').text(datePick).css("color", "green");
+	    var year = arrDate[0];
+	    var month =parseInt(arrDate[1]);
+	    var day = arrDate[2];
+	    var monthArr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	    var stringDate = monthArr[month] + ' - ' +day+' - '+ year;
+		$('.reserved').text(stringDate).css("color", "green");
 	}
 
 	if (timePick === ":undefined") {
 		$('.reservedTime').text("You must enter a Valid Time").css("color", "red");
 	}
 	else {
+	    var dinnerChoise = arr[2];
+	    if (dinnerChoise=='AM') {
+	        $('.brekfastOrLunch').text('Breakfast').css("color", "green");
+	    }
+	    else {
+	        $('.brekfastOrLunch').text('Dinner').css("color", "green");
+	    }
 		$('.reservedTime').text(timePick).css("color", "green");
 	}
 	var regex = new RegExp(/^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/);
