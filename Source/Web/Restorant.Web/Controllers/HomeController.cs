@@ -17,9 +17,9 @@
 
         public ActionResult Index()
         {
-            var model = this.posts.All().Project().To<IndexBlogPostViewModel>();
+            //var model = this.posts.All().Project().To<IndexBlogPostViewModel>();
 
-            return this.View(model);
+            return this.View();
         }
     }
 }

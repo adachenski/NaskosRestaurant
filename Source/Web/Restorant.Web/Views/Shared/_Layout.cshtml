@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Forloop.HtmlHelpers 
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -7,6 +8,10 @@
     @Styles.Render("~/Content/css")
 </head>
 <body>
+    @if (!Request.IsAuthenticated)
+{
+    @Html.Partial("LoginModal")
+}
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -22,6 +27,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Ask question", "Ask", "Questions")</li>
                     <li>@Html.ActionLink("Feedbacks","Create","CommentForm")</li>
+                    <li>@Html.ActionLink("Reservations","Create","Reservation")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -49,6 +55,8 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
+    @Html.RenderScripts()
 </body>
 </html>

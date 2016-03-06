@@ -46,27 +46,27 @@
                     {
                         @Html.AntiForgeryToken()
                         <div class="row">
-                            <div class="col-xs-6 col-sm-3">
-                                <img style="height:200px;z-index:1" src="~/jpgs/ChiefGIrlReservation.jpg" />
+                            <div class="col-xs-6 col-md-4">
+                                <img style="height:200px;z-index:1" src="~/jpgs/Chief-Reservation.png" />
                             </div>
 
                             <div style="font-size:18px" class="form-group">
-                                <div class="col-md-offset-4" style="font-weight:900">
+                                <div class="col-md-offset-4 reservation-form">
                                     Date :
                                     <span class="reserved" required="required"></span>
                                 </div>
 
-                                <div class="col-md-offset-4" style="font-weight:900">
+                                <div class="col-md-offset-4 reservation-form">
                                     Time :
                                     <span class="reservedTime"></span>
                                 </div>
 
-                                <div class="col-md-offset-4" style="font-weight:900">
-                                    @Html.TextBoxFor(m => m.ReservedFor, new { @class = "reserved", style = "visibility:hidden;width:1px", required = "required" })                                
+                                <div class="col-md-offset-4 reservation-form" style="padding-left:0">
+                                    @Html.TextBoxFor(m => m.ReservedFor, new { @class = "reserved", style = "visibility:hidden;width:0px", required = "required" })                                
                                      <span>Reservation for :  </span>                     
                                     <span class="brekfastOrLunch"></span>
                                 </div>
-                                <div class="col-md-offset-4" style="padding-left:6px">
+                                <div class="col-md-offset-4 reservation-form">
                                     @Html.LabelFor(m => m.Table) for
 
                                     @Html.DropDownListFor(m => m.Table.NumberOfChairs, new SelectList(new List<Object>{
@@ -79,7 +79,7 @@
                                                                                     2))
 
                                 </div>
-                                <div class="col-md-offset-4" style="padding-left:6px">
+                                <div class="col-md-offset-4 reservation-form">
 
                                     @Html.LabelFor(m => m.Table.IsTaken)
                                     @Html.CheckBoxFor(m => m.Table.IsTaken, new { required = "required" })

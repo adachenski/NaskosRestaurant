@@ -1,5 +1,6 @@
 ﻿namespace Restorant.Web
 {
+    using Forloop.HtmlHelpers;
     using System.Web;
     using System.Web.Optimization;
 
@@ -16,7 +17,8 @@
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/LoginModal.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.cosmo.css",
@@ -24,6 +26,7 @@
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
+            ScriptContext.ScriptPathResolver = System.Web.Optimization.Scripts.Render;
             BundleTable.EnableOptimizations = false;
         }
     }

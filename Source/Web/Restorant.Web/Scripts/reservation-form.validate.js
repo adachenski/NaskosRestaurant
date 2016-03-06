@@ -22,9 +22,7 @@ $(function () { // will trigger when the document is ready
 function getTimepick() {
 
     var datePick = $('#datepicker').datepick().val();
-    console.log(datePick);
     var arrDate = datePick.split(/[ -]+/);
-    console.log(arrDate)
 	var timePick = $('#timepicker').timepicki().val();
 	var arr = timePick.split(/[ :]+/);
 
@@ -37,13 +35,12 @@ function getTimepick() {
 	else {
 		timePick = arr[0] + ':' + arr[1];
 	}
-	console.log(arr[0])
 	var arrHouers = arr[0];
 	if (arrHouers < 6 || arrHouers > 11 && arrHouers < 18 || arrHouers > 22) {
 		timePick = ":undefined";
 	}
 	if (datePick === "") {
-		$('.reserved').text("You must Enter Day").css("color", "red");
+		$('.reserved').text("Please enter a valid Day").css("color", "red");
 	}
 	else {
 	    var year = arrDate[0];
@@ -55,7 +52,7 @@ function getTimepick() {
 	}
 
 	if (timePick === ":undefined") {
-		$('.reservedTime').text("You must enter a Valid Time").css("color", "red");
+		$('.reservedTime').text("Please enter a valid Time").css("color", "red");
 	}
 	else {
 	    var dinnerChoise = arr[2];
@@ -70,7 +67,7 @@ function getTimepick() {
 	var regex = new RegExp(/^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/);
 	var testDate = regex.test(datePick)
 	if (!testDate) {
-		$('.reserved').text("Wrong time format").css("color", "red");
+		$('.reserved').text("Please enter a valid Date").css("color", "red");
 	}
 
 	$('.reserved').val(datePick + 'T' + timePick);
