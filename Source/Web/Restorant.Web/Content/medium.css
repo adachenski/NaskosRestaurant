@@ -1,0 +1,34 @@
+﻿body {
+
+}
+.modalImg{
+    visibility:hidden;
+}
+.container-fluid{
+    height:430px !important;
+}
+.modal-container{
+
+	height:430px !important;
+    background-image:url("http://photos4.meetupstatic.com/photos/event/d/2/3/4/600_430133812.jpeg")
+}
+#chef{
+    height:200px;
+    left:-200px;
+}
+#modalScroll{
+    left:-30px;
+    visibility:visible !important;
+  
+}
+#video-modal{
+    opacity:0.4 !important;
+}
+#naskosRestaurant{
+    width: 300px;
+    margin-left: 250px;
+    margin-top: 250px;
+}
+
+
+

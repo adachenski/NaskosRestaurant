@@ -27,12 +27,16 @@ textarea {
 .affix {
     top: 0;
     width: 100%;
-    z-index:1;
-    opacity:0.7;
+    opacity:0.8;
 }
 
-    .affix + .container-fluid {
+    .affix {
+    }
+    .container-fluid {
         padding-top: 70px;
+        height:600px;
+        width:100%;
+        padding:20px
     }
 
 .modal-content {
@@ -41,6 +45,20 @@ textarea {
 	text-align: left;
 }
 
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #ffffff;
+    background-color: #314459;
+}
+
+.modal-container{
+    position:absolute;
+    top:0%;
+	                left:0%;
+	                height:600px;
+	                width:100%;
+	                overflow: hidden;
+                   
+}
 .modal-header {
 	padding: 25px 25px 15px 25px;
 	background: #fff;
@@ -68,9 +86,23 @@ textarea {
 	text-align: left;
 	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
 }
-
-.modal-body img {
-	margin-bottom: 15px;
+.wrap{
+    position:absolute; 
+    left:50%;
+    width:100%;
+    float:left;
+    display:block;
+}
+#modalScroll {
+    left:-30px;
+    width:70px;
+    transform: rotate(180deg);
+	visibility:hidden;
+}
+.modalImg{
+    top:485px;
+    width:auto;
+    max-width:200px
 }
 
 .modal-body form textarea {
