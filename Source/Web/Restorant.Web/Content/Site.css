@@ -1,11 +1,15 @@
 ﻿body {
     padding-bottom: 20px;
+
+
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    position:relative;
+    background-color:white;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -26,12 +30,10 @@ textarea {
 /* Note: Try to remove the following lines to see the effect of CSS positioning */
 .affix {
     top: 0;
-    width: 100%;
-    opacity:0.8;
+    left:0;
+    opacity:0.9;
 }
 
-    .affix {
-    }
     .container-fluid {
         padding-top: 70px;
         height:600px;
@@ -49,14 +51,26 @@ textarea {
     color: #ffffff;
     background-color: #314459;
 }
+#navigation{
+    z-index:6;
+   margin-bottom:0;
+   width:100%;
+}
 
 .modal-container{
-    position:absolute;
+    position:fixed;
     top:0%;
-	                left:0%;
-	                height:600px;
-	                width:100%;
-	                overflow: hidden;
+    left:0%;
+    height:600px;
+    width:100%;
+    overflow: hidden;
+    z-index:50;
+    /*position:fixed;
+        top: 0px;
+    left: 0px;
+    height: 620px;
+    width: 100%;
+    z-index: 50;*/
                    
 }
 .modal-header {
@@ -90,8 +104,8 @@ textarea {
     position:absolute; 
     left:50%;
     width:100%;
-    float:left;
     display:block;
+    z-index:3;
 }
 #modalScroll {
     left:-30px;
@@ -117,4 +131,26 @@ textarea {
     font-family:'Times New Roman', Times, serif;
     padding-left:12px;
     font-weight:900;
+}
+
+.reservation-create{
+    position:relative;
+    width:100%; 
+    height:auto; 
+    float:left
+}
+.reservation-create img{
+    width:100%;
+    height:auto;
+}
+.reservation-create>div{
+    position:absolute;
+    top:65%;
+}
+
+#datepicker, #timepicker{
+    width:270px;
+}
+h1,h2,h5{
+    font-family:'Tabarra Shadow',Impact
 }

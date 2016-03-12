@@ -100,6 +100,26 @@
             }
         }
 
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<JsonResult> LoginJson(string username, string password, bool rememberme)
+        {
+            var result = await SignInManager.PasswordSignInAsync(username, password, rememberme, shouldLockout: false);
+            switch (result)
+            {
+                case SignInStatus.Success:
+                    return Json(true);
+                case SignInStatus.LockedOut:
+                case SignInStatus.RequiresVerification:
+                case SignInStatus.Failure:
+                    return Json(false);
+                default:
+                    break;
+            }
+            return Json(false);
+        }
+
         // GET: /Account/VerifyCode
         [AllowAnonymous]
         public async Task<ActionResult> VerifyCode(string provider, string returnUrl, bool rememberMe)

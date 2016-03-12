@@ -17,7 +17,7 @@
             this.feedbacks = feedBacks;
         }
         [HttpGet]
-        public ActionResult Index( SorthingValues sorthValues , int page = 1 )
+        public ActionResult _Index( SorthingValues sorthValues , int page = 1 )
         {
             var dummyItems = this.feedbacks.All()
                     .OrderBy(x => x.CreatedOn).ThenBy(x => x.Id);

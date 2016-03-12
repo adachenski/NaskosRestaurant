@@ -4,7 +4,7 @@
 
     $("#loginform").submit(function (event) {
         if ($("#loginform").valid()) {
-            var username = $("#Email").val();
+            var username = $("#Username").val();
             var password = $("#Password").val();
             var rememberme = $("#RememberMe").val();
             var antiForgeryToken = ModalLogin.Views.Common.getAntiForgeryValue();
@@ -20,7 +20,7 @@
 
     //TODO alle Referenzen auf Form controls bezogen auf form, um Doppeldeutigkeiten zu vermeiden.
     $("#ModalLogin").on("shown.bs.modal", function (e) {
-        $("#Email").focus();
+        $("#Username").focus();
     });
 
 });

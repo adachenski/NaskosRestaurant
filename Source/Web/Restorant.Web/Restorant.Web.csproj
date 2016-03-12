@@ -235,6 +235,7 @@
     <Compile Include="ViewModels\PageableComment\PageableComment.cs" />
     <Compile Include="ViewModels\PageableComment\SorthingValues.cs" />
     <Compile Include="ViewModels\Questions\QuestionDisplayViewModel.cs" />
+    <Compile Include="ViewModels\Reservations\ReservationsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
@@ -246,7 +247,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jquery.datepick.css" />
     <Content Include="Content\medium.css" />
-    <Content Include="Content\modal-front-page.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\timepicki.css" />
     <Content Include="favicon.ico" />
@@ -258,6 +258,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="jpgs\chef-girl.png" />
     <Content Include="jpgs\Noa Restaurant Intro.webm" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="jpgs\arrow.png" />
@@ -273,9 +274,6 @@
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
@@ -497,7 +495,7 @@
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Questions\Display.cshtml" />
     <Content Include="Views\CommentForm\Create.cshtml" />
-    <Content Include="Views\PageableComment\Index.cshtml" />
+    <Content Include="Views\PageableComment\_Index.cshtml" />
     <Content Include="Views\Reservation\Create.cshtml" />
     <Content Include="Views\Shared\_AffixHomePartial.cshtml" />
     <Content Include="Scripts\reservation-form.validate.js" />

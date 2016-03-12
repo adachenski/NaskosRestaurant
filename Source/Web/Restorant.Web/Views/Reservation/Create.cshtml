@@ -1,66 +1,75 @@
-﻿@model Restorant.Data.Models.Reservation
+﻿@model Restorant.Web.ViewModels.Reservations.ReservationsViewModel
 @using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Create Reservation";
 }
-
-<h2>@ViewBag.Title</h2>
+<h1>@ViewBag.Title</h1>
 <link rel="stylesheet" type="text/css" href="~/Content/jquery.datepick.css">
 <link rel="stylesheet" type="text/css" href="~/Content/timepicki.css" />
-
+<link rel='stylesheet' media='screen and (min-width: 120px) and (max-width: 701px)' href='~/Content/medium.css' />
 <div class="container">
     <!-- Trigger the modal with a button -->
-    <div style="font-size:22px" class="alert alert-warning alert-dismissible fade in" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        <strong>Resevation Houers : </strong> Breakfast from 6 AM to 11 AM, Dinner from 6 PM to 11 PM
-    </div>
-    <h3>Pick up a Date</h3>
-    <input type="text" id="datepicker" required="required">
-    <br />
-    <br />
-    <h3>Pick up a Time</h3>
-    <input id="timepicker" type="text" name="timepicker" required="required" />
-    <br />
-    <br />
 
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div style="font-size:22px" class="alert alert-warning alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>Resevation Houers : </strong> Breakfast from 6 AM to 11 AM, Dinner from 6 PM to 11 PM
+        </div>
+    }
+    else
+    {
+        <div style="font-size:22px" class="alert alert-danger alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <p><strong>Please Login to complete the Reservation</strong></p>
+        </div>
+    }
+
+    <div class="reservation-create">
+        <img src="~/jpgs/chef-girl.png"/>
+        <div id="date-div"style="left:25%">
+            <h2>Pick up a Date</h2>
+            <input class="form-control" type="text" id="datepicker" required="required">
+        </div>
+        <div id="time-div" style="left:55%">
+            <h2>Pick up a Time</h2>
+            <input class="form-control" id="timepicker" type="text" name="timepicker" required="required" />
+        </div>
+    </div>
     <button type="button" class="btn btn-info btn-lg no-modal" onclick="getTimepick()" data-toggle="modal" data-target="#myModal">Make a Reservation</button>
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
-
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                     
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>                    
                     <h4 style="font-weight:900" class="modal-title">
                         @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })                        
                     Please compleate your Reservation form.
                     </h4>
-
                 </div>
                 <div class="modal-body">
                     @using (Html.BeginForm("Create", "Reservation", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                     {
                         @Html.AntiForgeryToken()
                         <div class="row">
-                            <div class="col-xs-6 col-md-4">
-                                <img style="height:200px;z-index:1" src="~/jpgs/Chief-Reservation.png" />
+                            <div class="col-md-4">
+                                <img style="height:270px;z-index:1;" src="~/jpgs/Chief-Reservation.png" />
                             </div>
-
                             <div style="font-size:18px" class="form-group">
                                 <div class="col-md-offset-4 reservation-form">
                                     Date :
                                     <span class="reserved" required="required"></span>
                                 </div>
-
                                 <div class="col-md-offset-4 reservation-form">
                                     Time :
                                     <span class="reservedTime"></span>
                                 </div>
-
                                 <div class="col-md-offset-4 reservation-form" style="padding-left:0">
                                     @Html.TextBoxFor(m => m.ReservedFor, new { @class = "reserved", style = "visibility:hidden;width:0px", required = "required" })                                
                                      <span>Reservation for :  </span>                     
@@ -68,7 +77,6 @@
                                 </div>
                                 <div class="col-md-offset-4 reservation-form">
                                     @Html.LabelFor(m => m.Table) for
-
                                     @Html.DropDownListFor(m => m.Table.NumberOfChairs, new SelectList(new List<Object>{
                                                     new { value = 2 , text = "2 People"  },
                                                     new { value = 4 , text = "4 People" },
@@ -80,29 +88,28 @@
 
                                 </div>
                                 <div class="col-md-offset-4 reservation-form">
-
+                                    @Html.LabelFor(m=>m.AskSomething)
+                                    @Html.TextAreaFor(m=>m.AskSomething.Content,new {style= "width:150px;vertical-align:top;font-size:18px;line-height:normal;" })
+                                </div>
+                                <div class="col-md-offset-4 reservation-form">
                                     @Html.LabelFor(m => m.Table.IsTaken)
                                     @Html.CheckBoxFor(m => m.Table.IsTaken, new { required = "required" })
                                     <p style="color:red">@Html.ValidationMessageFor(model => model.Table.IsTaken)</p>
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <div class="col-md-offset-1 col-md-10">
                                     <input type="submit" class="btn btn-info" value="Send Reservation" />
                                 </div>
                             </div>
                         </div>
-
                     }
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
 

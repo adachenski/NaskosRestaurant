@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using Restorant.Data.Common.Repository;
 using Restorant.Data.Models;
+using Restorant.Web.ViewModels.Reservations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,10 +24,10 @@ namespace Restorant.Web.Controllers
         {
             return View();
         }
-
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Reservation userReservation)
+        public ActionResult Create(ReservationsViewModel userReservation)
         {
             if (this.User.Identity.IsAuthenticated)
             {
@@ -34,16 +35,14 @@ namespace Restorant.Web.Controllers
                 {
                     PersonId = this.User.Identity.GetUserId(),
                     Table = userReservation.Table,
-                    ReservedFor = userReservation.ReservedFor
+                    ReservedFor = userReservation.ReservedFor,
+                    AskSomething = userReservation.AskSomething
                     
                 };
-                if (userReservation.Comments!=null)
-                {
-                    newReservation.Comments = userReservation.Comments;
-                }
+
                 this.reservations.Add(newReservation);
                 this.reservations.SaveChanges();
-                this.TempData["Notification"] = "Your reservation has been Send";
+                this.TempData["Notification"] = "Your reservation has been Approved";
             }
             return Redirect("/");
         }
