@@ -14,12 +14,16 @@ margin: 0 auto -4em;
 height: 4em;
 clear:both;
 }
+.body-content{
+    padding-left:10px !important;
+    padding-right:10px !important;
+}
 
 form {
     height: 100%;
 }
 .modalImg{
-    visibility:hidden;
+    display:none;
 }
 .container-fluid{
     height:430px !important;
@@ -30,21 +34,24 @@ form {
     /*background-image:url("http://photos4.meetupstatic.com/photos/event/d/2/3/4/600_430133812.jpeg")*/
 }
 #chef{
-    height:200px;
-    left:-200px;
+    height:415px !important;
+    padding-left:0 !important;
 }
 #modalScroll{
-    left:-30px;
+    
     visibility:visible !important;
+    width: 60px;
+    position: absolute;
+    bottom: 325px;
+    left: 80px;
+    transform: rotate(180deg);
   
 }
-#video-modal{
-    opacity:0.7 !important;
-}
+
 #naskosRestaurant{
     width: 300px;
-    margin-left: 250px;
-    margin-top: 250px;
+    top:250px;
+    
 }
 #date-div{
     position:absolute;

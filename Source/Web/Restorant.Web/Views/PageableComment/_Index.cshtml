@@ -1,0 +1,76 @@
+﻿@model Restorant.Web.ViewModels.PageableComment.IndexPageViewModel
+@{
+    ViewBag.Title = "All Feedbacks";
+}
+
+
+<h2 style="background-color:pink;text-align:center;padding-top:10px;padding-bottom:10px">@ViewBag.Title</h2>
+<div>
+    <p>
+        <span> Sorth by Date :</span>
+        <select id="PageableComment_SorthingValues" name="Restorant.Web.ViewModels.PageableComment.SorthingValues">
+            <option value="oldest">select value</option>
+            <option value="oldest">Newest</option>
+            <option value="newest">Oldest</option>
+        </select>
+        @*@Html.DropDownListFor(m=> Restorant.Web.ViewModels.PageableComment.SorthingValues.SorthingValues, new SelectList(new List<Object>{
+            new { value = 2 , text = "2 People"  },
+            new { value = 4 , text = "4 People" },
+            new { value = 6 , text = "6 People"}
+                                             },
+                                           "value",
+                                           "text",
+                                            2))*@
+    </p>
+</div>
+<table class="table table-striped">
+    <tr>
+        <th>Author</th>
+        <th style="background-color:pink">Title</th>
+        <th>Content</th>
+        <th>Created On</th>
+    </tr>
+    @foreach (var comment in Model.AllComments)
+    {
+        <tr>
+            <th>@comment.Author</th>
+            <td style="background-color:pink"><h5> @comment.Title</h5></td>
+            <td>@comment.Description</td>
+            <td>@comment.CreatedOn</td>
+        </tr>
+    }
+</table>
+<div class="col-sm-offset-3">
+    @if (Model.Pager.EndPage > 1)
+    {
+        <ul class="pagination">
+            @if (Model.Pager.EndPage > 1)
+                {
+                <li>
+                    <a href="~/CommentForm/Create">First</a>
+                </li>
+                <li>
+                    <a href="~/CommentForm/Create?page=@(Model.Pager.CurrentPage-1)">Previous</a>
+                </li>
+            }
+
+            @for (var page = Model.Pager.StartPage; page < Model.Pager.EndPage; page++)
+                {
+                <li class="@(page == Model.Pager.CurrentPage ? "active" : "")">
+                    <a href="/CommentForm/Create?page=@page">@page</a>
+                </li>
+            }
+
+            @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+                {
+                <li>
+                    <a href="~/CommentForm/Create?page=@(Model.Pager.CurrentPage+1)">Next</a>
+                </li>
+                <li>
+                    <a href="~/CommentForm/Create?page=@(Model.Pager.TotalPages)">Last</a>
+                </li>
+            }
+        </ul>
+    }
+</div>
+@Scripts.Render("~/bundles/jquery")

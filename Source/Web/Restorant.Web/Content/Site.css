@@ -1,15 +1,32 @@
 ﻿body {
     padding-bottom: 20px;
-
-
+    background-image: url("https://focusmedical.files.wordpress.com/2015/01/istock_000047600082_medium.jpg?w=1697&h=1131&crop=1");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-    position:relative;
-    background-color:white;
+    padding-left: 100px;
+    padding-right: 100px;
+    position: relative;
+    background-color: rgba(255,255,255,0.9);
+}
+
+#video-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    background: url() no-repeat;
+    background-size: cover;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -23,134 +40,151 @@
 input,
 select,
 textarea {
-    max-width:280px;
+    max-width: 280px;
 }
 
 
 /* Note: Try to remove the following lines to see the effect of CSS positioning */
 .affix {
     top: 0;
-    left:0;
-    opacity:0.9;
+    left: 0;
+    opacity: 0.9;
 }
 
-    .container-fluid {
-        padding-top: 70px;
-        height:600px;
-        width:100%;
-        padding:20px
-    }
+.container-fluid {
+    padding-top: 70px;
+    height: 600px;
+    width: 100%;
+    padding: 20px;
+}
 
 .modal-content {
-
-	border: 0;
-	text-align: left;
+    border: 0;
+    text-align: left;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
     color: #ffffff;
     background-color: #314459;
 }
-#navigation{
-    z-index:6;
-   margin-bottom:0;
-   width:100%;
+
+#navigation {
+    z-index: 6;
+    margin-bottom: 0;
+    width: 100%;
 }
 
-.modal-container{
-    position:fixed;
-    top:0%;
-    left:0%;
-    height:600px;
-    width:100%;
+.home-container {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 600px;
+    width: 100%;
     overflow: hidden;
-    z-index:50;
     /*position:fixed;
         top: 0px;
     left: 0px;
     height: 620px;
     width: 100%;
     z-index: 50;*/
-                   
-}
-.modal-header {
-	padding: 25px 25px 15px 25px;
-	background: #fff;
-	border: 0;
-	border-bottom: 1px solid #ddd;
-	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
 }
 
-.modal-header .close {
-	font-size: 36px;
-	color: #888;
-	font-weight: 300;
-	text-shadow: none;
-	opacity: 1;
+.modal-header {
+    padding: 25px 25px 15px 25px;
+    background: #fff;
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
 }
+
+    .modal-header .close {
+        font-size: 36px;
+        color: #888;
+        font-weight: 300;
+        text-shadow: none;
+        opacity: 1;
+    }
 
 .modal-title {
-	margin-bottom: 10px;
-	line-height: 30px;
+    margin-bottom: 10px;
+    line-height: 30px;
 }
 
 .modal-body {
-	padding: 25px 25px 30px 25px;
-	background: #eee;
-	text-align: left;
-	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
+    padding: 25px 25px 30px 25px;
+    background: #eee;
+    text-align: left;
+    -moz-border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
 }
-.wrap{
-    position:absolute; 
-    left:50%;
-    width:100%;
-    display:block;
-    z-index:3;
+
+.wrap {
+    position: absolute;
+    z-index: 3;
+}
+#chef{
+    position:absolute;
+    height:600px;
 }
 #modalScroll {
-    left:-30px;
-    width:70px;
-    transform: rotate(180deg);
-	visibility:hidden;
+    visibility: hidden;
 }
-.modalImg{
-    top:485px;
-    width:auto;
-    max-width:200px
+
+.center {
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+}
+
+.modalImg {
+    position: absolute;
+    top: 480px;
+    width: auto;
+    max-width: 200px;
 }
 
 .modal-body form textarea {
-	height: 100px;
+    height: 100px;
 }
 
 .modal-body form .input-error {
-	border-color: #399599;
-}
-.reservation-form{
-    font-size:22px;
-    font-family:'Times New Roman', Times, serif;
-    padding-left:12px;
-    font-weight:900;
+    border-color: #399599;
 }
 
-.reservation-create{
-    position:relative;
-    width:100%; 
-    height:auto; 
-    float:left
-}
-.reservation-create img{
-    width:100%;
-    height:auto;
-}
-.reservation-create>div{
-    position:absolute;
-    top:65%;
+.reservation-form {
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 12px;
+    font-weight: 900;
 }
 
-#datepicker, #timepicker{
-    width:270px;
+.reservation-create {
+    position: relative;
+    width: 100%;
+    height: auto;
+    float: left;
 }
-h1,h2,h5{
-    font-family:'Tabarra Shadow',Impact
+
+.modal-backdrop {
+}
+
+.reservation-create img {
+    width: 100%;
+    height: auto;
+}
+
+.reservation-create > div {
+    position: absolute;
+    top: 65%;
+}
+
+#datepicker, #timepicker {
+    width: 270px;
+}
+
+h1, h2, h3, h5 {
+    font-family: 'Tabarra Shadow',Impact;
 }

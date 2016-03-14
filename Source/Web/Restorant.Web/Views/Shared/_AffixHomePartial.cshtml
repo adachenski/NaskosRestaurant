@@ -10,51 +10,22 @@
 </head>
 <body>
     @Scripts.Render("~/bundles/jquery")
-    <script>
-        //$(function () {
-        //    function debouncer(func, timeout) {
-        //        var timeoutID, timeout = timeout || 200;
-        //        return function () {
-        //            var scope = this, args = arguments;
-        //            clearTimeout(timeoutID);
-        //            timeoutID = setTimeout(function () {
-        //                func.apply(scope, Array.prototype.slice.call(args));
-        //            }, timeout);
-        //        }
-        //    }
-        //    $(window).resize(debouncer(function (e) {
-        //        var height = e.currentTarget.innerHeight;
-        //        var width = e.currentTarget.innerWidth;
-        //        if (width <= 320) {
-        //
-        //        }
-        //    }));
-        //});
-    </script>
-    <div class="container-fluid">
-        <div class="modal-container" style="z-index:1">
-            <video id="video-modal"
-                   style="position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    transform: translateX(-50%) translateY(-50%);opacity:0.8" loop="" autoplay="" muted="" poster="http://photos4.meetupstatic.com/photos/event/d/2/3/4/600_430133812.jpeg">
+    <video id="video-background"loop="" autoplay="" muted="" poster="http://photos4.meetupstatic.com/photos/event/d/2/3/4/600_430133812.jpeg">
                 <source src="~/jpgs/Noa Restaurant Intro.mp4" type="video/mp4">
                 <source src="~/jpgs/Noa Restaurant Intro.webm" type="video/webm">
             </video>
-            <div class="wrap">
-                <img id="chef" style="height:600px;left:-200px; position:absolute" src="~/jpgs/chef3.png" />
-                <img id="naskosRestaurant" style="position:absolute;left:-400px;
-                     top:30px;" src="~/jpgs/NaskosRestaurant2.png" />
-                <img id="modalScroll" style="position:absolute;"
+
+    <div class="container-fluid" style="z-index:1;position:relative">
+        <div class="modal-container" >
+            
+            <div class="wrap center">
+                <img class="center" id="chef" src="~/jpgs/chef3.png" />
+                <img class="center" id="naskosRestaurant" style="position:absolute" src="~/jpgs/NaskosRestaurant2.png" />
+                <img id="modalScroll"
                      src="http://www.makelaaroverzicht.nl/wp-content/themes/makelaaroverzicht/images/scroll-down.gif" />
-                <img class="modalImg" style="position:absolute;left:-400px"
+                <img class="modalImg" style="left:-300px"
                      src="http://www.lagos.me.uk/wpimages/wp135b02df_06.png" />
-                <img class="modalImg" style="position:absolute;left:120px" src="http://www.deluxevectors.com/images/sample/national-restaurant-association.png" />
+                <img class="modalImg" style="left:300px" src="http://www.deluxevectors.com/images/sample/national-restaurant-association.png" />
             </div>
         </div><!-- /.container -->
     </div><!-- /#index-hero-->
@@ -83,7 +54,7 @@
             </div>
         </div>
     </div>
-    <div class="container body-content site" style="z-index:5">
+    <div class="container body-content site">
         <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
             <li><a href="#">Library</a></li>

@@ -1,18 +1,22 @@
 ﻿@model Restorant.Web.ViewModels.Reservations.ReservationsViewModel
 @using Microsoft.AspNet.Identity
 @{
-    ViewBag.Title = "Create Reservation";
+    ViewBag.Title = "Make Reservation";
 }
 <h1>@ViewBag.Title</h1>
+@Scripts.Render("~/bundles/jquery")
+
 <link rel="stylesheet" type="text/css" href="~/Content/jquery.datepick.css">
 <link rel="stylesheet" type="text/css" href="~/Content/timepicki.css" />
 <link rel='stylesheet' media='screen and (min-width: 120px) and (max-width: 701px)' href='~/Content/medium.css' />
-<div class="container">
-    <!-- Trigger the modal with a button -->
+<script>
 
+</script>
+<div class="container-reservation" style="background-image:url(http://cdn.makeagif.com/media/10-21-2015/VPxph8.gif);background-size:cover">
+    <!-- Trigger the modal with a button -->
     @if (User.Identity.IsAuthenticated)
     {
-        <div style="font-size:22px" class="alert alert-warning alert-dismissible fade in" role="alert">
+        <div style="font-size:22px;margin-bottom:0" class="alert alert-warning alert-dismissible fade in" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -21,7 +25,7 @@
     }
     else
     {
-        <div style="font-size:22px" class="alert alert-danger alert-dismissible fade in" role="alert">
+        <div style="font-size:22px;margin-bottom:0;" class="alert alert-danger alert-dismissible fade in" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -30,7 +34,7 @@
     }
 
     <div class="reservation-create">
-        <img src="~/jpgs/chef-girl.png"/>
+        <img style="margin-bottom:20px" src="~/jpgs/chef-girl.png"/>
         <div id="date-div"style="left:25%">
             <h2>Pick up a Date</h2>
             <input class="form-control" type="text" id="datepicker" required="required">

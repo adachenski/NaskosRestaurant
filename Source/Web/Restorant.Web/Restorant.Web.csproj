@@ -233,7 +233,6 @@
     <Compile Include="ViewModels\PageableComment\IndexPageViewModel.cs" />
     <Compile Include="ViewModels\PageableComment\Pager.cs" />
     <Compile Include="ViewModels\PageableComment\PageableComment.cs" />
-    <Compile Include="ViewModels\PageableComment\SorthingValues.cs" />
     <Compile Include="ViewModels\Questions\QuestionDisplayViewModel.cs" />
     <Compile Include="ViewModels\Reservations\ReservationsViewModel.cs" />
   </ItemGroup>
