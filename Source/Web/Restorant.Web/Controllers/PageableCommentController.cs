@@ -17,17 +17,28 @@
             this.feedbacks = feedBacks;
         }
         [HttpGet]
-        public ActionResult _Index(int page = 1 )
+        public ActionResult _Index(string SorthByDate, int pageSize=4, int page = 1)
         {
-            var dummyItems = this.feedbacks.All()
-                    .OrderBy(x => x.CreatedOn).ThenBy(x => x.Id);
-                                
-            var pager = new Pager(dummyItems.Count(), page);
+            var dummyItems = this.feedbacks.All();
+
+            if (SorthByDate == "newest")
+            {
+                dummyItems = this.feedbacks.All()
+                  .OrderByDescending(x => x.CreatedOn).ThenBy(x => x.Id);
+            }
+            else
+            {
+                dummyItems = this.feedbacks.All()
+                                .OrderBy(x => x.CreatedOn).ThenBy(x => x.Id);
+            }
+            var pager = new Pager(dummyItems.Count(),SorthByDate, page, pageSize);
 
             var viewModel = new IndexPageViewModel
             {
                 AllComments = dummyItems.Skip((pager.CurrentPage - 1) * pager.PageSize).Take(pager.PageSize).Project().To<PageableComment>().ToList(),
-                Pager = pager
+                Pager = pager,
+                SorthValues  = pager.CurrentSorth,
+                PageSize = pager.PageSize
             };
 
             return PartialView(viewModel);

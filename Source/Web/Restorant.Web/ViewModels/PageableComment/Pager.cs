@@ -4,7 +4,7 @@
 
     public class Pager
     {
-        public Pager(int totalItems, int? page, int pageSize = 4)
+        public Pager(int totalItems,string SorthByDate, int? page, int pageSize = 4)
         {
             // calculate total, start and end pages
             var totalPages = (int)Math.Ceiling((decimal)totalItems / (decimal)pageSize);
@@ -24,7 +24,7 @@
                     startPage = endPage - 9;
                 }
             }
-
+            CurrentSorth = SorthByDate;
             TotalItems = totalItems;
             CurrentPage = currentPage;
             PageSize = pageSize;
@@ -32,6 +32,7 @@
             StartPage = startPage;
             EndPage = endPage;
         }
+        public string CurrentSorth { get; set; }
 
         public int TotalItems { get; set; }
         public int CurrentPage { get; set; }

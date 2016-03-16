@@ -2,17 +2,41 @@
 @{
     ViewBag.Title = "All Feedbacks";
 }
-
+@Scripts.Render("~/bundles/jquery")
 
 <h2 style="background-color:pink;text-align:center;padding-top:10px;padding-bottom:10px">@ViewBag.Title</h2>
 <div>
     <p>
-        <span> Sorth by Date :</span>
-        <select id="PageableComment_SorthingValues" name="Restorant.Web.ViewModels.PageableComment.SorthingValues">
-            <option value="oldest">select value</option>
-            <option value="oldest">Newest</option>
-            <option value="newest">Oldest</option>
-        </select>
+        <div>          
+            @using (Html.BeginForm("Create", "CommentForm", FormMethod.Get, new { @class = "form-horizontal", role = "form" }))
+            {
+                <label>Rows per Page: </label>
+                <select id="RowsPerPage" name="pageSize">
+                    <option value="">select value</option>
+                    <option value="4">Four</option>
+                    <option value="8">Eight</option>
+                    <option value="12">Twelve</option>
+                </select>
+
+                <label> Sorth by Date :</label>
+                <select id="SorthingValues" name="SorthByDate"  onchange="SorthTable()">
+                    <option value="oldest">select value</option>
+                    <option value="oldest">Oldest</option>
+                    <option value="newest">Newest</option>
+                </select>
+                <input type="submit" id="form-btn" value="submit values" />            
+            }
+        </div>
+      
+        <script>
+            function SorthTable() {
+                var values = $('#SorthingValues option:selected').val();
+                $('#form-btn').click();
+
+                console.log(values);
+            }
+        </script>
+
         @*@Html.DropDownListFor(m=> Restorant.Web.ViewModels.PageableComment.SorthingValues.SorthingValues, new SelectList(new List<Object>{
             new { value = 2 , text = "2 People"  },
             new { value = 4 , text = "4 People" },
@@ -23,7 +47,7 @@
                                             2))*@
     </p>
 </div>
-<table class="table table-striped">
+<table class="table table-striped" id="tableInfo">
     <tr>
         <th>Author</th>
         <th style="background-color:pink">Title</th>
@@ -38,7 +62,7 @@
             <td>@comment.Description</td>
             <td>@comment.CreatedOn</td>
         </tr>
-    }
+        }
 </table>
 <div class="col-sm-offset-3">
     @if (Model.Pager.EndPage > 1)
@@ -50,27 +74,27 @@
                     <a href="~/CommentForm/Create">First</a>
                 </li>
                 <li>
-                    <a href="~/CommentForm/Create?page=@(Model.Pager.CurrentPage-1)">Previous</a>
+                    <a href="~/CommentForm/Create?pageSize=@Model.PageSize&SorthByDate=@Model.SorthValues&page=@(Model.Pager.CurrentPage-1)">Previous</a>
                 </li>
             }
 
             @for (var page = Model.Pager.StartPage; page < Model.Pager.EndPage; page++)
                 {
                 <li class="@(page == Model.Pager.CurrentPage ? "active" : "")">
-                    <a href="/CommentForm/Create?page=@page">@page</a>
+                    <a href="/CommentForm/Create?pageSize=@Model.PageSize&SorthByDate=@Model.SorthValues&page=@page">@page</a>
                 </li>
             }
 
             @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
                 {
                 <li>
-                    <a href="~/CommentForm/Create?page=@(Model.Pager.CurrentPage+1)">Next</a>
+                    <a href="~/CommentForm/Create?pageSize=@Model.PageSize&SorthByDate=@Model.SorthValues&page=@(Model.Pager.CurrentPage+1)">Next</a>
                 </li>
                 <li>
-                    <a href="~/CommentForm/Create?page=@(Model.Pager.TotalPages)">Last</a>
+                    <a href="~/CommentForm/Create?pageSize=@Model.PageSize&SorthByDate=@Model.SorthValues&page=@(Model.Pager.TotalPages)">Last</a>
                 </li>
             }
         </ul>
     }
 </div>
-@Scripts.Render("~/bundles/jquery")
+
