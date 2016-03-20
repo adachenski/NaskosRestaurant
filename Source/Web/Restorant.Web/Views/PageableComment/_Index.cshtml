@@ -2,12 +2,11 @@
 @{
     ViewBag.Title = "All Feedbacks";
 }
-@Scripts.Render("~/bundles/jquery")
 
 <h2 style="background-color:pink;text-align:center;padding-top:10px;padding-bottom:10px">@ViewBag.Title</h2>
 <div>
     <p>
-        <div>          
+        <div>
             @using (Html.BeginForm("Create", "CommentForm", FormMethod.Get, new { @class = "form-horizontal", role = "form" }))
             {
                 <label>Rows per Page: </label>
@@ -19,32 +18,20 @@
                 </select>
 
                 <label> Sorth by Date :</label>
-                <select id="SorthingValues" name="SorthByDate"  onchange="SorthTable()">
+                <select id="SorthingValues" name="SorthByDate" onchange="SorthTable()">
                     <option value="oldest">select value</option>
                     <option value="oldest">Oldest</option>
                     <option value="newest">Newest</option>
                 </select>
-                <input type="submit" id="form-btn" value="submit values" />            
+                <input type="submit" id="form-btn" value="Submit Values" />
             }
         </div>
-      
         <script>
             function SorthTable() {
-                var values = $('#SorthingValues option:selected').val();
+                //var values = $('#SorthingValues option:selected').val();
                 $('#form-btn').click();
-
-                console.log(values);
             }
         </script>
-
-        @*@Html.DropDownListFor(m=> Restorant.Web.ViewModels.PageableComment.SorthingValues.SorthingValues, new SelectList(new List<Object>{
-            new { value = 2 , text = "2 People"  },
-            new { value = 4 , text = "4 People" },
-            new { value = 6 , text = "6 People"}
-                                             },
-                                           "value",
-                                           "text",
-                                            2))*@
     </p>
 </div>
 <table class="table table-striped" id="tableInfo">
@@ -62,7 +49,7 @@
             <td>@comment.Description</td>
             <td>@comment.CreatedOn</td>
         </tr>
-        }
+    }
 </table>
 <div class="col-sm-offset-3">
     @if (Model.Pager.EndPage > 1)
@@ -97,4 +84,3 @@
         </ul>
     }
 </div>
-

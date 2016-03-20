@@ -1,179 +1,6 @@
-﻿@*@model IEnumerable<Restorant.Web.ViewModels.Home.IndexBlogPostViewModel>
-@{
-    ViewBag.Title = "Home Page";
+﻿@section Styles {
+    <link href="~/Content/dzen-section.css" rel="stylesheet" type="text/css" />
 }
-<div class="container">
-    @foreach (var post in Model)
-    {
-        <div class="row">
-            <div class="col-md-1">
-                <div class="well text-center">
-                    <div class="row">0</div>
-                    <div class="row">answers</div>
-                </div>
-            </div>
-            <div class="col-md-1">
-                <div class="well text-center">
-                    <div class="row">0</div>
-                    <div class="row">answers</div>
-                </div>
-            </div>
-            <div class="col-md-10">
-                <div class="row">
-                    <h4>
-                        <a href="/123/asd-asd-asd">@post.Title</a>
-                    </h4>
-                </div>
-                <div class="row">
-                    <p>asked 35 minutes ago in Kids Academy - програмиране за деца by a.dimitrov04 (40 points)</p>
-                </div>
-                <div class="row">
-                    <span class="label label-default">kids</span>
-                    <span class="label label-default">academy</span>
-                    <span class="label label-default">blabla</span>
-                    <span class="label label-default">kadasdaasdasdasdids</span>
-                </div>
-            </div>
-        </div>
-        <hr />
-    }
-</div>
-<h1>
-    Coding Everything: Bootstrap Docs Sidebar Explained
-    www.codingeverything.com/2014/02/BootstrapDocsSideBar.html
-    Feb 28, 2014 - Here are the results of dissecting Bootstrap's Doc's side nav bar. Simple Content. This really works best with some content to scroll through, so let' just start by ... Now we need to create a two column layout for our page. ..... First, let's give the navbar a little breathing room by giving it margins on the top, left,  ...
-    Bootstrap Scrolling Table with Fixed Header example code
-    www.bootply.com/JnOYtO9xzn
-    Bootstrap Bootstrap Scrolling Table with Fixed Header code example snippet ... Basic starter; Fixed Nav w/sticky footer; Carousel layout; Landing page; Affix left  ...
-    Bootstrap UI Development for Everyone | Udemy
-    https://www.udemy.com/bootstrap-for-everyone/
-    Rating: 4.2 - ‎11 votes
-    Learn how to work with the Bootstrap Framework to create responsive websites for any device. ... Net developer who understands that Bootstrap is now built-in to the MVC ... ·Tooltips, Popovers, Modal Dialogs and Affixed sections .... In this lecture we "live-code" our first page that sets up the framework for using bootstrap.
-    Create an Angular App in Seconds with Hot Towel
-    www.johnpapa.net/hot-towel-angular/
-    Oct 31, 2013 - So I included what I have found to be most helpful in kick-starting my apps. ... a good way to create a subnav for sidebar that would act just like the ... to a separate page on the MVC site which allows them to authenticate, ... Bootstrap 3 and UI-Bootstrap still have some incompatibilities. .... 1) Affixed Sidebar
-    Searches related to how to set affix bootstrap first page only mvc
-    bootstrap affix css
-    bootstrap affix sidebar example
-    bootstrap affix not working
-    bootstrap affix navbar
-    bootstrap affix bottom not working
-    affix.js download
-    angular affix
-    bootstrap affix.js
-
-</h1>*@
-<style>
-
-    .dzen_container{
-		width: 100%;
-		text-align: center;
-	}
-
-	.dzen_container:before,
-	.dzen_container:after{
-		display: table;
-		line-height: 0;
-		content: "";
-	}
-
-	.dzen_container:after{
-		clear: both;
-	}
-
-	.dzen_section_DD{
-		position: relative;
-		overflow:hidden;
-		padding-top: 0px;
-		padding-bottom: 0px;
-	}
-
-	.dzen_section_DD > *{
-		position: relative;
-	}
-	
-	.dzen_bg {
-	background-image: url('http://www.sashagitin.com/UploadImages/food/1396644026.jpg'); 
-	background-size: 100% 100%;
-	background-repeat: no-repeat; 
-	background-position: 100% 12px; 
-	background-attachment: fixed;
-	padding-top: 10px; 
-	background-size: 100% 100%;
-	} 
-
-	.dzen_container [class*="column_DD_span"]{
-		display: block;
-		float: left;
-		min-height: 20px;
-		margin-left: 2.564102564102564%;
-		-webkit-box-sizing: border-box; 
-		-moz-box-sizing: border-box; 
-		box-sizing: border-box;
-	}
-
-	.dzen_container [class*="column_DD_span"]:first-child{
-		margin-left: 0;
-	}
-
-	.dzen_column_DD_span3   {width: 23.07692307692308%;}
-
-
-
-
-** boxes **
-
-	.dzen_service_box{
-		text-align: center;
-		margin-bottom: 55px;
-		padding-top: 0;
-	}
-
-	.dzen_service_box h3{
-		font-size: 20px;
-		margin-bottom: 11px;
-	}
-
-	.dzen_service_box .dzen_icon_boxed{
-		display: inline-block;
-		width: 88px;
-		height: 88px;
-		-webkit-border-radius: 50%;
-		-moz-border-radius: 50%;
-		border-radius: 50%;
-		background: #f2f4f5;
-		position: relative;
-		margin-bottom: 16px;
-		text-decoration: none;
-	}
-
-	.dzen_service_box .dzen_icon_boxed i{
-		color: #056ab2;
-	}
-
-	.dzen_service_box:hover .dzen_icon_boxed{
-		background: #056ab2;
-	}
-
-	.dzen_service_box .dzen_icon_boxed i{
-		font-size: 32px;
-		line-height: 88px;
-		position: relative;
-		top: -1px;
-	}
-
-	.dzen_service_box:hover .dzen_icon_boxed i{
-		color: #fff;
-	}
-
-	.dzen_service_box .dzen_icon_boxed:hover:after{
-		border-top: 9px solid #056ab2;
-		transition: all 180ms ease-in;
-		-webkit-transition: all 180ms ease-in;
-	}
-
-</style>
-
     <p>
     Ipsum dolor sit amet, consectetur adipisicing elit. Culpa, voluptatum, veritatis, laudantium officia maxime tempora molestias est sunt iure vel blanditiis reprehenderit repellat amet dolorem eaque alias beatae nihil aliquid officiis possimus labore consectetur neque dolorum itaque libero accusantium odio.
 </p>
@@ -198,7 +25,7 @@
 <p>
     <section class="dzen_section_DD ">
         <div class="dzen_bg">
-            <h1> Ipsum dolor sit amet</h1>
+            <h1 style="text-align:center; font-family:Impact; color:white; text-shadow:5px 5px #14ad27;"> Ipsum dolor sit amet</h1>
             <div class="dzen_container">
                 <div class="dzen_column_DD_span3 ">
                     <div class="dzen_service_box dzen_service_box_round ">
@@ -216,9 +43,7 @@
                     <div class="dzen_service_box dzen_service_box_round ">
                         <div>
                             <a href="/CommentForm/Create"> <div class="dzen_icon_boxed"><i class="glyphicon glyphicon-comment"></i></div></a>
-
-                            <h3 style="color:red">Live a comment </h3>
-
+                            <h3 style="color:white; font-family:Impact;text-shadow:5px 5px #14ad27;">Live a comment </h3>
                         </div>
                     </div>
                 </div>

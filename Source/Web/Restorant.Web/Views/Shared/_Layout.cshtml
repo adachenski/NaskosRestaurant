@@ -1,11 +1,13 @@
-﻿@using Forloop.HtmlHelpers
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Nasko's Restorant</title>
+
     @Styles.Render("~/Content/css")
+    @RenderSection("Styles", false)
+    <link rel='stylesheet' media='screen and (min-width: 120px) and (max-width: 701px)' href='~/Content/medium.css' />
 </head>
 <body>
     @if (!Request.IsAuthenticated)
@@ -45,7 +47,7 @@
         {
             <div class="alert alert-info" role="alert">@this.TempData["Notification"]</div>
         }
-            @RenderBody()
+        @RenderBody()
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - <a href="https://github.com/NikolayIT/ForumSystem">open source forum system</a></p>
@@ -56,6 +58,5 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
-    @Html.RenderScripts()
 </body>
 </html>

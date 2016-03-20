@@ -24,6 +24,11 @@
                 defaults: new { controller = "Questions", action = "Display" });
 
             routes.MapRoute(
+                name: "Display reservation",
+                url: "GetReservations/{id}",
+                defaults: new { controller = "GetReservations", action = "IndexReservations" });
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional });

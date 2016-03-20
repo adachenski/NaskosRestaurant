@@ -53,10 +53,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\AutoMapper.3.3.0\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
-    <Reference Include="Forloop.HtmlHelpers, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Forloop.HtmlHelpers.1.2.0.0\lib\net45\Forloop.HtmlHelpers.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -200,6 +196,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CommentFormController.cs" />
+    <Compile Include="Controllers\GetReservationsController.cs" />
     <Compile Include="Controllers\PageableCommentController.cs" />
     <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="InputModels\Questions\AskInputModel.cs" />
@@ -219,6 +216,7 @@
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\CommentForm\CommentFormViewModel.cs" />
+    <Compile Include="ViewModels\GetReservations\GetReservationsVIewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\FactorViewModel.cs" />
@@ -244,6 +242,7 @@
     <Content Include="Content\bootstrap.cosmo.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\dzen-section.css" />
     <Content Include="Content\jquery.datepick.css" />
     <Content Include="Content\medium.css" />
     <Content Include="Content\style.css" />
@@ -501,6 +500,7 @@
     <Content Include="Views\Shared\_LayoutModal.cshtml" />
     <Content Include="Views\Shared\_LoginPartialForm.cshtml" />
     <Content Include="Views\Shared\LoginModal.cshtml" />
+    <Content Include="Views\GetReservations\IndexReservations.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,6 +1,5 @@
 ﻿namespace Restorant.Web
 {
-    using Forloop.HtmlHelpers;
     using System.Web;
     using System.Web.Optimization;
 
@@ -26,7 +25,6 @@
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
-            ScriptContext.ScriptPathResolver = System.Web.Optimization.Scripts.Render;
             BundleTable.EnableOptimizations = false;
         }
     }

@@ -1,23 +1,23 @@
-﻿@using Forloop.HtmlHelpers
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Nasko's Restorant</title>
+
     <link rel='stylesheet' media='screen and (min-width: 120px) and (max-width: 701px)' href='~/Content/medium.css' />
     @Styles.Render("~/Content/css")
+    @RenderSection("Styles", false)
 </head>
 <body>
-    @Scripts.Render("~/bundles/jquery")
-    <video id="video-background"loop="" autoplay="" muted="" poster="http://photos4.meetupstatic.com/photos/event/d/2/3/4/600_430133812.jpeg">
-                <source src="~/jpgs/Noa Restaurant Intro.mp4" type="video/mp4">
-                <source src="~/jpgs/Noa Restaurant Intro.webm" type="video/webm">
-            </video>
+    <video id="video-background" loop="" autoplay="" muted="" poster="http://photos4.meetupstatic.com/photos/event/d/2/3/4/600_430133812.jpeg">
+        <source src="~/jpgs/Noa Restaurant Intro.mp4" type="video/mp4">
+        <source src="~/jpgs/Noa Restaurant Intro.webm" type="video/webm">
+    </video>
 
     <div class="container-fluid" style="z-index:1;position:relative">
-        <div class="modal-container" >
-            
+        <div class="modal-container">
+
             <div class="wrap center">
                 <img class="center" id="chef" src="~/jpgs/chef3.png" />
                 <img class="center" id="naskosRestaurant" style="position:absolute" src="~/jpgs/NaskosRestaurant2.png" />
@@ -44,9 +44,27 @@
                 </button>
                 @*@Html.ActionLink("Nasko's Restorant", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
+            <style>
+                #menu1:hover{
+                    background-color:black !important;
+                }
+            </style>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <ul class="nav navbar-nav ">
+                    <li class="dropdown">
+                        <button  style="background-color:#2780E3;border:none;border-right:1px solid #6290C4; height:50px;" class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                            Home
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">W3Schools</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+                        </ul>
+                    </li>
                     <li>@Html.ActionLink("Ask question", "Ask", "Questions")</li>
                     <li>@Html.ActionLink("Feedbacks", "Create", "CommentForm")</li>
                 </ul>
@@ -75,6 +93,6 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
-    @Html.RenderScripts()
+    <script src="~/Scripts/LoginModal.js"></script>
 </body>
 </html>
