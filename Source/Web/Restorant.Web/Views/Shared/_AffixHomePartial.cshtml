@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Nasko's Restorant</title>
-
     <link rel='stylesheet' media='screen and (min-width: 120px) and (max-width: 701px)' href='~/Content/medium.css' />
     @Styles.Render("~/Content/css")
     @RenderSection("Styles", false)
@@ -65,8 +64,8 @@
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
                         </ul>
                     </li>
-                    <li>@Html.ActionLink("Ask question", "Ask", "Questions")</li>
                     <li>@Html.ActionLink("Feedbacks", "Create", "CommentForm")</li>
+                    <li>@Html.ActionLink("Reservations", "Create", "Reservation")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -75,7 +74,6 @@
     <div class="container body-content site">
         <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Library</a></li>
             <li class="active">Data</li>
         </ol>
 

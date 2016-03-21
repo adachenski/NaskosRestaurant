@@ -1,0 +1,52 @@
+﻿
+@model IEnumerable<Restorant.Web.ViewModels.GetReservations.GetReservationsVIewModel>
+
+@{
+    ViewBag.Title = "My Reservations";
+}
+<div class="container">
+    @Html.AntiForgeryToken()
+    @{ var count = 1;}
+    @foreach (var reservations in Model)
+    {
+        <div class="row">
+
+            <div class="col-md-1" style="margin-top:20px">
+                <div class="well text-center">
+                    <div class="row">Reserve</div>
+                    <div class="row">@count</div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="row">
+                    <h4>
+                        <a href="/123/asd-asd-asd">Reservetion for: @reservations.ReservedFor.ToLongDateString()</a>
+                    </h4>
+                </div>
+                <div class="row">
+                    <p>
+                        <strong>Reservation Time: </strong> @reservations.ReservedFor.ToLongTimeString()
+                        <strong>Table for: </strong> @reservations.Table.NumberOfChairs people
+                    </p>
+                    @if (reservations.AskSomething.Content != null)
+                    {
+                        <p><strong>Comment: </strong>@reservations.AskSomething.Content </p>
+                    }
+                    else
+                    {
+                        <p><strong>Comment: </strong> No Comment </p>
+                    }
+
+                </div>
+                <div class="row">
+                    <span class="label label-default"> @reservations.Table.NumberOfChairs seats</span>
+                    <span class="label label-default">@reservations.ReservedFor.ToShortDateString()</span>
+                    <span class="label label-default">@reservations.ReservedFor.TimeOfDay</span>
+                    <span class="label label-default">@reservations.ReservedFor.DayOfWeek</span>
+                </div>
+            </div>
+        </div>
+        <hr />
+        count++;
+    }
+</div>

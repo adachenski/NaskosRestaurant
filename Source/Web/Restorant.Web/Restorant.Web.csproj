@@ -217,6 +217,8 @@
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\CommentForm\CommentFormViewModel.cs" />
     <Compile Include="ViewModels\GetReservations\GetReservationsVIewModel.cs" />
+    <Compile Include="ViewModels\GetReservations\ReservationPostViewModel.cs" />
+    <Compile Include="ViewModels\GetReservations\ReservationTableViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\FactorViewModel.cs" />

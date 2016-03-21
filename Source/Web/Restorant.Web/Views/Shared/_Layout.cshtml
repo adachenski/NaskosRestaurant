@@ -27,9 +27,9 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Ask question", "Ask", "Questions")</li>
                     <li>@Html.ActionLink("Feedbacks", "Create", "CommentForm")</li>
                     <li>@Html.ActionLink("Reservations", "Create", "Reservation")</li>
+                    <li>@Html.ActionLink("Ask question", "Ask", "Questions")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -38,9 +38,14 @@
     <div style="height:50px"></div>
     <div class="container body-content">
         <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Library</a></li>
-            <li class="active">Data</li>
+            <li class="active">
+                @Html.ActionLink("Home", "Index", "Home")
+                @if (ViewContext.RouteData.Values["controller"].ToString() != "Home" && ViewContext.RouteData.Values["action"].ToString() != "Index")
+                {
+                    @:/ @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString())
+                }
+                / @ViewBag.SubTitle
+            </li>
         </ol>
 
         @if (TempData["Notification"] != null)
