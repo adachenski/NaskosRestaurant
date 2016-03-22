@@ -233,7 +233,7 @@
     <Compile Include="ViewModels\PageableComment\IndexPageViewModel.cs" />
     <Compile Include="ViewModels\PageableComment\Pager.cs" />
     <Compile Include="ViewModels\PageableComment\PageableComment.cs" />
-    <Compile Include="ViewModels\Questions\QuestionDisplayViewModel.cs" />
+    <Compile Include="ViewModels\Reservations\QuestionDisplayViewModel.cs" />
     <Compile Include="ViewModels\Reservations\ReservationsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -506,6 +506,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModels\Questions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
