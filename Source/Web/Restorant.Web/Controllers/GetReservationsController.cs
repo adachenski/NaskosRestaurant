@@ -27,20 +27,21 @@ namespace Restorant.Web.Controllers
         {
             var currentUser = User.Identity.GetUserId();
 
-            var allReservations = this.reservations.All()
+            var allReservations = this.reservations.All().Where(p => p.PersonId == currentUser)
                 .Project().To<GetReservationsVIewModel>();
 
-            var dbPerson = from p in allReservations
-                           where p.PersonId == currentUser
-                           orderby p.ReservedFor descending
-                           select p;
+           // var dbPerson = from p in allReservations
+           //                where p.PersonId == currentUser
+           //                orderby p.ReservedFor descending
+           //                select p;
 
-            if (dbPerson == null)
-            {
-                return this.HttpNotFound("No reservation yet!");
-            }
+           // if (!allReservations.Any())
+           // {
+           //     ViewBag.getReservations = "No reservation yet!";
+           //     return this.View();
+           // }
 
-            return this.View(dbPerson);
+            return this.View(allReservations);
         }
     }
 }

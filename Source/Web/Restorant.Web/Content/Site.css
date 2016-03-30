@@ -15,8 +15,8 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
     position: relative;
     background-color: rgba(255,255,255,0.9);
 }

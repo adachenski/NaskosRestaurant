@@ -6,7 +6,17 @@
 <h1>@ViewBag.Title</h1>
 <link rel="stylesheet" type="text/css" href="~/Content/jquery.datepick.css">
 <link rel="stylesheet" type="text/css" href="~/Content/timepicki.css" />
-
+<noscript style="position: absolute;
+z-index: 1;
+left: 0;
+width: 100%;
+text-align:center">
+    <div class="alert alert-danger" role="alert">
+        <p><h1>Your browser does not support JavaScript!</h1>
+            <div>You must enable JavaScript to compleate the Reservation.</div>
+        </p>
+    </div>
+    </noscript>
 <div class="container-reservation" style="background-image:url(http://cdn.makeagif.com/media/10-21-2015/VPxph8.gif);background-size:cover">
     <!-- Trigger the modal with a button -->
     @if (User.Identity.IsAuthenticated)

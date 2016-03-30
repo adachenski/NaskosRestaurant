@@ -42,8 +42,7 @@ form {
     visibility:visible !important;
     width: 60px;
     position: absolute;
-    bottom: 325px;
-    left: 80px;
+    left: -30px;
     transform: rotate(180deg);
   
 }
