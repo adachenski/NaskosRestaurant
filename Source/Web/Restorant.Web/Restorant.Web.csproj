@@ -247,6 +247,7 @@
     <Content Include="Content\dzen-section.css" />
     <Content Include="Content\jquery.datepick.css" />
     <Content Include="Content\medium.css" />
+    <Content Include="Content\simple-sidebar.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\timepicki.css" />
     <Content Include="favicon.ico" />

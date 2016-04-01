@@ -26,6 +26,7 @@
 	}
 	
 	.dzen_bg {
+    padding:10px;
 	background-image: url('http://www.sashagitin.com/UploadImages/food/1396644026.jpg'); 
 	background-size: 100% 100%;
 	background-repeat: no-repeat; 
@@ -64,7 +65,12 @@
 
 	.dzen_service_box h3{
 		font-size: 20px;
-		margin-bottom: 11px;
+        color: white;
+        font-family: Impact;
+        background-color:#14ad27;
+        opacity:0.8;
+        margin-bottom:20px;
+        padding:10px;
 	}
 
 	.dzen_service_box .dzen_icon_boxed{
@@ -78,6 +84,8 @@
 		position: relative;
 		margin-bottom: 16px;
 		text-decoration: none;
+        margin-top:20px;
+        opacity:0.8;
 	}
 
 	.dzen_service_box .dzen_icon_boxed i{

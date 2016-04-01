@@ -1,5 +1,4 @@
-﻿
-$(function () { // will trigger when the document is ready
+﻿$(document).ready(function () { // will trigger when the document is ready
 	var now = new Date($.now());
 	$("#datepicker").datepick({
 		minDate: now,
