@@ -199,6 +199,7 @@
     <Compile Include="Controllers\GetReservationsController.cs" />
     <Compile Include="Controllers\PageableCommentController.cs" />
     <Compile Include="Controllers\ReservationController.cs" />
+    <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="InputModels\Questions\AskInputModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -235,6 +236,7 @@
     <Compile Include="ViewModels\PageableComment\PageableComment.cs" />
     <Compile Include="ViewModels\Reservations\QuestionDisplayViewModel.cs" />
     <Compile Include="ViewModels\Reservations\ReservationsViewModel.cs" />
+    <Compile Include="ViewModels\Resumes\ResumeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
@@ -505,6 +507,7 @@
     <Content Include="Views\Shared\_LoginPartialForm.cshtml" />
     <Content Include="Views\Shared\LoginModal.cshtml" />
     <Content Include="Views\GetReservations\IndexReservations.cshtml" />
+    <Content Include="Views\Resume\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

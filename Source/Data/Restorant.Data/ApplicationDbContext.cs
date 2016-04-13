@@ -26,6 +26,10 @@
 
         public IDbSet<Reservation> Reservations { get; set; }
 
+        public IDbSet<Address> Addresses { get; set; }
+
+        public IDbSet<Resume> Resumes { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

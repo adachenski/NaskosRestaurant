@@ -1,15 +1,11 @@
-﻿using Microsoft.AspNet.Identity;
-using Restorant.Data.Common.Repository;
-using Restorant.Data.Models;
-using Restorant.Web.ViewModels.Reservations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace Restorant.Web.Controllers
+﻿namespace Restorant.Web.Controllers
 {
+    using Microsoft.AspNet.Identity;
+    using Restorant.Data.Common.Repository;
+    using Restorant.Data.Models;
+    using Restorant.Web.ViewModels.Reservations;
+    using System.Web.Mvc;
+
     public class ReservationController : Controller
     {
         // GET: Reservation

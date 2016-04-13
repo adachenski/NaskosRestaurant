@@ -1,15 +1,11 @@
-﻿using Microsoft.AspNet.Identity;
-using Restorant.Data.Common.Repository;
-using Restorant.Data.Models;
-using Restorant.Web.ViewModels.CommentForm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace Restorant.Web.Controllers
+﻿namespace Restorant.Web.Controllers
 {
+    using Microsoft.AspNet.Identity;
+    using Restorant.Data.Common.Repository;
+    using Restorant.Data.Models;
+    using Restorant.Web.ViewModels.CommentForm;
+    using System.Web.Mvc;
+
     public class CommentFormController : Controller
     {
         // GET: CommentForm

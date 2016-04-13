@@ -1,9 +1,8 @@
 ﻿namespace Restorant.Data.Models
 {
-    using Restorant.Data.Common.Models;
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
+    using Restorant.Data.Common.Models;
+
     public class Reservation : AuditInfo, IDeletableEntity
     {
         public Reservation()
