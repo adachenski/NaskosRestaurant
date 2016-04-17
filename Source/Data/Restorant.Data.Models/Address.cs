@@ -14,7 +14,7 @@
 
         public string State { get; set; }
 
-        public byte ZipCode { get; set; }
+        public int ZipCode { get; set; }
 
         public DateTime? DeletedOn { get; set; }
 

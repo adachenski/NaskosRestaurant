@@ -4,6 +4,7 @@
     using Restorant.Data.Common.Repository;
     using Restorant.Data.Models;
     using Restorant.Web.ViewModels.Resumes;
+    using System;
     using System.Web.Mvc;
 
     public class ResumeController : Controller
@@ -23,10 +24,12 @@
 
         [HttpPost]
         [Authorize]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(ResumeViewModel userResume)
         {
             var newResume = new Resume
             {
+                Person = userResume.Person,
                 PersonId = this.User.Identity.GetUserId(),
                 FirstName = userResume.FirstName,
                 LastName = userResume.LastName,

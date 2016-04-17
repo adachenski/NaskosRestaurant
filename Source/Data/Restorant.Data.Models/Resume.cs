@@ -23,7 +23,7 @@
 
         public string ApplyForPosition { get; set; }
 
-        public int DesiredSalary { get; set; }
+        public string DesiredSalary { get; set; }
 
         [Required]
         public string SSN { get; set; }

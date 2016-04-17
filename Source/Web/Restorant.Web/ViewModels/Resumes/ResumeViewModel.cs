@@ -8,6 +8,7 @@
 
     public class ResumeViewModel :IMapFrom<Resume>
     {
+        public virtual ApplicationUser Person { get; set; }
         [Required]
         [DisplayName("First Name ")]
         public string FirstName { get; set; }
@@ -28,12 +29,18 @@
         public string ApplyForPosition { get; set; }
 
         [DisplayName("Desired Salary")]
-        public int DesiredSalary { get; set; }
+        public string DesiredSalary { get; set; }
 
         [Required]
         [DisplayName("Date Of Birth")]
         public DateTime DateOfBirth { get; set; }
 
-        public DateTime CreatedOn { get; set; }
+        public DateTime CreatedOn
+        {
+            get
+            {
+                return DateTime.Now;
+            }
+        }
     }
 }
