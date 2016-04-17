@@ -1,2 +1,57 @@
 ﻿@model Restorant.Web.ViewModels.Resumes.ResumeViewModel
-    <div>Nasko</div>
+    <h2>Job application form</h2>
+<style>
+    legend{
+        margin:10px;
+        padding:10px;
+    }
+   form{
+       margin:50px;
+       padding:0px;
+       background-color:lightgray;
+   }
+    .reserve-label{
+        margin:10px;
+        font-size:18px;
+    }
+    .right{
+        float:right;
+    }
+    .max{
+        width:65% !important;
+    }
+    .min{
+        width:15% !important;
+    }
+    .reserve-input{
+        min-width:100px;
+        width: 35%;
+        margin:10px;
+        padding:3px;
+        font-size:18px;
+                border:0;
+    }
+    .reserve-input:focus{
+        background-color:lightblue;
+        outline:0;
+
+    }
+</style>
+    <form id="application-wrapper" style="position:relative">
+    <fieldset>
+        <legend>Personal Data</legend>
+        @Html.LabelFor(x => x.FirstName,new { @class="reserve-label"})
+        @Html.TextBoxFor(x=>x.FirstName,new { @class="reserve-input"})
+        @Html.LabelFor(x => x.LastName, new { @class = "reserve-label" })
+        @Html.TextBoxFor(x => x.LastName, new { @class = "reserve-input" })
+      
+        <br />
+        @Html.LabelFor(x => x.Address.StreetAdress, new {@class="reserve-label"} )
+        @Html.TextBoxFor(x=>x.Address.StreetAdress,new {@class="reserve-input"} )
+        @Html.LabelFor(x=>x.Address.City,new { @class = "reserve-label" })
+        @Html.TextBoxFor(x => x.Address.City, new { @class="reserve-input min"})
+        @Html.LabelFor(x => x.Address.ZipCode, new { @class = "reserve-label" })
+        @Html.TextBoxFor(x => x.Address.ZipCode, new { @class = "reserve-input min" })
+
+    </fieldset>  
+    </form>

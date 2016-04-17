@@ -2,11 +2,12 @@
 {
     using Restorant.Data.Common.Models;
     using System;
-
+    using System.ComponentModel;
     public class Address : AuditInfo, IDeletableEntity
     {
         public int Id { get; set; }
 
+        [DisplayName("Street Address")]
         public string StreetAdress { get; set; }
 
         public string City { get; set; }
