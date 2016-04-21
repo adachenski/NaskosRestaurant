@@ -26,6 +26,12 @@
         public string DesiredSalary { get; set; }
 
         [Required]
+        public string PhoneNumber { get; set; }
+
+        [Required]
+        public string EmailAddress { get; set; }
+
+        [Required]
         public string SSN { get; set; }
 
         public Address Address { get; set; }

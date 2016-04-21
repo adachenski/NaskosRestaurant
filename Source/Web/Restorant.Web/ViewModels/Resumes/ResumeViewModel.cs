@@ -25,11 +25,19 @@
         [DisplayName("Secondary Address")]
         public Address SecondAddress { get; set; }
 
-        [DisplayName("Position Applied For")]
+        [DisplayName("Position")]
         public string ApplyForPosition { get; set; }
 
         [DisplayName("Desired Salary")]
         public string DesiredSalary { get; set; }
+
+        [DisplayName("Phone")]
+        [Required]
+        public string PhoneNumber { get; set; }
+
+        [DisplayName("Email")]
+        [Required]
+        public string EmailAddress { get; set; }
 
         [Required]
         [DisplayName("Date Of Birth")]

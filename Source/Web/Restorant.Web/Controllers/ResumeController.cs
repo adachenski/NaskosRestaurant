@@ -29,7 +29,7 @@
         {
             var newResume = new Resume
             {
-                Person = userResume.Person,
+               // Person = userResume.Person,
                 PersonId = this.User.Identity.GetUserId(),
                 FirstName = userResume.FirstName,
                 LastName = userResume.LastName,
@@ -37,6 +37,8 @@
                 DesiredSalary = userResume.DesiredSalary,
                 CreatedOn = userResume.CreatedOn,
                 Address = userResume.Address,
+                PhoneNumber = userResume.PhoneNumber,
+                EmailAddress = userResume.EmailAddress,
                 SecondAddress = userResume.SecondAddress,
                 SSN= userResume.SSN,
                 DateOfBirth = userResume.DateOfBirth,

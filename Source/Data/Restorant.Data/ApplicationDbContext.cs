@@ -38,7 +38,7 @@
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();
-            return base.SaveChanges();
+             return base.SaveChanges();
         }
 
         private void ApplyAuditInfoRules()

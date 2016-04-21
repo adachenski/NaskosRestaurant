@@ -24,7 +24,7 @@
     }
 
     .max {
-        width: 45% !important;
+        width: 65% !important;
     }
 
     .min {
@@ -45,9 +45,32 @@
             outline: 0;
         }
 </style>
+<script>
+    $(document).ready(function () {
+
+        $('#perRate').change(function () {
+            var desiredSalery = $("#fake-input").val();
+            var rate = $("#perRate").val();
+            console.log(desiredSalery.indexOf("^"))
+            if (desiredSalery.indexOf("^") > -1) {
+                var result = desiredSalery;
+                var charAt = result.indexOf("^");
+                var firstHalf = result.substr(0, charAt);
+                desiredSalery = firstHalf;
+            }
+                    
+            console.log(desiredSalery);
+            console.log(desiredSalery + "^" + rate)
+            
+            $("#DesiredSalary").val(desiredSalery + "^" + rate);
+            $("#DesiredSalary").html(desiredSalery);
+        });
+    });
+</script>
 
 @{var listItems = new List<ListItem>
     {
+          new ListItem { Text = "rate", Value="" },
           new ListItem { Text = "per hour", Value="perHouer" },
           new ListItem {Text="per Day",Value="perDay" },
           new ListItem { Text = "per week", Value="perWeek" },
@@ -68,20 +91,26 @@
 
         <br />
         @Html.LabelFor(x => x.Address.StreetAdress, new { @class = "reserve-label" })
-        @Html.TextBoxFor(x => x.Address.StreetAdress, new { @class = "reserve-input" })
+        @Html.TextBoxFor(x => x.Address.StreetAdress, new { @class = "reserve-input", style = "width:79%" })
+        <br />
         @Html.LabelFor(x => x.Address.City, new { @class = "reserve-label" })
         @Html.TextBoxFor(x => x.Address.City, new { @class = "reserve-input min" })
+        @Html.LabelFor(x => x.Address.State, new { @class = "reserve-label" })
+        @Html.TextBoxFor(x => x.Address.State, new { @class = "reserve-input min" })
         @Html.LabelFor(x => x.Address.ZipCode, new { @class = "reserve-label" })
         @Html.TextBoxFor(x => x.Address.ZipCode, new { @class = "reserve-input min" })
         <br />
-        @Html.Label("Coose secondary addres: ", new { @class = "reserve-label" })
+        @Html.Label("Choose secondary addres: ", new { @class = "reserve-label" })
         @Html.CheckBox("second-address", false)
         <br />
         <div id="second-address-form" style="display:none">
             @Html.LabelFor(x => x.SecondAddress.StreetAdress, new { @class = "reserve-label" })
-            @Html.TextBoxFor(x => x.SecondAddress.StreetAdress, new { @class = "reserve-input" })
+            @Html.TextBoxFor(x => x.SecondAddress.StreetAdress, new { @class = "reserve-input",style="width:79%" })
+            <br />
             @Html.LabelFor(x => x.SecondAddress.City, new { @class = "reserve-label" })
             @Html.TextBoxFor(x => x.SecondAddress.City, new { @class = "reserve-input min" })
+            @Html.LabelFor(x => x.SecondAddress.State, new { @class = "reserve-label" })
+            @Html.TextBoxFor(x => x.SecondAddress.State, new { @class = "reserve-input min" })
             @Html.LabelFor(x => x.SecondAddress.ZipCode, new { @class = "reserve-label" })
             @Html.TextBoxFor(x => x.SecondAddress.ZipCode, new { @class = "reserve-input min" })
         </div>
@@ -97,24 +126,24 @@
            })
                 <br />
                 @Html.LabelFor(x => x.SSN, new { @class = "reserve-label" })
-                @Html.TextBoxFor(x => x.SSN, new { @class = "reserve-input" })
+                @Html.TextBoxFor(x => x.SSN, new { @class = "reserve-input max" })
 
             </div>
             <div class="col-sm-4">
-                @Html.LabelFor(x => x.Person.Email, new { @class = "reserve-label" })
-                @Html.TextBoxFor(x => x.Person.Email, new { @class = "reserve-input" })
+                @Html.LabelFor(x => x.EmailAddress, new { @class = "reserve-label" })
+                @Html.TextBoxFor(x => x.EmailAddress, new { @class = "reserve-input max" })
                 <br />
                 @Html.LabelFor(x => x.DesiredSalary, new { @class = "reserve-label" })
-                @Html.TextBoxFor(x => x.DesiredSalary, new { @class = "reserve-input", style = "min-width:10px; width:50px" })
-                @Html.DropDownList("perRate", new SelectList(listItems, "Value", "Text"))
+                @Html.TextBox("fake-input","", new { @class = "reserve-input",type="number", style = "min-width:20px; width:75px; margin-right:0" })
+                @Html.TextBoxFor(x => x.DesiredSalary, new { style = "min-width:0px; width:0px; display:none" })
+                @Html.DropDownList("perRate", new SelectList(listItems, "Value", "Text"),new {@class="reserve-input",style="min-width:50px;max-width:95px" })
             </div>
             <div class="col-sm-4">
-                @Html.LabelFor(x => x.Person.PhoneNumber, new { @class = "reserve-label" })
-                @Html.TextBoxFor(x => x.Person.PhoneNumber, new { @class = "reserve-input" })
-              
+                @Html.LabelFor(x => x.PhoneNumber, new { @class = "reserve-label" })
+                @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "reserve-input max" })            
                 <br />
                 @Html.LabelFor(x => x.ApplyForPosition, new { @class = "reserve-label" })
-                @Html.TextBoxFor(x => x.ApplyForPosition, new { @class = "reserve-input" })
+                @Html.TextBoxFor(x => x.ApplyForPosition, new { @class = "reserve-input max" })
             </div>
         </div>
         <div class="form-group">
