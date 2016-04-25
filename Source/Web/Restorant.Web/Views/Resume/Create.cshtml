@@ -1,5 +1,4 @@
 ﻿@model Restorant.Web.ViewModels.Resumes.ResumeViewModel
-<h2>Job application form</h2>
 <link rel="stylesheet" type="text/css" href="~/Content/jquery.datepick.css">
 @using System.Web.UI.WebControls
 <style>
@@ -44,6 +43,9 @@
             background-color: lightblue;
             outline: 0;
         }
+        h2, .div-warning{
+            text-align:center;
+        }
 </style>
 <script>
     $(document).ready(function () {
@@ -78,7 +80,13 @@
           new ListItem { Text = "per year", Value="perYear" }
     };
 }
-
+<h2>Job application form</h2>
+<div class="div-warning">
+    In Step One: Compleate your personal information
+    <br />
+    In Step Two: Upload your Resume
+</div>
+<h4>Step 1 of 2</h4>
 @using (Html.BeginForm("Create", "Resume", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
@@ -148,7 +156,7 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-1 col-md-10">
-                <input type="submit" class="btn btn-info" value="Send Resume" />
+                <input type="submit" class="btn btn-info" value="Continue to Step 2" />
             </div>
         </div>
     </fieldset>

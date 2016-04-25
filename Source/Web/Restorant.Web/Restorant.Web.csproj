@@ -200,6 +200,7 @@
     <Compile Include="Controllers\PageableCommentController.cs" />
     <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
+    <Compile Include="Controllers\UploadResumeController.cs" />
     <Compile Include="InputModels\Questions\AskInputModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -509,9 +510,11 @@
     <Content Include="Views\Shared\LoginModal.cshtml" />
     <Content Include="Views\GetReservations\IndexReservations.cshtml" />
     <Content Include="Views\Resume\Create.cshtml" />
+    <Content Include="Views\UploadResume\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="UploadedResumes\" />
     <Folder Include="ViewModels\Questions\" />
   </ItemGroup>
   <ItemGroup>
