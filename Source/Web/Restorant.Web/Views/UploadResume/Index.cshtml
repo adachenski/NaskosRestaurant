@@ -1,14 +1,9 @@
-﻿<style>
-    input{
-        max-width: 400px;
-        margin:20px;
-    }
-</style>
+﻿<link rel="stylesheet" href="~/Content/custom-partial.css" type="text/css"/>
 <h1>Upload resume to compleate your application</h1>
 <h4>Step 2 of 2</h4>
 @using (Html.BeginForm("Index", "UploadResume", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken();
-    <input type="file" name="file" class="form-control" />
+    <input type="file" name="file" class="upload-resume" required="required" />
     <input type="submit" class="btn btn-info" value="Upload Resume"/>
 }

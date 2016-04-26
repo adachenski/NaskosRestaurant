@@ -9,6 +9,7 @@
     {
         // GET: UploadResume
         [HttpGet]
+        [Authorize]
         public ActionResult Index()
         {
             return View();

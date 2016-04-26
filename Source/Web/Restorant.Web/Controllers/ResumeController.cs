@@ -47,7 +47,6 @@
             this.resume.Add(newResume);
             this.resume.SaveChanges();
             this.TempData["Notification"] = "Step 1: Compleated";
-
             return Redirect("/UploadResume/Index");
         }
     }

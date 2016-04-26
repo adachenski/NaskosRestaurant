@@ -1,74 +1,9 @@
 ﻿@model Restorant.Web.ViewModels.Resumes.ResumeViewModel
-<link rel="stylesheet" type="text/css" href="~/Content/jquery.datepick.css">
+@section Styles{
+    <link rel="stylesheet" type="text/css" href="~/Content/jquery.datepick.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/custom-partial.css" />
+}
 @using System.Web.UI.WebControls
-<style>
-    legend {
-        margin: 10px;
-        padding: 10px;
-    }
-
-    #application-wrapper {
-        margin: 50px;
-        padding: 0px;
-        background-color: lightgray;
-    }
-
-    .reserve-label {
-        margin: 10px;
-        font-size: 18px;
-    }
-
-    .right {
-        float: right;
-    }
-
-    .max {
-        width: 65% !important;
-    }
-
-    .min {
-        width: 15% !important;
-    }
-
-    .reserve-input {
-        min-width: 100px;
-        width: 35%;
-        margin: 10px;
-        padding: 3px;
-        font-size: 18px;
-        border: 0;
-    }
-
-        .reserve-input:focus {
-            background-color: lightblue;
-            outline: 0;
-        }
-        h2, .div-warning{
-            text-align:center;
-        }
-</style>
-<script>
-    $(document).ready(function () {
-
-        $('#perRate').change(function () {
-            var desiredSalery = $("#fake-input").val();
-            var rate = $("#perRate").val();
-            console.log(desiredSalery.indexOf("^"))
-            if (desiredSalery.indexOf("^") > -1) {
-                var result = desiredSalery;
-                var charAt = result.indexOf("^");
-                var firstHalf = result.substr(0, charAt);
-                desiredSalery = firstHalf;
-            }
-                    
-            console.log(desiredSalery);
-            console.log(desiredSalery + "^" + rate)
-            
-            $("#DesiredSalary").val(desiredSalery + "^" + rate);
-            $("#DesiredSalary").html(desiredSalery);
-        });
-    });
-</script>
 
 @{var listItems = new List<ListItem>
     {
@@ -82,9 +17,9 @@
 }
 <h2>Job application form</h2>
 <div class="div-warning">
-    In Step One: Compleate your personal information
+    Step One: Compleate your personal information
     <br />
-    In Step Two: Upload your Resume
+    Step Two: Upload your Resume
 </div>
 <h4>Step 1 of 2</h4>
 @using (Html.BeginForm("Create", "Resume", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -113,7 +48,7 @@
         <br />
         <div id="second-address-form" style="display:none">
             @Html.LabelFor(x => x.SecondAddress.StreetAdress, new { @class = "reserve-label" })
-            @Html.TextBoxFor(x => x.SecondAddress.StreetAdress, new { @class = "reserve-input",style="width:79%" })
+            @Html.TextBoxFor(x => x.SecondAddress.StreetAdress, new { @class = "reserve-input", style = "width:79%" })
             <br />
             @Html.LabelFor(x => x.SecondAddress.City, new { @class = "reserve-label" })
             @Html.TextBoxFor(x => x.SecondAddress.City, new { @class = "reserve-input min" })
@@ -142,13 +77,13 @@
                 @Html.TextBoxFor(x => x.EmailAddress, new { @class = "reserve-input max" })
                 <br />
                 @Html.LabelFor(x => x.DesiredSalary, new { @class = "reserve-label" })
-                @Html.TextBox("fake-input","", new { @class = "reserve-input",type="number", style = "min-width:20px; width:75px; margin-right:0" })
+                @Html.TextBox("fake-input", "", new { @class = "reserve-input", type = "number", style = "min-width:20px; width:75px; margin-right:0" })
                 @Html.TextBoxFor(x => x.DesiredSalary, new { style = "min-width:0px; width:0px; display:none" })
-                @Html.DropDownList("perRate", new SelectList(listItems, "Value", "Text"),new {@class="reserve-input",style="min-width:50px;max-width:95px" })
+                @Html.DropDownList("perRate", new SelectList(listItems, "Value", "Text"), new { @class = "reserve-input", style = "min-width:50px;max-width:95px" })
             </div>
             <div class="col-sm-4">
                 @Html.LabelFor(x => x.PhoneNumber, new { @class = "reserve-label" })
-                @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "reserve-input max" })            
+                @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "reserve-input max" })
                 <br />
                 @Html.LabelFor(x => x.ApplyForPosition, new { @class = "reserve-label" })
                 @Html.TextBoxFor(x => x.ApplyForPosition, new { @class = "reserve-input max" })
