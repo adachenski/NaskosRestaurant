@@ -2,7 +2,10 @@
     /*padding-bottom: 20px;
     background-image: url("https://focusmedical.files.wordpress.com/2015/01/istock_000047600082_medium.jpg?w=1697&h=1131&crop=1");
     background-size: 100%;*/
+
 }
+
+
 @media (min-width: 764px) {
     ul.nav li.dropdown:hover > button {
         background-color: black;

@@ -10,12 +10,47 @@
 </head>
 <body>
     @Scripts.Render("~/bundles/jquery")
-    <video id="video-background" loop="" autoplay="" muted="" poster="http://photos4.meetupstatic.com/photos/event/d/2/3/4/600_430133812.jpeg">
-        <source src="~/jpgs/Noa Restaurant Intro.mp4" type="video/mp4">
-        <source src="~/jpgs/Noa Restaurant Intro.webm" type="video/webm">
-    </video>
+    <script>
+        $(document).ready(function () {
 
-    <div class="container-fluid" style="z-index:1;position:relative">
+            var distance = $('.container').offset().top,
+            $window = $(window);
+
+            $window.scroll(function () {
+                if ($window.scrollTop() >= distance) {
+                    $('.left-scroll').slideDown("slow");
+                }
+                else {
+                    $('.left-scroll').slideUp("slow");
+                }
+            });
+        })
+ 
+    </script>
+
+    <video style="opacity:0.7" id="video-background" loop="" autoplay="" muted="" poster="http://photos4.meetupstatic.com/photos/event/d/2/3/4/600_430133812.jpeg">
+        <source src="~/jpgs/Noa Restaurant Intro.mp4" type="video/mp4">
+        @*<source src="~/jpgs/Noa Restaurant Intro.webm" type="video/webm">*@
+    </video>
+    @*<iframe id="video-background"  src="https://www.youtube.com/embed/AHT7hpIGfMo?loop=1&autoplay=1&controls=1" frameborder="0" allowfullscreen>
+    </iframe>*@
+    <div class="left-scroll" style="position:fixed; top:6%; height:900px; width:15%;  left:2%; display:none"> <img style="width:100%; position:absolute" src="~/jpgs/Scroll2.png" />
+    <div style="position:absolute; top:12%; padding:10px;font-size:18px ">
+        <h2 style="text-align:center">Today's Deals</h2>
+        <h3>Breakfast:</h3>
+        Consectetur adipisicing elit. Molestias, molestiae, asperiores iure ducimus 
+        itaque delectus quasi! Qui, deleniti, harum, magni blanditiis quasi reprehenderit 
+        earum quam tempore asperiores exercitationem dignissimos accusantium ipsam 
+        <h3>Lunch:</h3>
+        laudantium animi possimus ducimus pariatur provident numquam eveniet 
+        reiciendis. Libero, rem pariatur quos nobis cupiditate mollitia hic sunt totam.
+        <h3>Dinner:</h3>
+        Dolor sit amet, consectetur adipisicing elit. Voluptas accusamus delectus explicabo 
+        officia laboriosam. Distinctio, laudantium minima hic corrupti libero!
+    </div>
+    </div>
+    <div class="left-scroll" style="position:fixed; top:6%; height:900px; width:15%;  right:2%; display:none"> <img style="width:100%" src="~/jpgs/Scroll2.png" /></div>
+        <div class="container-fluid" style="z-index:1;position:relative">
         <div class="modal-container">
             <div class="wrap center">
                 <img class="center" id="chef" src="~/jpgs/chef3.png" />

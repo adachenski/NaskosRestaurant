@@ -32,7 +32,8 @@ summary {
 audio,
 canvas,
 progress,
-video {
+video ,
+iframe{
   display: inline-block;
   vertical-align: baseline;
 }
