@@ -22,6 +22,55 @@
     Step Two: Upload your Resume
 </div>
 <h4>Step 1 of 2</h4>
+<script>
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode != 46 && charCode > 31
+        && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
+    $(document).ready(function () {
+        $("#SSN").on("keypress", function () {
+            if ($(this).val) {
+                var ssnlength = $(this).val().length
+                var ssnVal = $(this).val();
+                switch (ssnlength) {
+                    case 3:
+                        var ssnNewVal = ssnVal + '-';
+                        $(this).val(ssnNewVal);
+                        break;
+                    case 6:
+                        var ssnNewVal = ssnVal + '-';
+                        $(this).val(ssnNewVal);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+        $("#PhoneNumber").on("keypress", function () {
+            if ($(this).val) {
+                var phonelength = $(this).val().length
+                var phoneVal = $(this).val();
+                switch (phonelength) {
+                    case 3:
+                        var phoneNewVal = "(" + phoneVal + ")" + '-';
+                        $(this).val(phoneNewVal);
+                        break;
+                    case 9:
+                        var phoneNewVal = phoneVal + '-';
+                        $(this).val(phoneNewVal);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+
+    })
+
+</script>
 @using (Html.BeginForm("Create", "Resume", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
@@ -34,47 +83,42 @@
 
         <br />
         @Html.LabelFor(x => x.Address.StreetAdress, new { @class = "reserve-label" })
-        @Html.TextBoxFor(x => x.Address.StreetAdress, new { @class = "reserve-input", style = "width:79%" })
+        @Html.TextBoxFor(x => x.Address.StreetAdress, new { @class = "reserve-input", style = "width:79%", required = "required" })
         <br />
         @Html.LabelFor(x => x.Address.City, new { @class = "reserve-label" })
-        @Html.TextBoxFor(x => x.Address.City, new { @class = "reserve-input min" })
+        @Html.TextBoxFor(x => x.Address.City, new { @class = "reserve-input min", required = "required" })
         @Html.LabelFor(x => x.Address.State, new { @class = "reserve-label" })
-        @Html.TextBoxFor(x => x.Address.State, new { @class = "reserve-input min" })
+        @Html.TextBoxFor(x => x.Address.State, new { @class = "reserve-input min", required = "required" })
         @Html.LabelFor(x => x.Address.ZipCode, new { @class = "reserve-label" })
-        @Html.TextBoxFor(x => x.Address.ZipCode, new { @class = "reserve-input min" })
+        @Html.TextBoxFor(x => x.Address.ZipCode, new { @class = "reserve-input min",onkeypress = "return isNumberKey(event)", maxlength = 5, required = "required" })
         <br />
         @Html.Label("Choose secondary addres: ", new { @class = "reserve-label" })
         @Html.CheckBox("second-address", false)
         <br />
         <div id="second-address-form" style="display:none">
             @Html.LabelFor(x => x.SecondAddress.StreetAdress, new { @class = "reserve-label" })
-            @Html.TextBoxFor(x => x.SecondAddress.StreetAdress, new { @class = "reserve-input", style = "width:79%" })
+            @Html.TextBoxFor(x => x.SecondAddress.StreetAdress, new { @class = "reserve-input", style = "width:79%", required = "required" })
             <br />
             @Html.LabelFor(x => x.SecondAddress.City, new { @class = "reserve-label" })
-            @Html.TextBoxFor(x => x.SecondAddress.City, new { @class = "reserve-input min" })
+            @Html.TextBoxFor(x => x.SecondAddress.City, new { @class = "reserve-input min", required = "required" })
             @Html.LabelFor(x => x.SecondAddress.State, new { @class = "reserve-label" })
-            @Html.TextBoxFor(x => x.SecondAddress.State, new { @class = "reserve-input min" })
+            @Html.TextBoxFor(x => x.SecondAddress.State, new { @class = "reserve-input min", required = "required" })
             @Html.LabelFor(x => x.SecondAddress.ZipCode, new { @class = "reserve-label" })
-            @Html.TextBoxFor(x => x.SecondAddress.ZipCode, new { @class = "reserve-input min" })
+            @Html.TextBoxFor(x => x.SecondAddress.ZipCode, new { @class = "reserve-input min", onkeypress = "return isNumberKey(event)", maxlength = 5, required = "required" })
         </div>
         <br />
         <div class="row" style="width:100%">
             <div class="col-sm-4">
                 @Html.LabelFor(x => x.DateOfBirth, new { @class = "reserve-label" })
-                @Html.TextBoxFor(x => x.DateOfBirth, new
-           {
-               @class = "reserve-input",
-               id = "popupDatepicker",
-               required = "required"
-           })
+                @Html.TextBoxFor(x => x.DateOfBirth, new { @class = "reserve-input", id = "popupDatepicker", required = "required" })
                 <br />
                 @Html.LabelFor(x => x.SSN, new { @class = "reserve-label" })
-                @Html.TextBoxFor(x => x.SSN, new { @class = "reserve-input max" })
+                @Html.TextBoxFor(x => x.SSN, new { @class = "reserve-input max", onkeypress = "return isNumberKey(event)", maxlength = 11, required = "required" })
 
             </div>
             <div class="col-sm-4">
                 @Html.LabelFor(x => x.EmailAddress, new { @class = "reserve-label" })
-                @Html.TextBoxFor(x => x.EmailAddress, new { @class = "reserve-input max" })
+                @Html.TextBoxFor(x => x.EmailAddress, new { @class = "reserve-input max", type = "email", required = "required" })
                 <br />
                 @Html.LabelFor(x => x.DesiredSalary, new { @class = "reserve-label" })
                 @Html.TextBox("fake-input", "", new { @class = "reserve-input", type = "number", style = "min-width:20px; width:75px; margin-right:0" })
@@ -83,10 +127,10 @@
             </div>
             <div class="col-sm-4">
                 @Html.LabelFor(x => x.PhoneNumber, new { @class = "reserve-label" })
-                @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "reserve-input max" })
+                @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "reserve-input max", onkeypress = "return isNumberKey(event)", maxlength = 14, required = "required" })
                 <br />
                 @Html.LabelFor(x => x.ApplyForPosition, new { @class = "reserve-label" })
-                @Html.TextBoxFor(x => x.ApplyForPosition, new { @class = "reserve-input max" })
+                @Html.TextBoxFor(x => x.ApplyForPosition, new { @class = "reserve-input max", required = "required" })
             </div>
         </div>
         <div class="form-group">
