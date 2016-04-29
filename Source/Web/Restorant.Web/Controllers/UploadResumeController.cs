@@ -2,6 +2,7 @@
 {
     using System;
     using System.IO;
+    using System.Net;
     using System.Web;
     using System.Web.Mvc;
 
@@ -20,6 +21,14 @@
         [ValidateAntiForgeryToken]
         public ActionResult Index(HttpPostedFileBase file)
         {
+            int iFileSize = file.ContentLength;
+
+
+            if (iFileSize > 1 * 1024 * 1024)  // 1MB
+            {
+                ViewBag.fileSize = "File to Big, Please Select file with size up to 1MB";
+                return View();
+            }
             BinaryReader b = new BinaryReader(file.InputStream);
             byte[] binData = b.ReadBytes((int)file.InputStream.Length);
             //var currentUser = System.Web.HttpContext.Current.User.Identity.Name.ToString();
@@ -29,13 +38,19 @@
             System.IO.File.WriteAllBytes(filePath, binData);
             this.TempData["Notification"] = "Your application has been sent successfully, we will be in touch within 24 hours.";
 
-            try
-            {
-            }
-            catch (Exception ex)
-            { return View("Error"); }
+
             //System.Web.HttpException: Maximum request length exceeded
             return Redirect("/");
+        }
+        [HttpPost]
+        public ActionResult Download()
+        {
+            var currentDirectory = "~/App_Data/kitty.jpg";
+            return this.File(currentDirectory, "application/octet-stream","Form.jpg");
+
+            //byte[] fileBytes = System.IO.File.ReadAllBytes("~/App_Data/kitty.jpg");
+            //string fileName = "myfile.ext";
+            //return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
         }
     }
 }

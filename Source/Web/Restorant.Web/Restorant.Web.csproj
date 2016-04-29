@@ -238,8 +238,10 @@
     <Compile Include="ViewModels\Reservations\QuestionDisplayViewModel.cs" />
     <Compile Include="ViewModels\Reservations\ReservationsViewModel.cs" />
     <Compile Include="ViewModels\Resumes\ResumeViewModel.cs" />
+    <Compile Include="ViewModels\Resumes\UploadResumeVIewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\kitty.jpg" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -515,7 +517,6 @@
     <Content Include="Views\UploadResume\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="UploadedResumes\" />
     <Folder Include="ViewModels\Questions\" />
   </ItemGroup>
