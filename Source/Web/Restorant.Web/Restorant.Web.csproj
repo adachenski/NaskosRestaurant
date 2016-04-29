@@ -238,7 +238,6 @@
     <Compile Include="ViewModels\Reservations\QuestionDisplayViewModel.cs" />
     <Compile Include="ViewModels\Reservations\ReservationsViewModel.cs" />
     <Compile Include="ViewModels\Resumes\ResumeViewModel.cs" />
-    <Compile Include="ViewModels\Resumes\UploadResumeVIewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\kitty.jpg" />
@@ -283,6 +282,7 @@
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\file-upload-validation.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />

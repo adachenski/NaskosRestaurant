@@ -12,11 +12,12 @@ left: 0;
 width: 100%;
 text-align:center">
     <div class="alert alert-danger" role="alert">
-        <p><h1>Your browser does not support JavaScript!</h1>
+        <p>
+            <h1>Your browser does not support JavaScript!</h1>
             <div>You must enable JavaScript to compleate the Reservation.</div>
         </p>
     </div>
-    </noscript>
+</noscript>
 <div class="container-reservation" style="background-image:url(http://cdn.makeagif.com/media/10-21-2015/VPxph8.gif);background-size:cover">
     <!-- Trigger the modal with a button -->
     @if (User.Identity.IsAuthenticated)
@@ -63,9 +64,7 @@ text-align:center">
                         <div style="font-size:22px;margin-bottom:0;width:95%" class="alert alert-success" role="alert">
                             <strong>@Html.ActionLink("Hi " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" }) </strong>  Please compleate your Reservation form.
                         </div>
-                           
-                           
-                       
+
                     }
                     else
                     {

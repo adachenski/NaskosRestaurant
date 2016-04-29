@@ -1,63 +1,13 @@
 ﻿<link rel="stylesheet" href="~/Content/custom-partial.css" type="text/css" />
-<h1>Upload a resume to compleate your application</h1>
+<h1>Upload a resume to complete your application</h1>
 <h4>Step 2 of 2</h4>
 <div class="row">
-    <script>
-        function showFileSize() {
-            var input, file;
-            // (Can't use `typeof FileReader === "function"` because apparently
-            // it comes back as "object" on some browsers. So just see if it's there
-            // at all.)
-            if (!window.FileReader) {
-                bodyAppend("p", "The file API isn't supported on this browser yet.");
-                return;
-            }
-            
-            input = document.getElementById('fileinput');
-            file = input.files[0]
-              
-                if (!input) {
-                    bodyAppend("p", "Um, couldn't find the fileinput element.");
-                }
-                else if (!input.files) {
-                    bodyAppend("p", "This browser doesn't seem to support the `files` property of file inputs.");
-                }
-                else {
-                    var fileinput = document.getElementById("submitForm");
-                    if (file.size < (1 * 1024 * 1024)) {
-                        fileinput.disabled = false;
-                        //bodyAppend("p", "File " + file.name + " is " + file.size + " bytes in size");
-                    }
-                    else {
-                        fileinput.disabled = true;
-                    }
-                }
-            }
-
-        function bodyAppend(tagName, innerHTML) {
-            var elm;
-            var x = document.getElementById("warning-js");
-            elm = document.createElement(tagName);
-            elm.className = "upload-warning";
-            elm.innerHTML = innerHTML;
-            x.appendChild(elm);
-        }
-    </script>
-    <style>
-        .upload-warning {
-            background-color: red;
-            color: white;
-            font-size: 18px;
-            padding: 10px;
-            font-weight: 900;
-        }
-    </style>
     <div class="col col-md-5">
 
         @using (Html.BeginForm("Index", "UploadResume", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken();
-            <h4>Choose file from your PC</h4>
+            <h4>File size up to 1MB</h4>
             if (ViewBag.fileSize != null)
             {
                 <div class="upload-warning">
@@ -70,7 +20,7 @@
         }
     </div>
     <div class="col col-md-2">
-        <h1 style="text-align:center">OR</h1>
+        <h1>OR</h1>
     </div>
     <div class="col col-md-5">
         @using (Html.BeginForm("Download", "UploadResume", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -78,10 +28,12 @@
             @Html.AntiForgeryToken();
             <h4>(optional)</h4>
             <div class="upload-resume">
-                <span>Download the form and mail it to us</span>
-
+                <span>Download form and mail it to us</span>
             </div>
             <input type="submit" class="btn btn-info" value="Download Form" />
         }
     </div>
 </div>
+@section Scripts{
+    <script type="text/javascript" src="~/Scripts/file-upload-validation.js"></script>
+    }

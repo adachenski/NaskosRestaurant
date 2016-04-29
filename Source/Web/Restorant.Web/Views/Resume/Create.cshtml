@@ -17,60 +17,12 @@
 }
 <h2>Job application form</h2>
 <div class="div-warning">
-    Step One: Compleate your personal information
+    <b>Step One:</b> Compleate your personal information
     <br />
-    Step Two: Upload your Resume
+    <b>Step Two:</b> Upload your Resume <b>or</b> download Application Form
 </div>
 <h4>Step 1 of 2</h4>
-<script>
-    function isNumberKey(evt) {
-        var charCode = (evt.which) ? evt.which : event.keyCode;
-        if (charCode != 46 && charCode > 31
-        && (charCode < 48 || charCode > 57))
-            return false;
-        return true;
-    }
-    $(document).ready(function () {
-        $("#SSN").on("keypress", function () {
-            if ($(this).val) {
-                var ssnlength = $(this).val().length
-                var ssnVal = $(this).val();
-                switch (ssnlength) {
-                    case 3:
-                        var ssnNewVal = ssnVal + '-';
-                        $(this).val(ssnNewVal);
-                        break;
-                    case 6:
-                        var ssnNewVal = ssnVal + '-';
-                        $(this).val(ssnNewVal);
-                        break;
-                    default:
-                        break;
-                }
-            }
-        });
-        $("#PhoneNumber").on("keypress", function () {
-            if ($(this).val) {
-                var phonelength = $(this).val().length
-                var phoneVal = $(this).val();
-                switch (phonelength) {
-                    case 3:
-                        var phoneNewVal = "(" + phoneVal + ")" + '-';
-                        $(this).val(phoneNewVal);
-                        break;
-                    case 9:
-                        var phoneNewVal = phoneVal + '-';
-                        $(this).val(phoneNewVal);
-                        break;
-                    default:
-                        break;
-                }
-            }
-        });
 
-    })
-
-</script>
 @using (Html.BeginForm("Create", "Resume", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
