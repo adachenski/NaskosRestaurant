@@ -7,25 +7,30 @@
     <link rel='stylesheet' media='screen and (min-width: 120px) and (max-width: 701px)' href='~/Content/medium.css' />
     @Styles.Render("~/Content/css")
     @RenderSection("Styles", false)
+    @Scripts.Render("~/bundles/jquery")
 </head>
 <body>
-    @Scripts.Render("~/bundles/jquery")
     <script>
         $(document).ready(function () {
 
             var distance = $('.container').offset().top,
             $window = $(window);
-
+            var closeBtn = $('#close-button')
+            var chefAnim = $('#chef-add')
+            closeBtn.on('click', function () {
+                chefAnim.css('display','none')
+            }),
             $window.scroll(function () {
                 if ($window.scrollTop() >= distance) {
                     $('.left-scroll').slideDown("slow");
+                    $('#chef-add').animate({ "left": "0" }, "slow");
                 }
                 else {
                     $('.left-scroll').slideUp("slow");
                 }
             });
         })
- 
+
     </script>
 
     <video style="opacity:0.7" id="video-background" loop="" autoplay="" muted="" poster="http://photos4.meetupstatic.com/photos/event/d/2/3/4/600_430133812.jpeg">
@@ -33,24 +38,84 @@
         @*<source src="~/jpgs/Noa Restaurant Intro.webm" type="video/webm">*@
     </video>
     @*<iframe id="video-background"  src="https://www.youtube.com/embed/AHT7hpIGfMo?loop=1&autoplay=1&controls=1" frameborder="0" allowfullscreen>
-    </iframe>*@
-    <div class="left-scroll" style="position:fixed; top:6%; height:900px; width:15%;  left:2%; display:none"> <img style="width:100%; position:absolute" src="~/jpgs/Scroll2.png" />
-    <div style="position:absolute; top:12%; padding:10px;font-size:18px ">
-        <h2 style="text-align:center">Today's Deals</h2>
-        <h3>Breakfast:</h3>
-        Consectetur adipisicing elit. Molestias, molestiae, asperiores iure ducimus 
-        itaque delectus quasi! Qui, deleniti, harum, magni blanditiis quasi reprehenderit 
-        earum quam tempore asperiores exercitationem dignissimos accusantium ipsam 
-        <h3>Lunch:</h3>
-        laudantium animi possimus ducimus pariatur provident numquam eveniet 
-        reiciendis. Libero, rem pariatur quos nobis cupiditate mollitia hic sunt totam.
-        <h3>Dinner:</h3>
-        Dolor sit amet, consectetur adipisicing elit. Voluptas accusamus delectus explicabo 
-        officia laboriosam. Distinctio, laudantium minima hic corrupti libero!
+        </iframe>*@
+    <div class="left-scroll" style="position:fixed; top:6%; height:900px; width:15%;  left:2%; display:none">
+        <img style="min-height:100%;width:100%; position:absolute" src="~/jpgs/Scroll2.png" />
+        <div style="position:absolute; top:12%; padding:10px; max-height:100%">
+            <h2 style="text-align:center">Today's Deals</h2>
+            <h3>Breakfast:</h3>
+            Consectetur adipisicing elit. Molestias, molestiae, asperiores iure ducimus
+            itaque delectus quasi! Qui, deleniti, harum, magni blanditiis quasi reprehenderit
+            earum quam tempore asperiores exercitationem dignissimos accusantium ipsam
+            <h3>Lunch:</h3>
+            laudantium animi possimus ducimus pariatur provident numquam eveniet
+            reiciendis. Libero, rem pariatur quos nobis cupiditate mollitia hic sunt totam.
+            <h3>Dinner:</h3>
+            Dolor sit amet, consectetur adipisicing elit. Voluptas accusamus delectus explicabo
+            officia laboriosam. Distinctio, laudantium minima hic corrupti libero!
+        </div>
     </div>
+    <style>
+        #chef-add {
+            position: fixed;
+            top: 50%;
+            height: 900px;
+            width: 15%;
+            left: -600px;
+            width: 600px;
+            z-index: 9;
+        }
+
+            #close-button {
+                position: absolute;
+                right: 0;
+                cursor:pointer;
+                z-index:11;
+                width: 30px;
+            }
+            #close-button:hover{
+                width:40px;
+            }
+
+            #chef-add > div:first-of-type {
+                position: absolute;
+                z-index: 10;
+                font-size: 20px;
+                width: 35%;
+                right: 5%;
+                top: 5%;
+            }
+
+            #chef-add > img:last-of-type {
+                position: absolute;
+                width: 100%;
+            }
+    </style>
+    <div id="chef-add" >
+        <img id="close-button" src="~/jpgs/close-button.png" />
+        <div>
+            <b>BUY ONE GET ONE FREE!</b>
+            <hr />
+            Reserve a table today
+            <a href="#">Click Here</a>
+        </div>
+        <img src="~/jpgs/ChefDeal.png" />
     </div>
-    <div class="left-scroll" style="position:fixed; top:6%; height:900px; width:15%;  right:2%; display:none"> <img style="width:100%" src="~/jpgs/Scroll2.png" /></div>
-        <div class="container-fluid" style="z-index:1;position:relative">
+
+
+
+
+
+
+
+
+
+
+
+    <div class="left-scroll" style="position:fixed; top:6%; height:900px; width:15%;  right:2%; display:none">
+        <img style="width:100%" src="~/jpgs/Scroll2.png" />
+    </div>
+    <div class="container-fluid" style="z-index:1;position:relative">
         <div class="modal-container">
             <div class="wrap center">
                 <img class="center" id="chef" src="~/jpgs/chef3.png" />
@@ -81,14 +146,14 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav ">
                     <li class="dropdown">
-                        <a  class="navbar-left dropdown-toggle"  data-toggle="dropdown">
+                        <a class="navbar-left dropdown-toggle" data-toggle="dropdown">
                             Main Menue
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
                             <li>@Html.ActionLink("Feedbacks", "Create", "CommentForm")</li>
                             <li role="presentation" class="divider"></li>
-                            <li>@Html.ActionLink("Join Our Team","Create","Resume")</li>
+                            <li>@Html.ActionLink("Join Our Team", "Create", "Resume")</li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
                             <li role="presentation" class="divider"></li>
@@ -108,8 +173,8 @@
 
         @if (TempData["Notification"] != null)
             {
-                <div class="alert alert-info" role="alert">@this.TempData["Notification"]</div>
-            }
+            <div class="alert alert-info" role="alert">@this.TempData["Notification"]</div>
+        }
 
         @RenderBody()
         <hr />
@@ -161,7 +226,6 @@
     </div>
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryval")
-    @RenderSection("scripts", required: false)
-    <script src="~/Scripts/LoginModal.js"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

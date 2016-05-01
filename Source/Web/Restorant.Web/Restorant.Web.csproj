@@ -265,6 +265,8 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="jpgs\chef-girl.png" />
+    <Content Include="jpgs\ChefDeal.png" />
+    <Content Include="jpgs\close-button.png" />
     <Content Include="jpgs\girl-reservation.png" />
     <Content Include="jpgs\Noa Restaurant Intro.webm" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />

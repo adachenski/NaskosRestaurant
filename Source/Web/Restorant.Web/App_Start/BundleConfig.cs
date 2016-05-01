@@ -16,8 +16,7 @@
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js",
-                      "~/Scripts/LoginModal.js"));
+                      "~/Scripts/respond.js").Include("~/Scripts/LoginModal.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.cosmo.css",
