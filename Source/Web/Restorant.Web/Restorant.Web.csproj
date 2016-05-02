@@ -250,6 +250,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom-partial.css" />
     <Content Include="Content\dzen-section.css" />
+    <Content Include="Content\home-page-animation.css" />
     <Content Include="Content\jquery.datepick.css" />
     <Content Include="Content\medium.css" />
     <Content Include="Content\simple-sidebar.css" />

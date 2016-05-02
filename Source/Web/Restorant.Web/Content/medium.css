@@ -46,6 +46,17 @@ form {
     transform: rotate(180deg);
   
 }
+.left-scroll{
+    display:none !important;
+}
+
+#chef-add{
+    width:350px !important;
+}
+ #chef-add > div:first-of-type{
+     top:2% !important;
+     font-size:12px !important;
+ }
 
 #naskosRestaurant{
     width: 300px;

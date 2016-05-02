@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Nasko's Restorant</title>
     <link rel='stylesheet' media='screen and (min-width: 120px) and (max-width: 701px)' href='~/Content/medium.css' />
+    <link rel="stylesheet" href="~/Content/home-page-animation.css" />
     @Styles.Render("~/Content/css")
     @RenderSection("Styles", false)
     @Scripts.Render("~/bundles/jquery")
@@ -15,33 +16,41 @@
 
             var distance = $('.container').offset().top,
             $window = $(window);
-            var closeBtn = $('#close-button')
-            var chefAnim = $('#chef-add')
+            var closeBtn = $('#close-button');
+            var chefAnim = $('#chef-add');
             closeBtn.on('click', function () {
-                chefAnim.css('display','none')
-            }),
+
+                chefAnim.css("display", "none");
+
+            })
+            if (chefAnim.css('display') !== 'none') {
+                setTimeout(function () {
+
+                    chefAnim.animate({ "left": "0" }, "slow")
+                }, 5000);
+            }
             $window.scroll(function () {
-                if ($window.scrollTop() >= distance) {
-                    $('.left-scroll').slideDown("slow");
-                    $('#chef-add').animate({ "left": "0" }, "slow");
+                if ($window.scrollTop() >= distance && $window.width() > 1700) {
+                    console.log($window.width())
+                    $('.scroll').slideDown("slow");
+
                 }
                 else {
-                    $('.left-scroll').slideUp("slow");
+                    $('.scroll').slideUp("slow");
                 }
             });
         })
-
     </script>
-
     <video style="opacity:0.7" id="video-background" loop="" autoplay="" muted="" poster="http://photos4.meetupstatic.com/photos/event/d/2/3/4/600_430133812.jpeg">
         <source src="~/jpgs/Noa Restaurant Intro.mp4" type="video/mp4">
         @*<source src="~/jpgs/Noa Restaurant Intro.webm" type="video/webm">*@
     </video>
     @*<iframe id="video-background"  src="https://www.youtube.com/embed/AHT7hpIGfMo?loop=1&autoplay=1&controls=1" frameborder="0" allowfullscreen>
         </iframe>*@
-    <div class="left-scroll" style="position:fixed; top:6%; height:900px; width:15%;  left:2%; display:none">
-        <img style="min-height:100%;width:100%; position:absolute" src="~/jpgs/Scroll2.png" />
-        <div style="position:absolute; top:12%; padding:10px; max-height:100%">
+
+    <div class="scroll scroll-left">
+        <img src="~/jpgs/Scroll2.png" />
+        <div>
             <h2 style="text-align:center">Today's Deals</h2>
             <h3>Breakfast:</h3>
             Consectetur adipisicing elit. Molestias, molestiae, asperiores iure ducimus
@@ -55,43 +64,8 @@
             officia laboriosam. Distinctio, laudantium minima hic corrupti libero!
         </div>
     </div>
-    <style>
-        #chef-add {
-            position: fixed;
-            top: 50%;
-            height: 900px;
-            width: 15%;
-            left: -600px;
-            width: 600px;
-            z-index: 9;
-        }
 
-            #close-button {
-                position: absolute;
-                right: 0;
-                cursor:pointer;
-                z-index:11;
-                width: 30px;
-            }
-            #close-button:hover{
-                width:40px;
-            }
-
-            #chef-add > div:first-of-type {
-                position: absolute;
-                z-index: 10;
-                font-size: 20px;
-                width: 35%;
-                right: 5%;
-                top: 5%;
-            }
-
-            #chef-add > img:last-of-type {
-                position: absolute;
-                width: 100%;
-            }
-    </style>
-    <div id="chef-add" >
+    <div id="chef-add">
         <img id="close-button" src="~/jpgs/close-button.png" />
         <div>
             <b>BUY ONE GET ONE FREE!</b>
@@ -102,19 +76,10 @@
         <img src="~/jpgs/ChefDeal.png" />
     </div>
 
-
-
-
-
-
-
-
-
-
-
-    <div class="left-scroll" style="position:fixed; top:6%; height:900px; width:15%;  right:2%; display:none">
-        <img style="width:100%" src="~/jpgs/Scroll2.png" />
+    <div class="scroll scroll-right">
+        <img src="~/jpgs/Scroll2.png" />
     </div>
+
     <div class="container-fluid" style="z-index:1;position:relative">
         <div class="modal-container">
             <div class="wrap center">
@@ -134,7 +99,7 @@
     }
 
     <div class="container" style="padding:0">
-        <div id="navigation" class="navbar navbar-inverse" data-spy="affix" data-offset-top="600" style="width:100%">
+        <div id="navigation" class="navbar navbar-default" data-spy="affix" data-offset-top="600" style="width:100%">
             <div class="navbar-header" style="width:100%">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -146,7 +111,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav ">
                     <li class="dropdown">
-                        <a class="navbar-left dropdown-toggle" data-toggle="dropdown">
+                        <a class="navbar-default dropdown-toggle" data-toggle="dropdown">
                             Main Menue
                             <span class="caret"></span>
                         </a>
