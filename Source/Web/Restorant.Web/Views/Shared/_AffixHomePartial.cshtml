@@ -23,12 +23,11 @@
                 chefAnim.css("display", "none");
 
             })
-            if (chefAnim.css('display') !== 'none') {
-                setTimeout(function () {
 
-                    chefAnim.animate({ "left": "0" }, "slow")
-                }, 5000);
-            }
+            setTimeout(function () {
+                chefAnim.animate({ "left": "0" }, "slow")
+            }, 7000);
+
             $window.scroll(function () {
                 if ($window.scrollTop() >= distance && $window.width() > 1700) {
                     console.log($window.width())
@@ -78,6 +77,16 @@
 
     <div class="scroll scroll-right">
         <img src="~/jpgs/Scroll2.png" />
+        <div>
+            <h2 style="text-align:center">Today's Deals</h2>
+            <h3>Breakfast:</h3>
+            Lorem Ipsum ut ultricies velit. Nunc nec magna lectus. Aliquam et accumsan elit,
+            dictum blandit nulla. Suspendisse fringilla bibendum mauris. Proin lacinia erat
+            quam, ac vulputate velit aliquet sit amet. Vestibulum cursus finibus enim sit
+            amet dictum. Morbi nec sem a est imperdiet pellentesque at id risus. In lacinia,
+            orci non semper rhoncus, augue velit tincidunt lacus, non varius lectus odio quis
+            mauris. Donec feugiat arcu non elit laoreet, a maximus tellus porttitor.
+        </div>
     </div>
 
     <div class="container-fluid" style="z-index:1;position:relative">
@@ -164,7 +173,7 @@
             <div class="footer-center">
                 <div>
                     <i class="fa fa-map-marker"></i>
-                    <p><span>21 Revolution Street</span> Massachusets, USA</p>
+                    <p><span>21 Revolution Street</span> California, USA</p>
                 </div>
                 <div>
                     <i class="fa fa-phone"></i>
