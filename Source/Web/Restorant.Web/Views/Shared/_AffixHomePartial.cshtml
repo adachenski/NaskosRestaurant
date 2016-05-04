@@ -11,35 +11,6 @@
     @Scripts.Render("~/bundles/jquery")
 </head>
 <body>
-    <script>
-        $(document).ready(function () {
-
-            var distance = $('.container').offset().top,
-            $window = $(window);
-            var closeBtn = $('#close-button');
-            var chefAnim = $('#chef-add');
-            closeBtn.on('click', function () {
-
-                chefAnim.css("display", "none");
-
-            })
-
-            setTimeout(function () {
-                chefAnim.animate({ "left": "0" }, "slow")
-            }, 7000);
-
-            $window.scroll(function () {
-                if ($window.scrollTop() >= distance && $window.width() > 1700) {
-                    console.log($window.width())
-                    $('.scroll').slideDown("slow");
-
-                }
-                else {
-                    $('.scroll').slideUp("slow");
-                }
-            });
-        })
-    </script>
     <video style="opacity:0.7" id="video-background" loop="" autoplay="" muted="" poster="http://photos4.meetupstatic.com/photos/event/d/2/3/4/600_430133812.jpeg">
         <source src="~/jpgs/Noa Restaurant Intro.mp4" type="video/mp4">
         @*<source src="~/jpgs/Noa Restaurant Intro.webm" type="video/webm">*@
@@ -70,7 +41,7 @@
             <b>BUY ONE GET ONE FREE!</b>
             <hr />
             Reserve a table today
-            <a href="#">Click Here</a>
+            <a href="/Reservation/Create">Click Here</a>
         </div>
         <img src="~/jpgs/ChefDeal.png" />
     </div>
@@ -201,5 +172,6 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("Scripts", required: false)
+    <script type="text/javascript" src="~/Scripts/home-page-animation.js"></script>
 </body>
 </html>

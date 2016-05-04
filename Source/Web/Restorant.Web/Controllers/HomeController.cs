@@ -5,7 +5,7 @@
     using ViewModels.Home;
     using Data.Common.Repository;
     using Data.Models;
-
+    using System;
     public class HomeController : Controller
     {
         private readonly IDeletableEntityRepository<Post> posts;
@@ -18,7 +18,6 @@
         public ActionResult Index()
         {
             //var model = this.posts.All().Project().To<IndexBlogPostViewModel>();
-
             return this.View();
         }
     }
