@@ -2,6 +2,7 @@
 
             var distance = $('.container').offset().top,
             $window = $(window);
+    
             var closeBtn = $('#close-button');
             var chefAnim = $('#chef-add');
             closeBtn.on('click', function () {

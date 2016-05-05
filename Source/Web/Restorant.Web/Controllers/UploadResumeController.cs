@@ -45,7 +45,7 @@
         public ActionResult Download()
         {
             var currentDirectory = "~/App_Data/kitty.jpg";
-            return this.File(currentDirectory, "application/octet-stream","Form.jpg");
+            return this.File(currentDirectory, "application/octet-stream","Nasko's-Restaurant.jpg");
         }
     }
 }

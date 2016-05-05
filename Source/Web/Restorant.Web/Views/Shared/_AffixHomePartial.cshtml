@@ -6,20 +6,38 @@
     <title>@ViewBag.Title - Nasko's Restorant</title>
     <link rel='stylesheet' media='screen and (min-width: 120px) and (max-width: 701px)' href='~/Content/medium.css' />
     <link rel="stylesheet" href="~/Content/home-page-animation.css" />
+    <link id="ie-style" href="" rel="stylesheet" />
     @Styles.Render("~/Content/css")
     @RenderSection("Styles", false)
     @Scripts.Render("~/bundles/jquery")
 </head>
 <body>
-    <video style="opacity:0.7" id="video-background" loop="" autoplay="" muted="" poster="http://photos4.meetupstatic.com/photos/event/d/2/3/4/600_430133812.jpeg">
-        <source src="~/jpgs/Noa Restaurant Intro.mp4" type="video/mp4">
-        @*<source src="~/jpgs/Noa Restaurant Intro.webm" type="video/webm">*@
-    </video>
+    <script>
+        function detectIE() {
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf('MSIE '),
+                trident = ua.indexOf('Trident/'),
+                edge = ua.indexOf('Edge/');
+            if (edge > 0|| msie>0|| trident>0 ) {
+                $('#ie-style').attr("href", "Content/IE.css");
+                setTimeout(function () {
+                    chefAnim.animate({ "left": "0" }, "slow")
+                }, 4000);
+            }
+        }
+        detectIE();
+    </script>
+  
+        <video style="opacity:0.7" id="video-background" loop="" autoplay="" muted="" poster="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/background_zpsnagammqk.jpg">
+            <source src="http://vid1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/Noa%20Restaurant%20Intro_zps5bivxhfq.mp4" type="video/mp4">
+            <source src="~/jpgs/Noa Restaurant Intro.webm" type="video/webm">
+        </video>
+  
     @*<iframe id="video-background"  src="https://www.youtube.com/embed/AHT7hpIGfMo?loop=1&autoplay=1&controls=1" frameborder="0" allowfullscreen>
         </iframe>*@
 
     <div class="scroll scroll-left">
-        <img src="~/jpgs/Scroll2.png" />
+        <img src="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/Scroll2_zpsssphh9a1.png" />
         <div>
             <h2 style="text-align:center">Today's Deals</h2>
             <h3>Breakfast:</h3>
@@ -43,11 +61,11 @@
             Reserve a table today
             <a href="/Reservation/Create">Click Here</a>
         </div>
-        <img src="~/jpgs/ChefDeal.png" />
+        <img src="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/ChefDeal_zpsqlbv2i4q.png" />
     </div>
 
     <div class="scroll scroll-right">
-        <img src="~/jpgs/Scroll2.png" />
+        <img src="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/Scroll2_zpsssphh9a1.png" />
         <div>
             <h2 style="text-align:center">Today's Deals</h2>
             <h3>Breakfast:</h3>
@@ -63,13 +81,13 @@
     <div class="container-fluid" style="z-index:1;position:relative">
         <div class="modal-container">
             <div class="wrap center">
-                <img class="center" id="chef" src="~/jpgs/chef3.png" />
-                <img class="center" id="naskosRestaurant" style="position:absolute" src="~/jpgs/NaskosRestaurant2.png" />
+                <img class="center" id="chef" src="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/chef3_zpsgcptmqzz.png" />
+                <img class="center" id="naskosRestaurant" style="position:absolute" src="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/NaskosRestaurant2_zpsvxdo3enb.png" />
                 <img id="modalScroll"
-                     src="http://www.makelaaroverzicht.nl/wp-content/themes/makelaaroverzicht/images/scroll-down.gif" />
+                     src="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/scroll-down_zpsxstwdoa9.gif" />
                 <img class="modalImg" style="left:-300px"
-                     src="http://www.lagos.me.uk/wpimages/wp135b02df_06.png" />
-                <img class="modalImg" style="left:300px" src="http://www.deluxevectors.com/images/sample/national-restaurant-association.png" />
+                     src="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/logo-main-left_zpsciupz7q5.png" />
+                <img class="modalImg" style="left:300px" src="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/national-restaurant-association_zps8detmmee.png" />
             </div>
         </div><!-- /.container -->
     </div><!-- /#index-hero-->

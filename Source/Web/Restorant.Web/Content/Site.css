@@ -38,7 +38,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
     -ms-transform: translateX(-50%) translateY(-50%);
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
-    background: url() no-repeat;
+    /*background: url("") no-repeat;*/
     background-size: cover;
 }
 

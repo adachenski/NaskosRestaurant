@@ -238,6 +238,7 @@
     <Compile Include="ViewModels\PageableComment\PageableComment.cs" />
     <Compile Include="ViewModels\Reservations\QuestionDisplayViewModel.cs" />
     <Compile Include="ViewModels\Reservations\ReservationsViewModel.cs" />
+    <Compile Include="ViewModels\Resumes\AddressViewModel.cs" />
     <Compile Include="ViewModels\Resumes\ResumeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +253,7 @@
     <Content Include="Content\custom-partial.css" />
     <Content Include="Content\dzen-section.css" />
     <Content Include="Content\home-page-animation.css" />
+    <Content Include="Content\IE.css" />
     <Content Include="Content\jquery.datepick.css" />
     <Content Include="Content\medium.css" />
     <Content Include="Content\simple-sidebar.css" />
@@ -266,22 +268,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <Content Include="jpgs\chef-girl.png" />
-    <Content Include="jpgs\ChefDeal.png" />
     <Content Include="jpgs\close-button.png" />
-    <Content Include="jpgs\girl-reservation.png" />
     <Content Include="jpgs\Noa Restaurant Intro.webm" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="jpgs\arrow.png" />
-    <Content Include="jpgs\bg.jpg" />
-    <Content Include="jpgs\chef3.png" />
     <Content Include="jpgs\Chief-Reservation.png" />
-    <Content Include="jpgs\ChiefGIrlReservation2.jpg" />
-    <Content Include="jpgs\naskos2.png" />
-    <Content Include="jpgs\NaskosRestaurant2.png" />
-    <Content Include="jpgs\Noa Restaurant Intro.mp4" />
-    <Content Include="jpgs\scroll-down.png" />
-    <Content Include="jpgs\Scroll2.png" />
     <Content Include="jpgs\top_arr.png" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
