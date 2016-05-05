@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNet.Identity
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div style="font-size:22px;margin-bottom:0;width:100%" class="alert alert-success" role="alert">
+            <strong>@Html.ActionLink("Hi " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" }) </strong>  Please compleate your Form.
+        </div>
+
+    }
+    else
+    {
+        <div style="font-size:22px;margin-bottom:0;width:100%" class="alert alert-danger" role="alert">
+            <p><strong>Please Login to complete your Form</strong></p>
+        </div>
+    }

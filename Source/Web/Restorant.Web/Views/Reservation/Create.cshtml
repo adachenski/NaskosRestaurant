@@ -1,5 +1,4 @@
 ﻿@model Restorant.Web.ViewModels.Reservations.ReservationsViewModel
-@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Make Reservation";
 }
@@ -59,20 +58,7 @@ text-align:center">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <div style="font-size:22px;margin-bottom:0;width:95%" class="alert alert-success" role="alert">
-                            <strong>@Html.ActionLink("Hi " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" }) </strong>  Please compleate your Reservation form.
-                        </div>
-
-                    }
-                    else
-                    {
-                        <div style="font-size:22px;margin-bottom:0;width:95%" class="alert alert-danger" role="alert">
-                            <p><strong>Please Login to complete the Reservation</strong></p>
-                        </div>
-                    }
-
+                    @Html.Partial("_DisplayWarning")
                 </div>
                 <div class="modal-body">
                     @using (Html.BeginForm("Create", "Reservation", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
