@@ -27,27 +27,32 @@
         [ValidateAntiForgeryToken]
         public ActionResult Create(ResumeViewModel userResume)
         {
-            var newResume = new Resume
+            if (ModelState.IsValid)
             {
-               // Person = userResume.Person,
-                PersonId = this.User.Identity.GetUserId(),
-                FirstName = userResume.FirstName,
-                LastName = userResume.LastName,
-                ApplyForPosition = userResume.ApplyForPosition,
-                DesiredSalary = userResume.DesiredSalary,
-                CreatedOn = userResume.CreatedOn,
-                Address = userResume.Address,
-                PhoneNumber = userResume.PhoneNumber,
-                EmailAddress = userResume.EmailAddress,
-                SecondAddress = userResume.SecondAddress,
-                SSN= userResume.SSN,
-                DateOfBirth = userResume.DateOfBirth,
-               
-            };
-            this.resume.Add(newResume);
-            this.resume.SaveChanges();
-            this.TempData["Notification"] = "Step 1: Compleated";
-            return Redirect("/UploadResume/Index");
+                var newResume = new Resume
+                {
+                    // Person = userResume.Person,
+                    PersonId = this.User.Identity.GetUserId(),
+                    FirstName = userResume.FirstName,
+                    LastName = userResume.LastName,
+                    ApplyForPosition = userResume.ApplyForPosition,
+                    DesiredSalary = userResume.DesiredSalary,
+                    CreatedOn = userResume.CreatedOn,
+                    Address = userResume.Address,
+                    PhoneNumber = userResume.PhoneNumber,
+                    EmailAddress = userResume.EmailAddress,
+                    SecondAddress = userResume.SecondAddress,
+                    SSN = userResume.SSN,
+                    DateOfBirth = userResume.DateOfBirth,
+
+                };
+                this.resume.Add(newResume);
+                this.resume.SaveChanges();
+                this.TempData["Notification"] = "Step 1: Compleated";
+                return Redirect("/UploadResume/Index");
+            }
+            return View(userResume);
+          
         }
     }
 }

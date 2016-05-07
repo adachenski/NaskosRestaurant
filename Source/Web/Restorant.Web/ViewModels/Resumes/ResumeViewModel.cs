@@ -18,13 +18,17 @@
         public string LastName { get; set; }
 
         [Required]
+        [DisplayName("SSN")]
         public string SSN { get; set; }
 
+        [Required]
+        [DisplayName("Address")]
         public Address Address { get; set; }
 
         [DisplayName("Secondary Address")]
-        public Address SecondAddress { get; set; }
+        public  Address SecondAddress { get; set; }
 
+        [Required]
         [DisplayName("Position")]
         public string ApplyForPosition { get; set; }
 
@@ -32,10 +36,12 @@
         public string DesiredSalary { get; set; }
 
         [DisplayName("Phone")]
+        [DataType(DataType.PhoneNumber)]
         [Required]
         public string PhoneNumber { get; set; }
 
         [DisplayName("Email")]
+        [DataType(DataType.EmailAddress)]
         [Required]
         public string EmailAddress { get; set; }
 

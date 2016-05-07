@@ -2,6 +2,7 @@
 @section Styles{
     <link rel="stylesheet" type="text/css" href="~/Content/jquery.datepick.css">
     <link rel="stylesheet" type="text/css" href="~/Content/custom-partial.css" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
 }
 @using System.Web.UI.WebControls
 
@@ -33,24 +34,29 @@
     }, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
+
     <fieldset>
         <legend>Personal Data</legend>
+        <div style="color:red; font-size:18px">
+            @Html.ValidationSummary()
+        </div>
         @Html.LabelFor(x => x.FirstName, new { @class = "reserve-label" })
         @Html.TextBoxFor(x => x.FirstName, new { @class = "reserve-input" })
         @Html.LabelFor(x => x.LastName, new { @class = "reserve-label" })
         @Html.TextBoxFor(x => x.LastName, new { @class = "reserve-input" })
 
         <br />
-        @Html.LabelFor(x => x.Address.StreetAdress, new { @class = "reserve-label" })
-        @Html.TextBoxFor(x => x.Address.StreetAdress, new { @class = "reserve-input", style = "width:79%", required = "required" })
-        <br />
-        @Html.LabelFor(x => x.Address.City, new { @class = "reserve-label" })
-        @Html.TextBoxFor(x => x.Address.City, new { @class = "reserve-input min", required = "required" })
-        @Html.LabelFor(x => x.Address.State, new { @class = "reserve-label" })
-        @Html.TextBoxFor(x => x.Address.State, new { @class = "reserve-input min", required = "required" })
-        @Html.LabelFor(x => x.Address.ZipCode, new { @class = "reserve-label" })
-        @Html.TextBoxFor(x => x.Address.ZipCode, new { @class = "reserve-input min",onkeypress = "return isNumberKey(event)", maxlength = 5, required = "required" })
-        <br />
+        <div>
+            @Html.LabelFor(x => x.Address.StreetAdress, new { @class = "reserve-label" })
+            @Html.TextBoxFor(x => x.Address.StreetAdress, new { @class = "reserve-input", style = "width:79%", required = "required" })
+            <br />
+            @Html.LabelFor(x => x.Address.City, new { @class = "reserve-label" })
+            @Html.TextBoxFor(x => x.Address.City, new { @class = "reserve-input min"})
+            @Html.LabelFor(x => x.Address.State, new { @class = "reserve-label" })
+            @Html.TextBoxFor(x => x.Address.State, new { @class = "reserve-input min"})
+            @Html.LabelFor(x => x.Address.ZipCode, new { @class = "reserve-label" })
+            @Html.TextBoxFor(x => x.Address.ZipCode, new { @class = "reserve-input min", onkeypress = "return isNumberKey(event)", maxlength = 5, required = "required" })
+        </div>
         @Html.Label("Choose secondary addres: ", new { @class = "reserve-label" })
         @Html.CheckBox("second-address", false)
         <br />

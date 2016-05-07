@@ -9,7 +9,7 @@ function isNumberKey(evt) {
 
 (function () {
     var now = new Date($.now());
-
+    var ageToWork = now.getDate()-(16*365);
     document.addEventListener("click", function () {
         var isChecked = $('#second-address').is(":checked")
         if (isChecked) {
@@ -22,7 +22,7 @@ function isNumberKey(evt) {
     })
 
     $('#popupDatepicker').datepick({
-        maxDate: now,
+        maxDate: ageToWork,
         dateFormat: 'yyyy-mm-dd',
         altField: '#isoDate',
         altFormat: 'yyyy-mm-dd',

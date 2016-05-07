@@ -15,30 +15,24 @@
 
         public string PersonId { get; set; }
 
-        [Required]
         public string FirstName { get; set; }
 
-        [Required]
         public string LastName { get; set; }
 
         public string ApplyForPosition { get; set; }
 
         public string DesiredSalary { get; set; }
 
-        [Required]
         public string PhoneNumber { get; set; }
 
-        [Required]
         public string EmailAddress { get; set; }
 
-        [Required]
         public string SSN { get; set; }
 
         public Address Address { get; set; }
 
         public Address SecondAddress { get; set; }
 
-        [Required]
         public DateTime DateOfBirth { get; set; }
 
         public DateTime? DeletedOn { get; set; }
