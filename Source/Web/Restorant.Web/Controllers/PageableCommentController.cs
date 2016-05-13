@@ -17,6 +17,7 @@
             this.feedbacks = feedBacks;
         }
         [HttpGet]
+        [ChildActionOnly]
         public ActionResult _Index(string SorthByDate, int pageSize=4, int page = 1)
         {
             var dummyItems = this.feedbacks.All();

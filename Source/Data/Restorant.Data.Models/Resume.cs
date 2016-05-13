@@ -11,7 +11,7 @@
         }
         public int Id { get; set; }
 
-        public virtual ApplicationUser Person { get; set; }
+        //public virtual ApplicationUser Person { get; set; }
 
         public string PersonId { get; set; }
 
@@ -29,9 +29,9 @@
 
         public string SSN { get; set; }
 
-        public Address Address { get; set; }
+        public  Address Address { get; set; }
 
-        public Address SecondAddress { get; set; }
+        public virtual  Address SecondAddress { get; set; }
 
         public DateTime DateOfBirth { get; set; }
 

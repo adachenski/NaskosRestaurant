@@ -8,17 +8,13 @@
     {
         public int Id { get; set; }
 
-        [DisplayName("Street Address")]
         public string StreetAdress { get; set; }
 
-        [DisplayName("City")]
         public string City { get; set; }
 
-        [DisplayName("State")]
         public string State { get; set; }
 
-        [DisplayName("ZipCode")]
-        public int ZipCode { get; set; }
+        public int? ZipCode { get; set; }
 
         public DateTime? DeletedOn { get; set; }
 

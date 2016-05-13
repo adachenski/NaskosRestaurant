@@ -13,7 +13,7 @@
 
             setTimeout(function () {
                 chefAnim.animate({ "left": "0" }, "slow")
-            }, 7000);
+            }, 10000);
 
             $window.scroll(function () {
                 if ($window.scrollTop() >= distance && $window.width() > 1700) {

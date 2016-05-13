@@ -8,7 +8,7 @@
 
     public class ResumeViewModel :IMapFrom<Resume>
     {
-        public virtual ApplicationUser Person { get; set; }
+       // public virtual ApplicationUser Person { get; set; }
         [Required]
         [DisplayName("First Name ")]
         public string FirstName { get; set; }
@@ -21,12 +21,9 @@
         [DisplayName("SSN")]
         public string SSN { get; set; }
 
-        [Required]
-        [DisplayName("Address")]
-        public Address Address { get; set; }
+        public AddressViewModel Address { get; set; }
 
-        [DisplayName("Secondary Address")]
-        public  Address SecondAddress { get; set; }
+        public virtual AddressViewModel SecondAddress { get; set; }
 
         [Required]
         [DisplayName("Position")]
@@ -48,13 +45,5 @@
         [Required]
         [DisplayName("Date Of Birth")]
         public DateTime DateOfBirth { get; set; }
-
-        public DateTime CreatedOn
-        {
-            get
-            {
-                return DateTime.Now;
-            }
-        }
     }
 }

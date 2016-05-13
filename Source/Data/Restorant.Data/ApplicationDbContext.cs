@@ -30,6 +30,10 @@
 
         public IDbSet<Resume> Resumes { get; set; }
 
+        public IDbSet<Joke> Jokes { get; set; }
+
+        public IDbSet<JokeCategory> JokeCategories { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

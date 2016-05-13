@@ -66,15 +66,10 @@
 
     <div class="scroll scroll-right">
         <img src="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/Scroll2_zpsssphh9a1.png" />
-        <div>
-            <h2 style="text-align:center">Today's Deals</h2>
-            <h3>Breakfast:</h3>
-            Lorem Ipsum ut ultricies velit. Nunc nec magna lectus. Aliquam et accumsan elit,
-            dictum blandit nulla. Suspendisse fringilla bibendum mauris. Proin lacinia erat
-            quam, ac vulputate velit aliquet sit amet. Vestibulum cursus finibus enim sit
-            amet dictum. Morbi nec sem a est imperdiet pellentesque at id risus. In lacinia,
-            orci non semper rhoncus, augue velit tincidunt lacus, non varius lectus odio quis
-            mauris. Donec feugiat arcu non elit laoreet, a maximus tellus porttitor.
+        <div style="width:100%">
+
+                @{Html.RenderAction("_JokePartial", "Joke");}
+
         </div>
     </div>
 

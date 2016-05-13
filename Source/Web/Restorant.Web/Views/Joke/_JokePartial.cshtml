@@ -1,0 +1,23 @@
+﻿@model IEnumerable< Restorant.Web.ViewModels.Jokes.JokeViewModel>
+
+<h1>Jokes</h1>
+
+
+    @foreach (var joke in Model)
+    {
+        <h3 style="font-family:Arial">
+         @joke.Content
+        </h3>
+        <br>
+    }
+
+<form style="position:absolute; top:95%; background-color:lightgray;width:90%;padding-bottom:10px;text-align:center">
+    <label style="font-size:18px">Joke vote</label>
+    <br />
+    Good
+    <input type="radio" name="vote" value="Good"/>
+    Bad
+    <input type="radio" name="vote" value="Bad"/>
+    <br />
+    <input type="submit" value="subit"/>
+</form>

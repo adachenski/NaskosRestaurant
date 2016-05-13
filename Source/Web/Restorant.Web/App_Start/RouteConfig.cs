@@ -25,8 +25,8 @@
 
             routes.MapRoute(
                 name: "Display reservation",
-                url: "GetReservations/{id}",
-                defaults: new { controller = "GetReservations", action = "IndexReservations" });
+                url: "GetReservations/Delete/{id}",
+                defaults: new { controller = "GetReservations", action = "Delete" });
 
             routes.MapRoute(
                 name: "Default",

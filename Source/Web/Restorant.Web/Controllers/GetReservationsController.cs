@@ -1,22 +1,19 @@
-﻿using AutoMapper.QueryableExtensions;
-using Restorant.Data.Common.Repository;
-using Restorant.Data.Models;
-using Restorant.Web.ViewModels.GetReservations;
-using Restorant.Web.ViewModels.Reservations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-
-namespace Restorant.Web.Controllers
+﻿namespace Restorant.Web.Controllers
 {
+    using AutoMapper.QueryableExtensions;
+    using Restorant.Data.Common.Repository;
+    using Restorant.Data.Models;
+    using Restorant.Web.ViewModels.GetReservations;
+    using System.Linq;
+    using System.Web.Mvc;
+    using Microsoft.AspNet.Identity;
+    using AutoMapper;
+
     public class GetReservationsController : Controller
     {
         IDeletableEntityRepository<Reservation> reservations;
 
-        public GetReservationsController(IDeletableEntityRepository<Reservation> reservations)
+        public GetReservationsController(DeletableEntityRepository<Reservation> reservations)
         {
             this.reservations = reservations;
         }
@@ -42,6 +39,33 @@ namespace Restorant.Web.Controllers
            // }
 
             return this.View(allReservations);
+        }
+        
+        [HttpGet]
+        public ActionResult Delete(int? id, int page = 1)
+        {
+            var postViewModel = this.reservations.All().Where(x => x.Id == id)
+                .Project().To<GetReservationsVIewModel>().FirstOrDefault();
+
+            if (postViewModel == null)
+            {
+                return this.HttpNotFound("No such post");
+            }
+
+            return this.View(postViewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete (int ? id)
+        {
+           //need to fix delete action
+            var postViewModel = this.reservations.All().Where(x => x.Id == id)
+               .Project().To<Reservation>().FirstOrDefault();
+            reservations.Delete(postViewModel);
+            Mapper.CreateMap<Reservation, Reservation>();
+            reservations.SaveChanges();
+            return Redirect("/GetReservations/IndexReservations");
         }
     }
 }

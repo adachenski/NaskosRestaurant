@@ -11,9 +11,10 @@
     {
         IDeletableEntityRepository<Resume> resume;
 
-        public ResumeController(IDeletableEntityRepository<Resume> Resume)
+        public ResumeController
+            (IDeletableEntityRepository<Resume> resume)
         {
-            this.resume = Resume;
+            this.resume = resume;
         }
         // GET: Resume
         [HttpGet]
@@ -29,6 +30,20 @@
         {
             if (ModelState.IsValid)
             {
+                var newAddres = new Address
+                {
+                    StreetAdress = userResume.Address.StreetAdress,
+                    City = userResume.Address.City,
+                    State = userResume.Address.State,
+                    ZipCode = userResume.Address.ZipCode
+                };
+                var newSecondAddres = new Address
+                {
+                    StreetAdress = userResume.SecondAddress.StreetAdress,
+                    City = userResume.SecondAddress.City,
+                    State = userResume.SecondAddress.State,
+                    ZipCode = userResume.SecondAddress.ZipCode
+                };
                 var newResume = new Resume
                 {
                     // Person = userResume.Person,
@@ -37,13 +52,13 @@
                     LastName = userResume.LastName,
                     ApplyForPosition = userResume.ApplyForPosition,
                     DesiredSalary = userResume.DesiredSalary,
-                    CreatedOn = userResume.CreatedOn,
-                    Address = userResume.Address,
+                    CreatedOn = DateTime.Now,
                     PhoneNumber = userResume.PhoneNumber,
                     EmailAddress = userResume.EmailAddress,
-                    SecondAddress = userResume.SecondAddress,
                     SSN = userResume.SSN,
                     DateOfBirth = userResume.DateOfBirth,
+                    Address = newAddres,
+                    SecondAddress = newSecondAddres,
 
                 };
                 this.resume.Add(newResume);

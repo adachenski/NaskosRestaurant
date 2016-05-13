@@ -22,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
     <UseGlobalApplicationHostFile />
+    <IsCompassProject>True</IsCompassProject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -198,6 +199,7 @@
     <Compile Include="Controllers\CommentFormController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\GetReservationsController.cs" />
+    <Compile Include="Controllers\JokeController.cs" />
     <Compile Include="Controllers\PageableCommentController.cs" />
     <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
@@ -222,6 +224,9 @@
     <Compile Include="ViewModels\GetReservations\GetReservationsVIewModel.cs" />
     <Compile Include="ViewModels\GetReservations\ReservationPostViewModel.cs" />
     <Compile Include="ViewModels\GetReservations\ReservationTableViewModel.cs" />
+    <Compile Include="ViewModels\Jokes\IndexJokesViewModel.cs" />
+    <Compile Include="ViewModels\Jokes\JokeCategoryViewModel.cs" />
+    <Compile Include="ViewModels\Jokes\JokeViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\FactorViewModel.cs" />
@@ -270,6 +275,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="jpgs\close-button.png" />
     <Content Include="jpgs\Noa Restaurant Intro.webm" />
+    <Content Include="config.rb" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="jpgs\arrow.png" />
     <Content Include="jpgs\Chief-Reservation.png" />
@@ -515,8 +521,12 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Shared\_DisplayWarning.cshtml" />
+    <Content Include="Views\Joke\_JokePartial.cshtml" />
+    <Content Include="Views\GetReservations\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="sass\" />
+    <Folder Include="stylesheets\" />
     <Folder Include="UploadedResumes\" />
     <Folder Include="ViewModels\Questions\" />
   </ItemGroup>

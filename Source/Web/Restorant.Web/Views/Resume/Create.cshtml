@@ -1,4 +1,5 @@
 ﻿@model Restorant.Web.ViewModels.Resumes.ResumeViewModel
+
 @section Styles{
     <link rel="stylesheet" type="text/css" href="~/Content/jquery.datepick.css">
     <link rel="stylesheet" type="text/css" href="~/Content/custom-partial.css" />
@@ -28,10 +29,7 @@
 </div>
 <h4>Step 1 of 2</h4>
 
-@using (Ajax.BeginForm("Create", "Resume",
-                    new AjaxOptions {
-                        HttpMethod = "POST"
-    }, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Create", "Resume",FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
 
@@ -47,29 +45,29 @@
 
         <br />
         <div>
-            @Html.LabelFor(x => x.Address.StreetAdress, new { @class = "reserve-label" })
-            @Html.TextBoxFor(x => x.Address.StreetAdress, new { @class = "reserve-input", style = "width:79%", required = "required" })
+            @Html.LabelFor(x => x.Address.StreetAdress, new { @class = "reserve-label" , required = "required" })
+            @Html.TextBoxFor(x => x.Address.StreetAdress, new { @class = "reserve-input", style = "width:79%" })
             <br />
             @Html.LabelFor(x => x.Address.City, new { @class = "reserve-label" })
-            @Html.TextBoxFor(x => x.Address.City, new { @class = "reserve-input min"})
+            @Html.TextBoxFor(x => x.Address.City, new { @class = "reserve-input min" })
             @Html.LabelFor(x => x.Address.State, new { @class = "reserve-label" })
-            @Html.TextBoxFor(x => x.Address.State, new { @class = "reserve-input min"})
+            @Html.TextBoxFor(x => x.Address.State, new { @class = "reserve-input min" })
             @Html.LabelFor(x => x.Address.ZipCode, new { @class = "reserve-label" })
-            @Html.TextBoxFor(x => x.Address.ZipCode, new { @class = "reserve-input min", onkeypress = "return isNumberKey(event)", maxlength = 5, required = "required" })
+            @Html.TextBoxFor(x => x.Address.ZipCode, new { @class = "reserve-input min", onkeypress = "return isNumberKey(event)", maxlength = 5 })
         </div>
         @Html.Label("Choose secondary addres: ", new { @class = "reserve-label" })
         @Html.CheckBox("second-address", false)
         <br />
         <div id="second-address-form" style="display:none">
             @Html.LabelFor(x => x.SecondAddress.StreetAdress, new { @class = "reserve-label" })
-            @Html.TextBoxFor(x => x.SecondAddress.StreetAdress, new { @class = "reserve-input", style = "width:79%", required = "required" })
+            @Html.TextBoxFor(x => x.SecondAddress.StreetAdress, new { @class = "reserve-input", style = "width:79%" })
             <br />
             @Html.LabelFor(x => x.SecondAddress.City, new { @class = "reserve-label" })
-            @Html.TextBoxFor(x => x.SecondAddress.City, new { @class = "reserve-input min", required = "required" })
+            @Html.TextBoxFor(x => x.SecondAddress.City, new { @class = "reserve-input min" })
             @Html.LabelFor(x => x.SecondAddress.State, new { @class = "reserve-label" })
-            @Html.TextBoxFor(x => x.SecondAddress.State, new { @class = "reserve-input min", required = "required" })
+            @Html.TextBoxFor(x => x.SecondAddress.State, new { @class = "reserve-input min" })
             @Html.LabelFor(x => x.SecondAddress.ZipCode, new { @class = "reserve-label" })
-            @Html.TextBoxFor(x => x.SecondAddress.ZipCode, new { @class = "reserve-input min", onkeypress = "return isNumberKey(event)", maxlength = 5, required = "required" })
+            @Html.TextBoxFor(x => x.SecondAddress.ZipCode, new { @class = "reserve-input min", onkeypress = "return isNumberKey(event)", maxlength = 5 })
         </div>
         <br />
         <div class="row" style="width:100%">
