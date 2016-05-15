@@ -8,12 +8,12 @@
     using System.Web.Mvc;
     using Microsoft.AspNet.Identity;
     using AutoMapper;
-
+    using Infrastructure.Mapping;
     public class GetReservationsController : Controller
     {
-        IDeletableEntityRepository<Reservation> reservations;
+        GenericRepository<Reservation> reservations;
 
-        public GetReservationsController(DeletableEntityRepository<Reservation> reservations)
+        public GetReservationsController(GenericRepository<Reservation> reservations)
         {
             this.reservations = reservations;
         }
@@ -59,12 +59,10 @@
         [ValidateAntiForgeryToken]
         public ActionResult Delete (int ? id)
         {
-           //need to fix delete action
             var postViewModel = this.reservations.All().Where(x => x.Id == id)
-               .Project().To<Reservation>().FirstOrDefault();
-            reservations.Delete(postViewModel);
-            Mapper.CreateMap<Reservation, Reservation>();
-            reservations.SaveChanges();
+               .FirstOrDefault();
+            this.reservations.Delete(postViewModel);
+            this.reservations.SaveChanges();
             return Redirect("/GetReservations/IndexReservations");
         }
     }

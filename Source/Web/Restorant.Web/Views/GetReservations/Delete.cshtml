@@ -1,18 +1,26 @@
 ﻿@model Restorant.Web.ViewModels.GetReservations.GetReservationsVIewModel
 
-<h1>Delete</h1>
-
-<div>
-    @Model.AskSomething.Content
+@Styles.Render("~/Content/reservation-delete.css")
+<div class="container-reservation">
+    <h1>Cancel this Reservation</h1>
+    <div>
+        <div> <span>Reservation for:</span>  @Model.ReservedFor.ToLongDateString()</div>
+        <div><span>Time:</span> @Model.ReservedFor.TimeOfDay</div>
+        <div> <span>Special Request:</span>  @Model.AskSomething.Content</div>
+    </div>
 </div>
-<div>
-    @using (Html.BeginForm("Delete", "GetReservations", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-    { 
-        @Html.AntiForgeryToken()
-    <div class="form-group">
-            <div class="col-md-offset-1 col-md-10">
-                <input type="submit" class="btn btn-info" value="Continue to Step 2" />
-            </div>
-        </div>
-    }
+
+<div class="row btn-container">
+    <div class="col col-lg-7">
+        <a class="btn btn-info" href="~/GetReservations/IndexReservations">Return to previous</a>
+    </div>
+    <div class="col col-lg-3">
+        @using (Html.BeginForm("Delete", "GetReservations", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <input type="submit" class="btn btn-info" value="Delete Reservation" />
+        }
+    </div>
+
 </div>

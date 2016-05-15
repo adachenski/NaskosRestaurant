@@ -65,16 +65,23 @@ namespace Restorant.Web
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<DbContext>().To<ApplicationDbContext>();
+            kernel.Bind<DbContext>()
+                .To<ApplicationDbContext>();
 
-            kernel.Bind(typeof(IRepository<Post>)).To(typeof(DeletableEntityRepository<Post>));
+            kernel.Bind(typeof(IRepository<Post>))
+                .To(typeof(DeletableEntityRepository<Post>));
+
+            kernel.Bind(typeof(IRepository<Reservation>))
+                .To(typeof(DeletableEntityRepository<Reservation>));
 
             kernel.Bind(typeof(IDeletableEntityRepository<>))
                 .To(typeof(DeletableEntityRepository<>));
 
-            kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
+            kernel.Bind(typeof(IRepository<>))
+                .To(typeof(GenericRepository<>));
 
-            kernel.Bind<ISanitizer>().To<HtmlSanitizerAdapter>();
+            kernel.Bind<ISanitizer>()
+                .To<HtmlSanitizerAdapter>();
         }
     }
 }

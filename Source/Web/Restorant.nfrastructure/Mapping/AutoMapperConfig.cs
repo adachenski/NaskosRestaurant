@@ -11,6 +11,7 @@
     {
         private Assembly assembly;
 
+
         public AutoMapperConfig(Assembly assembly)
         {
             this.assembly = assembly;
