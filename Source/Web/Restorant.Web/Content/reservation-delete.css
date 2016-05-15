@@ -1,0 +1,32 @@
+﻿.container-reservation {
+    text-align: center;
+}
+
+    .container-reservation h1 {
+        padding: 20px;
+    }
+
+    .container-reservation > div {
+        font-size: 20px;
+        background-color: lightgray;
+        padding: 20px;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+        .container-reservation > div span {
+            font-weight: 900;
+        }
+
+        .container-reservation > div div:nth-child(2) {
+            font-size: 34px;
+        }
+
+.btn-container {
+    padding-left: 20%;
+    padding-right: 5%;
+}
+
+    .btn-container div {
+        padding: 20px;
+    }

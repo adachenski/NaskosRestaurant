@@ -1,0 +1,51 @@
+﻿    .cancel-reserve {
+        padding: 10px;
+        min-width: 200px;
+        height: 100px;
+        line-height: 60px;
+        text-align: center;
+        font-size: 34px;
+        padding: 20px;
+        margin: 20px;
+        border: 1px solid black;
+        text-decoration: none !important;
+        color: black;
+        font-weight: 100;
+    }
+
+        .cancel-reserve:hover {
+            font-weight: 900;
+            background: linear-gradient(white,#292c2f);
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+    .reserve-front-box {
+        margin-top: 40px;
+        font-weight: 900;
+        background: linear-gradient(white,#292c2f);
+        color: white;
+        max-width: 95%;
+    }
+
+    .reserve-conent {
+        margin: 20px;
+    }
+
+    h2 {
+        text-align: center;
+        padding: 20px;
+    }
+
+    #no-reservation {
+        width: 95%;
+        text-align: center;
+    }
+    #no-reservation>div{
+        font-size:18px;
+        padding-bottom:10px;
+    }
+    #no-reservation>img{
+        width:100%;
+    }
