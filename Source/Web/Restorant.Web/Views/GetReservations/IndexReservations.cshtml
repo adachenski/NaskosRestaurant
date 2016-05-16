@@ -5,6 +5,7 @@
 }
 
 @Styles.Render("~/Content/reservation-index.css")
+
 <div class="container">
     @Html.AntiForgeryToken()
 
@@ -12,64 +13,61 @@
 
     @if (Model.Any())
     {
-    <h2>My Reservations</h2>
-    foreach (var reservations in Model)
-    {
-    <div class="row">
+        <h2>My Reservations</h2>
+        foreach (var reservations in Model)
+        {
+            <div class="row">
+                <div class="col-md-1 ">
+                    <div class="well text-center reserve-front-box">
+                        <div class="row">Reserve</div>
+                        <div class="row">@count</div>
+                    </div>
+                </div>
+                <div class="col-md-6 reserve-conent">
+                    <div class="row">
+                        <h4>
+                            <a href="~/GetReservations/Delete/@reservations.Id">Reservetion for: @reservations.ReservedFor.ToLongDateString()</a>
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <p>
+                            <strong>Reservation Time: </strong> @reservations.ReservedFor.ToLongTimeString()
+                            <strong>Table for: </strong> @reservations.Table.NumberOfChairs people
+                        </p>
+                        @if (reservations.AskSomething.Content != null)
+                        {
+                            <p><strong>Comment: </strong>@reservations.AskSomething.Content </p>
+                        }
+                        else
+                        {
+                            <p><strong>Comment: </strong> No Comment </p>
+                        }
 
-        <div class="col-md-1 ">
-            <div class="well text-center reserve-front-box">
-                <div class="row">Reserve</div>
-                <div class="row">@count</div>
+                    </div>
+                    <div class="row">
+                        <span class="label label-default"> @reservations.Table.NumberOfChairs seats</span>
+                        <span class="label label-default">@reservations.ReservedFor.ToShortDateString()</span>
+                        <span class="label label-default">@reservations.ReservedFor.TimeOfDay</span>
+                        <span class="label label-default">@reservations.ReservedFor.DayOfWeek</span>
+                    </div>
+                </div>
+                <a class="col-md-1 cancel-reserve" href="~/GetReservations/Delete/@reservations.Id">
+                    Cancel
+                </a>
             </div>
-        </div>
-        <div class="col-md-6 reserve-conent">
-            <div class="row">
-                <h4>
-                    <a href="~/GetReservations/Delete/@reservations.Id">Reservetion for: @reservations.ReservedFor.ToLongDateString()</a>
-                </h4>
-            </div>
-            <div class="row">
-                <p>
-                    <strong>Reservation Time: </strong> @reservations.ReservedFor.ToLongTimeString()
-                    <strong>Table for: </strong> @reservations.Table.NumberOfChairs people
-                </p>
-                @if (reservations.AskSomething.Content != null)
-                {
-                <p><strong>Comment: </strong>@reservations.AskSomething.Content </p>
-                }
-                else
-                {
-                <p><strong>Comment: </strong> No Comment </p>
-                }
-
-            </div>
-            <div class="row">
-                <span class="label label-default"> @reservations.Table.NumberOfChairs seats</span>
-                <span class="label label-default">@reservations.ReservedFor.ToShortDateString()</span>
-                <span class="label label-default">@reservations.ReservedFor.TimeOfDay</span>
-                <span class="label label-default">@reservations.ReservedFor.DayOfWeek</span>
-            </div>
-        </div>
-        <a class="col-md-1 cancel-reserve" href="~/GetReservations/Delete/@reservations.Id">
-            Cancel
-        </a>
-    </div>
-    <hr />
-    count++;
-    }
+            <hr />
+            count++;
+        }
     }
     else
     {
-    <div id="no-reservation" class="alert alert-warning alert-dismissible fade in" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        <h1>You don't have any Reservations at this poin. </h1>
-        <div>You can create one <a href="~/Reservation/Create">here</a> at any given moment </div>
-        <img src="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/no-reservations_zpss6wo51kb.jpg" />
-    </div>
-
+        <div id="no-reservation" class="alert alert-warning alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h1>You don't have any Reservations at this poin. </h1>
+            <div>You can create one <a href="~/Reservation/Create">here</a> at any given moment </div>
+            <img src="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/no-reservations_zpss6wo51kb.jpg" />
+        </div>
     }
-
 </div>

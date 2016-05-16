@@ -16,11 +16,10 @@
     </div>
     <div class="col col-lg-3">
         @using (Html.BeginForm("Delete", "GetReservations", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-        {
+            {
             @Html.AntiForgeryToken()
 
             <input type="submit" class="btn btn-info" value="Delete Reservation" />
         }
     </div>
-
 </div>

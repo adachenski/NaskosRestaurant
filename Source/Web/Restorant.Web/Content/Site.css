@@ -17,13 +17,16 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
     display: block;    
 }
          
-
+.modal-body{
+    padding-bottom:10px !important;
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 20px;
     padding-right: 20px;
     position: relative;
     background-color: rgba(255,255,255,0.9);
+    font-size:18px;
 }
 
 #video-background {
@@ -198,9 +201,13 @@ textarea {
 #datepicker, #timepicker {
     width: 270px;
 }
+h1{
+    text-align:center;
+}
 
 h1, h2, h3, h5 {
     font-family: 'Tabarra Shadow',Impact;
+
 }
 
 
