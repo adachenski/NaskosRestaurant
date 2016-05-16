@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CommentFormController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\GetReservationsController.cs" />
     <Compile Include="Controllers\JokeController.cs" />
@@ -255,7 +256,7 @@
     <Content Include="Content\bootstrap.cosmo.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\custom-partial.css" />
+    <Content Include="Content\resume-form.css" />
     <Content Include="Content\dzen-section.css" />
     <Content Include="Content\home-page-animation.css" />
     <Content Include="Content\IE.css" />
@@ -503,7 +504,6 @@
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Views\Shared\EditorTemplates\tinymce_full.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
-    <Content Include="Views\Questions\Display.cshtml" />
     <Content Include="Views\CommentForm\Create.cshtml" />
     <Content Include="Views\PageableComment\_Index.cshtml" />
     <Content Include="Views\Reservation\Create.cshtml" />
@@ -521,6 +521,8 @@
     <Content Include="Views\Shared\_DisplayWarning.cshtml" />
     <Content Include="Views\Joke\_JokePartial.cshtml" />
     <Content Include="Views\GetReservations\Delete.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Questions\Display.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UploadedResumes\" />

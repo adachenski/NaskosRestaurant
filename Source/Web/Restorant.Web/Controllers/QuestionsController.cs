@@ -38,18 +38,21 @@
             return this.View(postViewModel);
         }
 
-        // /questions/tagged/javascript
-        public ActionResult GetByTag(string tag)
-        {
-            return this.Content(tag);
-        }
-
         [HttpGet]
         [Authorize]
         public ActionResult Ask()
         {
             var model = new AskInputModel();
-            return this.View(model);
+           
+            //Checking if request is comming from 
+            if (!ControllerContext.IsChildAction)
+            {
+                return this.View(model);
+            }
+            else
+            {
+                return PartialView(model);
+            }
         }
 
         [HttpPost]
@@ -62,18 +65,16 @@
                 var userId = this.User.Identity.GetUserId();
 
                 var post = new Post
-                    {
-                        Title = input.Title,
-                        Content = this.sanitizer.Sanitize(input.Content),
-                        AuthorId = userId,
-                        
-                        // TODO: Tags
-                        // TODO: Author
-                    };
+                {
+                    Title = input.Title,
+                    Content = this.sanitizer.Sanitize(input.Content),
+                    AuthorId = userId,
+                };
 
                 this.posts.Add(post);
                 this.posts.SaveChanges();
-                return this.RedirectToAction("Display", new { id = post.Id, url = "new" });
+                this.TempData["Notification"] = "Your question has been Send. We'll be in touch with you soon ";
+                return RedirectToAction("Display", new { id = post.Id, url = "new" });
             }
 
             return this.View(input);

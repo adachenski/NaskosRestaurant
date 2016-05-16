@@ -108,6 +108,9 @@ textarea {
     font-weight:900;
     background-color:ghostwhite;
 }
+.alert-info{
+    margin-top:20px;
+}
 
 #navigation {
     z-index: 6;

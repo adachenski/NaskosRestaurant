@@ -64,6 +64,7 @@
                .FirstOrDefault();
             this.reservations.Delete(postViewModel);
             this.reservations.SaveChanges();
+            this.TempData["Notification"] = "Your reservation has been Cancel";
             return Redirect("/GetReservations/IndexReservations");
         }
     }

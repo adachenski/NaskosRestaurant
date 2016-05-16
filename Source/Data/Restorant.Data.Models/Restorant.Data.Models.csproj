@@ -63,7 +63,6 @@
     <Compile Include="Reservation.cs" />
     <Compile Include="Resume.cs" />
     <Compile Include="Table.cs" />
-    <Compile Include="Tag.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

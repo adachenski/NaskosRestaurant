@@ -16,8 +16,6 @@
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
         }
 
-        public IDbSet<Tag> Tags { get; set; }
-
         public IDbSet<Post> Posts { get; set; }
 
         public IDbSet<CommentForm> Comments { get; set; }
