@@ -1,4 +1,5 @@
-﻿  $(document).ready(function () {
+﻿/// <reference path="home-page-animation.js" />
+  $(document).ready(function () {
 
             var distance = $('.container').offset().top,
             $window = $(window);
@@ -13,7 +14,7 @@
 
             setTimeout(function () {
                 chefAnim.animate({ "left": "0" }, "slow")
-            }, 10000);
+            }, 20000);
 
             $window.scroll(function () {
                 if ($window.scrollTop() >= distance && $window.width() > 1700) {

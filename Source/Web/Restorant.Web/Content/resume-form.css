@@ -8,10 +8,17 @@
     font-family: calibri;
     text-align: center;
     cursor: pointer;
-    width:95%;
+    width: 95%;
 }
-h1,h2{
-    text-align:center;
+
+h1, h2 {
+    text-align: center;
+}
+
+.resume-alert {
+    font-size: 22px;
+    margin-top: 20px;
+    width: 100%;
 }
 
 legend {
@@ -66,5 +73,5 @@ legend {
 
 .div-warning {
     font-size: 18px;
-    padding-left:20%;
+    padding-left: 20%;
 }

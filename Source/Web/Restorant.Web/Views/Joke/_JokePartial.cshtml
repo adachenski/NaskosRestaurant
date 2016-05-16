@@ -1,13 +1,13 @@
 ﻿@model IEnumerable< Restorant.Web.ViewModels.Jokes.JokeViewModel>
 
-<h1>Jokes</h1>
+<h2>Jokes</h2>
 
 
     @foreach (var joke in Model)
     {
-        <h3 style="font-family:Arial">
+        <h4>
          @joke.Content
-        </h3>
+        </h4>
         <br>
     }
 
