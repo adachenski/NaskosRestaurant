@@ -23,23 +23,9 @@
                 <li>@Html.ActionLink("Make Reservation", "Create", "Reservation")</li>
                 <li>@Html.ActionLink("Ask question", "Ask", "Questions")</li>
                 <li>@Html.ActionLink("Join Our Team","Create","Resume")</li>
-                <li>
-                    <a href="#">Dashboard</a>
-                </li>
                 <li>@Html.ActionLink("My Reservations", "IndexReservations", "GetReservations")</li>
-                <li>
-                    <a href="#">Overview</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
                 <li>@Html.ActionLink("About", "Index", "Home")</li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
+                <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
             </ul>
         </div>
     </div>
@@ -87,14 +73,14 @@
                     ·
                     @Html.ActionLink("Make Reservation", "Create", "Reservation")
                     ·
-                    <a href="https://www.linkedin.com/in/atanasdachenski">Contact</a>
+                    @Html.ActionLink("Contact", "Index", "Contact")
                 </p>
                 <p class="footer-company-name">Nasko's Restaurant &copy; @DateTime.Now.ToLongDateString() </p>
             </div>
             <div class="footer-center">
                 <div>
                     <i class="fa fa-map-marker"></i>
-                    <p><span>21 Revolution Street</span> California, USA</p>
+                    <p><span>21 Random Street</span> California, USA</p>
                 </div>
                 <div>
                     <i class="fa fa-phone"></i>
@@ -102,7 +88,7 @@
                 </div>
                 <div>
                     <i class="fa fa-envelope"></i>
-                    <p><a href="https://www.linkedin.com/in/atanasdachenski">support@company.com</a></p>
+                    <p><a href="https://www.linkedin.com/in/atanasdachenski">nasko@naskorestaurant.com</a></p>
                 </div>
             </div>
             <div class="footer-right">
