@@ -18,9 +18,6 @@ clear:both;
     padding-left:10px !important;
     padding-right:10px !important;
 }
-#sidebar-wrapper ul{
-    margin-top:125px !important;
-}
 
 form {
     height: 100%;
@@ -54,10 +51,10 @@ form {
 }
 
 #chef-add{
-    width:350px !important;
+    width:310px !important;
 }
  #chef-add > div:first-of-type{
-     top:2% !important;
+     top:7% !important;
      font-size:12px !important;
  }
 
