@@ -256,6 +256,7 @@
     <Content Include="Content\bootstrap.cosmo.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\reservation.css" />
     <Content Include="Content\resume-form.css" />
     <Content Include="Content\dzen-section.css" />
     <Content Include="Content\home-page-animation.css" />
