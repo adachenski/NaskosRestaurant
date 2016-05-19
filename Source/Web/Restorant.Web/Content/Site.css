@@ -1,7 +1,5 @@
 ﻿body {
-    /*padding-bottom: 20px;
-    background-image: url("https://focusmedical.files.wordpress.com/2015/01/istock_000047600082_medium.jpg?w=1697&h=1131&crop=1");
-    background-size: 100%;*/
+    font-size: 14px;
 }
 
 @media (min-width: 764px) {
@@ -12,6 +10,14 @@
     ul.nav li.dropdown:hover > ul.dropdown-menu {
         display: block;
     }
+}
+
+noscript {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    text-align: center;
 }
 
 .dropdown-menu li a:hover {
@@ -49,6 +55,7 @@
 }
 /* Set padding to keep content from hitting the edges */
 .body-content {
+    font-size: 1.3em;
     padding-left: 20px;
     padding-right: 20px;
     position: relative;
@@ -204,45 +211,14 @@ textarea {
     border-color: #399599;
 }
 
-.reservation-form {
-    font-size: 22px;
-    font-family: 'Times New Roman', Times, serif;
-    padding-left: 12px;
-    font-weight: 900;
-}
-
-.reservation-create {
-    position: relative;
-    width: 100%;
-    height: auto;
-    float: left;
-}
-
-.modal-backdrop {
-}
-
-.reservation-create img {
-    width: 100%;
-    height: auto;
-}
-
-.reservation-create > div {
-    position: absolute;
-    top: 65%;
-}
-
 #datepicker, #timepicker {
     width: 270px;
 }
 
-
 h1, h2, h3 {
-    font-family: 'Tabarra Shadow',Impact;
+    font-family: Cookie, cursive;
     padding: 20px;
 }
-
-
-
 
 
 .footer-distributed {
@@ -311,18 +287,14 @@ h1, h2, h3 {
         width: 35%;
     }
 
-        .footer-distributed .footer-center i {
-            background-color: #33383b;
-            color: #ffffff;
-            font-size: 25px;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
+        .footer-distributed .footer-center img {
+            width: 30px;
             text-align: center;
             line-height: 42px;
             margin: 10px 15px;
             vertical-align: middle;
         }
+
 
             .footer-distributed .footer-center i.fa-envelope {
                 font-size: 17px;
@@ -376,20 +348,18 @@ h1, h2, h3 {
         margin-top: 25px;
     }
 
-        .footer-distributed .footer-icons a {
+        .footer-distributed .footer-icons img {
             display: inline-block;
             width: 35px;
-            height: 35px;
-            cursor: pointer;
-            background-color: #33383b;
-            border-radius: 2px;
-            font-size: 20px;
-            color: #ffffff;
+            cursor: pointer;      
             text-align: center;
             line-height: 35px;
             margin-right: 3px;
             margin-bottom: 5px;
         }
+        .footer-distributed .footer-icons img:hover {
+                width:30px;
+            }
 
 /* If you don't want the footer to be responsive, remove these media queries */
 
@@ -408,7 +378,7 @@ h1, h2, h3 {
             text-align: center;
         }
 
-            .footer-distributed .footer-center i {
+            .footer-distributed .footer-center img {
                 margin-left: 0;
             }
 }

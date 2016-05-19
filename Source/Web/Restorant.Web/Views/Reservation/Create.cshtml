@@ -3,26 +3,22 @@
     ViewBag.Title = "Make Reservation";
 }
 <h1>@ViewBag.Title</h1>
-<link rel="stylesheet" type="text/css" href="~/Content/jquery.datepick.css">
-<link rel="stylesheet" type="text/css" href="~/Content/timepicki.css" />
-<noscript style="position: absolute;
-z-index: 1;
-left: 0;
-width: 100%;
-text-align:center">
-    <div class="alert alert-danger" role="alert">
-        <p>
-            <h1>Your browser does not support JavaScript!</h1>
-            <div>You must enable JavaScript to compleate the Reservation.</div>
-        </p>
-    </div>
-</noscript>
-<div class="container-reservation" style="background-image:url(http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/reservation-BG_zpswvcvo5ai.gif);background-size:cover">
+@section Styles{
+    <link rel="stylesheet" type="text/css" href="~/Content/jquery.datepick.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/timepicki.css" />
+    <link  rel="stylesheet" type="text/css" href="~/Content/reservation.css"/>
+}
+
+<div class="container-reservation">
     <!-- Trigger the modal with a button -->
     @if (User.Identity.IsAuthenticated)
     {
-        <div style="font-size:22px;margin-bottom:0" class="alert alert-warning alert-dismissible fade in" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <div class="alert alert-warning alert-dismissible fade in"
+             role="alert">
+            <button type="button"
+                    class="close"
+                    data-dismiss="alert"
+                    aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
             <strong>Resevation Houers : </strong> Breakfast from 6 AM to 11 AM, Dinner from 6 PM to 11 PM
@@ -30,7 +26,8 @@ text-align:center">
     }
     else
     {
-        <div style="font-size:22px;margin-bottom:0;" class="alert alert-danger alert-dismissible fade in" role="alert">
+        <div class="alert alert-danger alert-dismissible fade in"
+             role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -39,17 +36,29 @@ text-align:center">
     }
 
     <div class="reservation-create">
-        <img style="margin-bottom:20px" src="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/chef-girl_zpsddehtmjp.png" />
+        <img src="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/chef-girl_zpsddehtmjp.png" />
         <div id="date-div" style="left:25%">
-            <h2>Pick up a Date</h2>
-            <input class="form-control" type="text" id="datepicker" required="required">
+            <div>Pick up a Date</div>
+            <input class="form-control"
+                   type="text" id="datepicker"
+                   required="required">
         </div>
         <div id="time-div" style="left:55%">
-            <h2>Pick up a Time</h2>
-            <input class="form-control" id="timepicker" type="text" name="timepicker" required="required" />
+            <div>Pick up a Time</div>
+            <input class="form-control"
+                   id="timepicker"
+                   type="text"
+                   name="timepicker"
+                   required="required" />
         </div>
     </div>
-    <button type="button" class="btn btn-info btn-lg no-modal" onclick="getTimepick()" data-toggle="modal" data-target="#myModal">Make a Reservation</button>
+    <button type="button"
+            class="btn btn-info btn-lg no-modal"
+            onclick="getTimepick()"
+            data-toggle="modal"
+            data-target="#myModal">
+        Make a Reservation
+    </button>
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">

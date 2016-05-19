@@ -3,7 +3,7 @@
     ViewBag.Title = "All Feedbacks";
 }
 
-<h2 style="background-color:#C38650;text-align:center;padding-top:10px;padding-bottom:10px">@ViewBag.Title</h2>
+<h1 style="background-color:#C38650;text-align:center;padding-top:10px;padding-bottom:10px">@ViewBag.Title</h1>
 <div>
     <p>
         <div>
@@ -36,10 +36,10 @@
 </div>
 <table class="table table-striped">
     <tr>
-        <th>Author</th>
-        <th style="background-color:#C38650">Title</th>
-        <th>Content</th>
-        <th>Created On</th>
+        <th><h3>Author</h3></th>
+        <th style="background-color:#C38650"><h3>Title</h3></th>
+        <th><h3> Content</h3></th>
+        <th><h3> Created On</h3></th>
     </tr>
     @foreach (var comment in Model.AllComments)
     {

@@ -1,0 +1,38 @@
+﻿.container-reservation {
+    background-image: url(http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/reservation-BG_zpswvcvo5ai.gif);
+    background-size: cover;
+    margin: 20px;
+}
+
+.reservation-form {
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 12px;
+    font-weight: 900;
+}
+
+.reservation-create {
+    position: relative;
+    width: 100%;
+    height: auto;
+    float: left;
+    font-family: Cookie;
+    font-size: 2em;
+    text-align: center;
+}
+
+    .reservation-create img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .reservation-create > div {
+        position: absolute;
+        top: 65%;
+    }
+
+.alert {
+    font-size: 22px;
+    margin-bottom: 0;
+}

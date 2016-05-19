@@ -2,9 +2,7 @@
 {
     using System.Linq;
     using System.Web.Mvc;
-
     using AutoMapper.QueryableExtensions;
-
     using Microsoft.AspNet.Identity;
     using Data.Common.Repository;
     using Data.Models;
@@ -43,16 +41,7 @@
         public ActionResult Ask()
         {
             var model = new AskInputModel();
-           
-            //Checking if request is comming from 
-            if (!ControllerContext.IsChildAction)
-            {
-                return this.View(model);
-            }
-            else
-            {
-                return PartialView(model);
-            }
+            return this.View(model);
         }
 
         [HttpPost]
