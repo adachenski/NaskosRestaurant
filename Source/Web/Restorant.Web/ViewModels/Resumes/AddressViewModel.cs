@@ -6,7 +6,6 @@
     using System.ComponentModel.DataAnnotations;
     public class AddressViewModel:IMapFrom<Address>
     {
-        [Required]
         [DisplayName("Street Address")]
         public string StreetAdress { get; set; }
 

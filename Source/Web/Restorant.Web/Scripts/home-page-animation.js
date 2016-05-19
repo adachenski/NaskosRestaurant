@@ -15,12 +15,15 @@
             setTimeout(function () {
                 chefAnim.animate({ "left": "0" }, "slow")
             }, 20000);
+            if ($window.width() < 768) {
+                //reset video src without removing it
+                $("#video-background").first().attr('src', '')
 
+            }
             $window.scroll(function () {
+                
                 if ($window.scrollTop() >= distance && $window.width() > 1700) {
-                    console.log($window.width())
                     $('.scroll').slideDown("slow");
-
                 }
                 else {
                     $('.scroll').slideUp("slow");
