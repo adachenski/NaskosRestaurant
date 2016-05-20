@@ -38,10 +38,12 @@
     }
 
     #no-reservation {
-        width: 95%;
+        margin-top:20px;
+        width: 96%;
         text-align: center;
     }
     #no-reservation>div{
+        font-family:Cookies;
         font-size:18px;
         padding-bottom:10px;
     }

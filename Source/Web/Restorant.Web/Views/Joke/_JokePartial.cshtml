@@ -1,23 +1,26 @@
-﻿@model IEnumerable< Restorant.Web.ViewModels.Jokes.JokeViewModel>
+﻿@model IEnumerable<Restorant.Web.ViewModels.Jokes.JokeViewModel>
 
-<h1>Jokes</h1>
-
-
+<div>
+    <h1>Random Jokes</h1>
     @foreach (var joke in Model)
     {
         <h4>
-         @joke.Content
+            @joke.Content
         </h4>
         <br>
     }
 
-<form style="position:absolute; top:95%; background-color:lightgray;width:90%;padding-bottom:10px;text-align:center">
-    <label style="font-size:18px">Joke vote</label>
-    <br />
-    Good
-    <input type="radio" name="vote" value="Good"/>
-    Bad
-    <input type="radio" name="vote" value="Bad"/>
-    <br />
-    <input type="submit" value="subit"/>
-</form>
+    <form style="background-color:lightgray;
+                width:100%;
+                padding-bottom:10px;
+                text-align:center">
+        <label style="font-size:18px">Joke vote</label>
+        <br />
+        Good
+        <input type="radio" name="vote" value="Good" />
+        Bad
+        <input type="radio" name="vote" value="Bad" />
+        <br />
+        <input type="submit" value="subit" />
+    </form>
+</div>

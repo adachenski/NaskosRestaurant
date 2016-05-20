@@ -278,6 +278,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="jpgs\close-button.png" />
+    <Content Include="jpgs\kitty2.jpg" />
     <Content Include="jpgs\Noa Restaurant Intro.webm" />
     <Content Include="config.rb" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />

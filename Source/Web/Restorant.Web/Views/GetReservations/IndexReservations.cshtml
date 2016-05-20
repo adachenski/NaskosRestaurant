@@ -45,7 +45,7 @@
 
                     </div>
                     <div class="row">
-                        <span class="label label-default"> @reservations.Table.NumberOfChairs seats</span>
+                        <span class="label label-default">@reservations.Table.NumberOfChairs seats</span>
                         <span class="label label-default">@reservations.ReservedFor.ToShortDateString()</span>
                         <span class="label label-default">@reservations.ReservedFor.TimeOfDay</span>
                         <span class="label label-default">@reservations.ReservedFor.DayOfWeek</span>
@@ -62,12 +62,19 @@
     else
     {
         <div id="no-reservation" class="alert alert-warning alert-dismissible fade in" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <button type="button" id="close-reservation" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
             <h1>You don't have any Reservations at this poin. </h1>
             <div>You can create one <a href="~/Reservation/Create">here</a> at any given moment </div>
-            <img src="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/no-reservations_zpss6wo51kb.jpg" />
+
+            <img id="reservation-pic" src="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/no-reservations_zpss6wo51kb.jpg" />
+        </div>
+        <div class="hide-jokes" style="display:none;">
+            @{Html.RenderAction("_JokePartial", "Joke");}
         </div>
     }
 </div>
+@section Scripts{
+    <script type="text/javascript" src="~/Scripts/show-jokes.js"></script>
+    }

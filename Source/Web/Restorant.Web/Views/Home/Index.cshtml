@@ -1,127 +1,137 @@
 ﻿@section Styles {
     <link href="~/Content/dzen-section.css" rel="stylesheet" type="text/css" />
 }
-<h1>Lorem ipsum</h1>
-<p>
-    Consectetur adipisicing elit. Molestias, molestiae, asperiores iure ducimus
-    itaque delectus quasi! Qui, deleniti, harum, magni blanditiis quasi
-    reprehenderit earum quam tempore asperiores exercitationem dignissimos
-    accusantium ipsam laudantium animi possimus ducimus pariatur provident
-    numquam eveniet reiciendis. Libero, rem pariatur quos nobis cupiditate
-    mollitia hic sunt totam.
-    Dolor sit amet, consectetur adipisicing elit. Voluptas accusamus delectus
-    explicabo officia laboriosam. Proin lacinia erat quam.
-</p>
-<p>
-    Distinctio, laudantium minima hic corrupti libero!
-    Nullam ut ultricies velit. Nunc nec magna lectus. Aliquam et accumsan elit,
-    dictum blandit nulla. Suspendisse fringilla bibendum mauris. Proin lacinia erat
-    quam, ac vulputate velit aliquet sit amet. Vestibulum cursus finibus enim sit
-    amet dictum. Morbi nec sem a est imperdiet pellentesque at id risus. In lacinia,
-    orci non semper rhoncus, augue velit tincidunt lacus, non varius lectus odio quis
-    mauris. Donec feugiat arcu non elit laoreet, a maximus tellus porttitor.
-</p>
-<h1>Dolor sit amet</h1>
-<p>
-    Ipsum, tempore, itaque dolorum sint reiciendis mollitia sed aperiam fugit est dolorem quos
-    asperiores laborum veniam. In earum ut porro omnis veniam pariatur quaerat architecto atque itaque?
-    Ipsum dolor sit amet, consectetur adipisicing elit. Culpa, voluptatum, veritatis, laudantium
-    officia maxime tempora molestias est sunt iure vel blanditiis reprehenderit repellat amet
-    dolorem eaque alias beatae nihil aliquid officiis possimus labore consectetur neque dolorum
-    itaque libero accusantium odio.
-</p>
+<style>
+    p {
+        width: 95%;
+        padding-left: 5%;
+    }
 
-<section class="dzen_section_DD ">
-    <div class="dzen_bg">
-        <h1 style="text-align:center; color:white; text-shadow:5px 5px #14ad27;"> Enjoy our Menu</h1>
-        <div class="dzen_container">
-            <div class="dzen_column_DD_span3 ">
-                <div class="dzen_service_box dzen_service_box_round ">
-                    <div>
-                        <a href="/GetReservations/IndexReservations">
-                            <div class="dzen_icon_boxed">
-                                <i class="glyphicon glyphicon-inbox"></i>
-                            </div>
-                        </a>
-                        <h3>My Reservations </h3>
+   #home-wrap p::first-letter {
+    font-size: 72px;
+    float: left;
+    padding: 10px;
+    height: 64px;
+    font-family: 'HominisNormal';
+    background-color: #7F7664;
+    margin-right: 10px;
+    color: white;
+    border-radius: 5px;
+    line-height: 70px;
+
+}
+</style>
+<div id="home-wrap">
+    <h1>About Nasko's</h1>
+    <p>
+        Nasko's Restaurant is ASP.NET MVC web App that i have made to test and practise
+        some of the technologies, and tools that i've learn
+        at <a href="http://telerikacademy.com">Telerik Academy</a> .
+        The App represent a Restaurant in witch you can make and organize reservations
+        Apply for a job, submit or upload a Resume Form. You can awso send and brouse
+        feedbacks,
+        after you create a simple profile account. I have removed the default
+        password requirement so the people can create account easyly to test the app functionality.
+        The project looks well on most of the devices.
+
+    </p>
+    <h1>Technologies used</h1>
+    <p>
+        I have used the folowing technologies: MVC 5.2 With the default packejes and Razor View Engine.
+        I've uninstall only the reqire
+        JS because i didnt intend to suppord older brouwsers. And Yes! The App is not gonna looks well on IE 8 or lower.
+        Other technologies and nuget packeges: JavaScript, JQuery, HTML5, CSS, Photoshop, SQL Manegment Studio 2014, EntityFramework wiht
+        CodeFirst Aproach. AutoMapper version 3.2, and Ninject as Dependency Injector. The project and DataBase 
+        are hosted with <a href="https://azure.microsoft.com">Microsoft Azure</a>  in Central USA. 
+    </p>
+    <hr />
+    <section class="dzen_section_DD ">
+        <div class="dzen_bg">
+            <h1 style="text-align:center; color:white; text-shadow:5px 5px #14ad27;"> Enjoy our Menu</h1>
+            <div class="dzen_container">
+                <div class="dzen_column_DD_span3 ">
+                    <div class="dzen_service_box dzen_service_box_round ">
+                        <div>
+                            <a href="/GetReservations/IndexReservations">
+                                <div class="dzen_icon_boxed">
+                                    <i class="glyphicon glyphicon-inbox"></i>
+                                </div>
+                            </a>
+                            <h3>My Reservations </h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="dzen_column_DD_span3 ">
-                <div class="dzen_service_box dzen_service_box_round ">
-                    <div>
-                        <a href="/CommentForm/Create">
-                            <div class="dzen_icon_boxed">
-                                <i class="glyphicon glyphicon-comment"></i>
-                            </div>
-                        </a>
-                        <h3>Live a Feedback </h3>
+                <div class="dzen_column_DD_span3 ">
+                    <div class="dzen_service_box dzen_service_box_round ">
+                        <div>
+                            <a href="/CommentForm/Create">
+                                <div class="dzen_icon_boxed">
+                                    <i class="glyphicon glyphicon-comment"></i>
+                                </div>
+                            </a>
+                            <h3>Live a Feedback </h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="dzen_column_DD_span3 ">
-                <div class="dzen_service_box dzen_service_box_round ">
-                    <div>
-                        <a href="/Reservation/Create">
-                            <div class="dzen_icon_boxed">
-                                <i class="glyphicon glyphicon-calendar"></i>
-                            </div>
-                        </a>
-                        <h3>Reservation</h3>
+                <div class="dzen_column_DD_span3 ">
+                    <div class="dzen_service_box dzen_service_box_round ">
+                        <div>
+                            <a href="/Reservation/Create">
+                                <div class="dzen_icon_boxed">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </div>
+                            </a>
+                            <h3>Reservation</h3>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="dzen_column_DD_span3 ">
-                <div class="dzen_service_box dzen_service_box_round ">
-                    <div>
-                        <a href="/Contact/Index">
-                            <div class="dzen_icon_boxed">
-                                <i class="glyphicon glyphicon-pencil"></i>
-                            </div>
-                        </a>
-                        <h3>Contact Us</h3>
+                <div class="dzen_column_DD_span3 ">
+                    <div class="dzen_service_box dzen_service_box_round ">
+                        <div>
+                            <a href="/Contact/Index">
+                                <div class="dzen_icon_boxed">
+                                    <i class="glyphicon glyphicon-pencil"></i>
+                                </div>
+                            </a>
+                            <h3>Contact Us</h3>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <hr />
+    <h1>Lorem Ipsum to enable scrolling</h1>
+    <p>
+        What is <a href="http://www.lipsum.com/"> Lorem Ipsum</a>?
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+        when an unknown printer took a galley of type and scrambled it to make a type 
+        specimen book. It has survived not only five centuries, but also the leap into 
+        electronic typesetting, remaining essentially unchanged. It was popularised in t
+        he 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+        and more recently with desktop publishing software like Aldus PageMaker including 
+        versions of Lorem Ipsum.
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a 
+        piece of classical Latin literature from 45 BC, making it over 2000 years old.
+    </p>
+    <h1>Lorem Ipsum</h1>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fermentum purus sit
+        amet ante sagittis venenatis eu in elit. Duis eu tortor est. Aliquam erat volutpat.
+        Phasellus et vestibulum nunc. Curabitur sed luctus nulla, quis dictum libero.
+        Nunc sagittis volutpat leo, eget efficitur purus vehicula a. Nullam dictum vitae
+        odio in fermentum. Nunc libero purus, pellentesque nec lectus eu, pretium elementum
+        nisl. Morbi sed elit a orci tincidunt ultrices vitae ac est. Morbi pretium venenatis
+        metus id feugiat. Fusce commodo ante quam, non ultrices arcu tristique at. Sed efficitur
+        rutrum vestibulum. Pellentesque ultrices leo ac neque tempor, eu accumsan ex placerat.
+        Ut turpis dolor, convallis vitae enim in, sodales sollicitudin nulla. In vel consequat nunc.
 
-<h1>Dolor sit amet</h1>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fermentum purus sit
-    amet ante sagittis venenatis eu in elit. Duis eu tortor est. Aliquam erat volutpat.
-    Phasellus et vestibulum nunc. Curabitur sed luctus nulla, quis dictum libero.
-    Nunc sagittis volutpat leo, eget efficitur purus vehicula a. Nullam dictum vitae
-    odio in fermentum. Nunc libero purus, pellentesque nec lectus eu, pretium elementum
-    nisl. Morbi sed elit a orci tincidunt ultrices vitae ac est. Morbi pretium venenatis
-    metus id feugiat. Fusce commodo ante quam, non ultrices arcu tristique at. Sed efficitur
-    rutrum vestibulum. Pellentesque ultrices leo ac neque tempor, eu accumsan ex placerat.
-    Ut turpis dolor, convallis vitae enim in, sodales sollicitudin nulla. In vel consequat nunc.
-    Ipsum, tempore, itaque dolorum sint reiciendis mollitia sed aperiam fugit est dolorem quos asperiores laborum veniam. In earum ut porro omnis veniam pariatur quaerat architecto atque itaque?
-</p>
-<h1>Lorem Ipsum</h1>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fermentum purus sit
-    amet ante sagittis venenatis eu in elit. Duis eu tortor est. Aliquam erat volutpat.
-    Phasellus et vestibulum nunc. Curabitur sed luctus nulla, quis dictum libero.
-    Nunc sagittis volutpat leo, eget efficitur purus vehicula a. Nullam dictum vitae
-    odio in fermentum. Nunc libero purus, pellentesque nec lectus eu, pretium elementum
-    nisl. Morbi sed elit a orci tincidunt ultrices vitae ac est. Morbi pretium venenatis
-    metus id feugiat. Fusce commodo ante quam, non ultrices arcu tristique at. Sed efficitur
-    rutrum vestibulum. Pellentesque ultrices leo ac neque tempor, eu accumsan ex placerat.
-    Ut turpis dolor, convallis vitae enim in, sodales sollicitudin nulla. In vel consequat nunc.
-
-    Nullam ut ultricies velit. Nunc nec magna lectus. Aliquam et accumsan elit,
-    dictum blandit nulla. Suspendisse fringilla bibendum mauris. Proin lacinia erat
-    quam, ac vulputate velit aliquet sit amet. Vestibulum cursus finibus enim sit
-    amet dictum. Morbi nec sem a est imperdiet pellentesque at id risus. In lacinia,
-    orci non semper rhoncus, augue velit tincidunt lacus, non varius lectus odio quis
-    mauris. Donec feugiat arcu non elit laoreet, a maximus tellus porttitor.
-
-    Suspendisse faucibus interdum mauris non viverra. Etiam nec libero mauris.
-    Vestibulum semper odio at lorem lobortis volutpat et vel nibh. Maecenas sit amet
-    magna ut libero feugiat dignissim. Nam accumsan vitae dui a venenatis. Praesent
-    maximus volutpat nulla, ut egestas massa iaculis vel. Fusce fringilla nibh sit
-    amet mauris blandit feugiat.
-</p>  
+        Nullam ut ultricies velit. Nunc nec magna lectus. Aliquam et accumsan elit,
+        dictum blandit nulla. Suspendisse fringilla bibendum mauris. Proin lacinia erat
+        quam, ac vulputate velit aliquet sit amet. Vestibulum cursus finibus enim sit
+        amet dictum. Morbi nec sem a est imperdiet pellentesque at id risus. In lacinia,
+        orci non semper rhoncus, augue velit tincidunt lacus, non varius lectus odio quis
+        mauris. Donec feugiat arcu non elit laoreet, a maximus tellus porttitor.
+    </p>
+</div>
