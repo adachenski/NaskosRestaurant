@@ -14,6 +14,21 @@
     @Scripts.Render("~/bundles/jquery")
 </head>
 <body>
+    <script>
+ -        function detectIE() {
+ -            var ua = window.navigator.userAgent;
+ -            var msie = ua.indexOf('MSIE '),
+ -                trident = ua.indexOf('Trident/'),
+ -                edge = ua.indexOf('Edge/');
+ -            if (edge > 0 || msie > 0 || trident > 0) {
+ -                $('#ie-style').attr("href", "Content/IE.css");
+ -                setTimeout(function () {
+ -                    $('.scroll').slideDown("slow");
+ -                }, 6000);
+ -            }
+ -        }
+ -        detectIE();
+ -    </script>
     <video style="opacity:0.7" id="video-background" loop="" autoplay="" muted="" poster="http://www.dhresource.com/0x0s/f2-albu-g3-M00-F1-70-rBVaHVSv75-AeppOAAaQTMblXTE043.jpg/7x5ft-vinyl-custom-photography-backdrops.jpg">
         <source src="http://vid1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/Noa%20Restaurant%20Intro_zps5bivxhfq.mp4" type="video/mp4">
         <source src="~/jpgs/Noa Restaurant Intro.webm" type="video/webm">
@@ -166,7 +181,6 @@
             </div>
         </footer>
     </div>
-    <script type="text/javascript" src="~/Scripts/detect-IE.js"></script>
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("Scripts", required: false)
