@@ -53,6 +53,9 @@ noscript {
 .modal-body {
     padding-bottom: 10px !important;
 }
+#naskosRestaurant{
+    position:absolute;
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
     font-size: 1.3em;
@@ -359,6 +362,7 @@ h1, h2, h3 {
             .footer-distributed .footer-icons img:hover {
                 width: 30px;
             }
+
 
 @media(max-width:768px) {
     #video-background {

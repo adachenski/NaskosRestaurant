@@ -1,114 +1,133 @@
-﻿.dzen_container{
-		width: 100%;
-		text-align: center;
-	}
+﻿#home-wrap p {
+    width: 95%;
+    padding-left: 5%;
+}
 
-	.dzen_container:before,
-	.dzen_container:after{
-		display: table;
-		line-height: 0;
-		content: "";
-	}
-
-	.dzen_container:after{
-		clear: both;
-	}
-
-	.dzen_section_DD{
-		position: relative;
-		overflow:hidden;
-		padding-top: 0px;
-		padding-bottom: 0px;
-	}
-
-	.dzen_section_DD > *{
-		position: relative;
-	}
-	
-	.dzen_bg {
-    padding:10px;
-	background-image: url('http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/dzen-background_zpsbqyly31d.jpg'); 
-	background-size: 100% 100%;
-	background-repeat: no-repeat; 
-	background-position: 100% 12px; 
-	background-attachment: fixed;
-	padding-top: 10px; 
-	background-size: 100% 100%;
-	} 
-
-	.dzen_container [class*="column_DD_span"]{
-		display: block;
-		float: left;
-		min-height: 20px;
-		margin-left: 2.564102564102564%;
-		-webkit-box-sizing: border-box; 
-		-moz-box-sizing: border-box; 
-		box-sizing: border-box;
-	}
-
-	.dzen_container [class*="column_DD_span"]:first-child{
-		margin-left: 0;
-	}
-
-	.dzen_column_DD_span3   {width: 23.07692307692308%;}
-
-
-
-
-** boxes **
-
-	.dzen_service_box{
-		text-align: center;
-		margin-bottom: 55px;
-		padding-top: 0;
-	}
-
-	.dzen_service_box h3{
-		font-size: 20px;
+    #home-wrap p::first-letter {
+        font-size: 72px;
+        float: left;
+        padding: 10px;
+        height: 64px;
+        font-family: 'HominisNormal';
+        background-color: #7F7664;
+        margin-right: 10px;
         color: white;
-        font-family: Impact;
-        background-color:#14ad27;
-        opacity:0.8;
-        margin-bottom:20px;
-        padding:10px;
-	}
+        border-radius: 5px;
+        line-height: 70px;
+    }
 
-	.dzen_service_box .dzen_icon_boxed{
-		display: inline-block;
-		width: 88px;
-		height: 88px;
-		-webkit-border-radius: 50%;
-		-moz-border-radius: 50%;
-		border-radius: 50%;
-		background: #f2f4f5;
-		position: relative;
-		margin-bottom: 16px;
-		text-decoration: none;
-        margin-top:20px;
-        opacity:0.8;
-	}
+.dzen_container {
+    width: 100%;
+    text-align: center;
+}
 
-	.dzen_service_box .dzen_icon_boxed i{
-		color: #056ab2;
-	}
 
-	.dzen_service_box:hover .dzen_icon_boxed{
-		background: #056ab2;
-	}
+    .dzen_container:before,
+    .dzen_container:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
 
-	.dzen_service_box .dzen_icon_boxed i{
-		font-size: 32px;
-		line-height: 88px;
-		position: relative;
-		top: -1px;
-	}
+    .dzen_container:after {
+        clear: both;
+    }
 
-	.dzen_service_box:hover .dzen_icon_boxed i{
-		color: #fff;
-	}
+.dzen_section_DD {
+    position: relative;
+    overflow: hidden;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
 
-	.dzen_service_box .dzen_icon_boxed:hover:after{
-		border-top: 9px solid #056ab2;
-		transition: all 180ms ease-in;
-		-webkit-transition: all 180ms ease-in;
-	}
+    .dzen_section_DD > * {
+        position: relative;
+    }
+
+.dzen_bg {
+    padding: 10px;
+    background-image: url('http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/dzen-background_zpsbqyly31d.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 100% 12px;
+    background-attachment: fixed;
+    padding-top: 10px;
+    background-size: 100% 100%;
+}
+
+.dzen_container [class*="column_DD_span"] {
+    display: block;
+    float: left;
+    min-height: 20px;
+    margin-left: 2.564102564102564%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+    .dzen_container [class*="column_DD_span"]:first-child {
+        margin-left: 0;
+    }
+
+.dzen_column_DD_span3 {
+    width: 23.07692307692308%;
+}
+
+
+
+
+** boxes ** .dzen_service_box {
+    text-align: center;
+    margin-bottom: 55px;
+    padding-top: 0;
+}
+
+.dzen_service_box h3 {
+    font-size: 20px;
+    color: white;
+    font-family: Impact;
+    background-color: #14ad27;
+    opacity: 0.8;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.dzen_service_box .dzen_icon_boxed {
+    display: inline-block;
+    width: 88px;
+    height: 88px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background: #f2f4f5;
+    position: relative;
+    margin-bottom: 16px;
+    text-decoration: none;
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+    .dzen_service_box .dzen_icon_boxed i {
+        color: #056ab2;
+    }
+
+.dzen_service_box:hover .dzen_icon_boxed {
+    background: #056ab2;
+}
+
+.dzen_service_box .dzen_icon_boxed i {
+    font-size: 32px;
+    line-height: 88px;
+    position: relative;
+    top: -1px;
+}
+
+.dzen_service_box:hover .dzen_icon_boxed i {
+    color: #fff;
+}
+
+.dzen_service_box .dzen_icon_boxed:hover:after {
+    border-top: 9px solid #056ab2;
+    transition: all 180ms ease-in;
+    -webkit-transition: all 180ms ease-in;
+}

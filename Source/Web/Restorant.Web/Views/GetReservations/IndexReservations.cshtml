@@ -61,6 +61,10 @@
     }
     else
     {
+        <div class="hide-jokes" style="display:none; width:97%; padding-bottom:20px">
+            @{Html.RenderAction("_JokePartial", "Joke");}
+        </div>
+
         <div id="no-reservation" class="alert alert-warning alert-dismissible fade in" role="alert">
             <button type="button" id="close-reservation" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -69,9 +73,6 @@
             <div>You can create one <a href="~/Reservation/Create">here</a> at any given moment </div>
 
             <img id="reservation-pic" src="http://i1204.photobucket.com/albums/bb414/Atanas_Dachenski/NaskoRestaurant/no-reservations_zpss6wo51kb.jpg" />
-        </div>
-        <div class="hide-jokes" style="display:none;">
-            @{Html.RenderAction("_JokePartial", "Joke");}
         </div>
     }
 </div>

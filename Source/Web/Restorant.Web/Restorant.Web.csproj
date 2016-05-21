@@ -288,6 +288,7 @@
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\detect-IE.js" />
     <Content Include="Scripts\file-upload-validation.js" />
     <Content Include="Scripts\home-page-animation.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
@@ -302,6 +303,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\LoginModal.js" />
     <Content Include="Scripts\resume-validation.js" />
+    <Content Include="Scripts\show-jokes.js" />
     <Content Include="Scripts\timepicki.js" />
     <Content Include="Scripts\tinymce\license.txt" />
     <Content Include="Scripts\tinymce\plugins\advlist\plugin.js" />
