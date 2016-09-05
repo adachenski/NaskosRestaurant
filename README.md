@@ -10,3 +10,12 @@ The Nasko's Restaurant is a web Application app that I have made to test and pra
         little close Button on the top of the page right after Nasko's address headline. When
         someone hits that button. Reservation form closes and Joke page load 3 random jokes with JQuery.
         The project looks well on most of the devices.
+        
+        Software technologies, practices and tools used:
+➤ IDE: Visual Studio 2015
+➤ ASP.NET MVC 5, C#
+➤ HTML5, CSS3, JavaScript
+➤ jQuery, Bootstrap
+➤ Data Access Layer: Entity Framework
+➤ Data Storage: MS SQL 2012, MySQL
+➤ Continuous deployment using GIT in Azure App Service
